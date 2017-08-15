@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width:156px;
+            height:156px;
+            background-color: #0000cc;
+            position: relative;
+            overflow: hidden;
+        }
+        .mask{
+            width:156px;
+            height:156px;
+            background-color: green;
+            position: absolute;
+            top:156px;
+
+        }
+        .left{
+            width:156px;
+            height:156px;
+            border:6px solid #f03e23;
+            box-sizing: border-box;
+            border-radius: 50%;
+            position: absolute;
+            clip:rect(0px,78px,156px,0px);
+            transition: all .5s ease;
+        }
+        .right{
+            width:156px;
+            height:156px;
+            border:6px solid #f03e23;
+            box-sizing: border-box;
+            border-radius: 50%;
+            position: absolute;
+            transition: all .5s ease;
+            clip:rect(0px,156px,156px,78px);
+        }
+        .box:hover>.left{
+            clip:rect(156px,78px,156px,0px);
+        }
+        .box:hover>.right{
+            clip:rect(0px,156px,0px,78px);
+        }
+        .box:hover>.mask{
+            animation:animations .5s ease .5s  forwards;
+        }
+        @-webkit-keyframes animations{
+            0%{-webkit-transform:translateY(0);}
+            100%{-webkit-transform:translateY(-156px);}
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="mask"></div>
+</div>
+
+</body>
+</html>
