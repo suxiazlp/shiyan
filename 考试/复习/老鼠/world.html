@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+    #canvas{
+    	border:1px solid #000;
+    	margin:0 auto;
+    }
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="500" height="500"></canvas>
+</body>
+<script>
+        var canvas = document.getElementById("canvas");
+        var cobj= canvas.getContext("2d");
+        cobj.rect(15,0,90,130)
+        cobj.fillStyle="#ff813e"
+        cobj.fill()
+        cobj.fillRect(10,0,100,40);
+        cobj.fillRect(10,40,20,20);
+        cobj.fillRect(90,40,20,20);
+
+        cobj.beginPath()
+        cobj.rect(25,70,25,15)
+        cobj.fillStyle="#fff"
+        cobj.fill()
+
+        cobj.beginPath()
+        cobj.rect(38,70,12,15)
+        cobj.fillStyle="#3d46ce"
+        cobj.fill()
+
+        cobj.beginPath()
+        cobj.rect(70,70,25,15)
+        cobj.fillStyle="#fff"
+        cobj.fill()
+
+        cobj.beginPath()
+        cobj.rect(70,70,12,15)
+        cobj.fillStyle="#3d46ce"
+        cobj.fill()
+
+        //鼻子
+        cobj.beginPath()
+        cobj.rect(54,88,12,12)
+        cobj.fillStyle="#ba7b56"
+        cobj.fill()
+
+        //嘴巴
+        cobj.beginPath()
+        cobj.rect(38,106,42,20)
+        cobj.fillStyle="#450000"
+        cobj.fill()
+
+        //舌头
+        cobj.beginPath()
+        cobj.rect(50,116,20,10)
+        cobj.fillStyle="#f494b9"
+        cobj.fill()
+
+           
+
+</script>
+</html>

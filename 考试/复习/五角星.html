@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style type="text/css">
+	#canvas{
+		background:pink;
+	}
+</style>
+<body>
+	<canvas id="canvas" width="500" height="500"></canvas>
+	
+	<script type="text/javascript">
+		var canvas=document.getElementById('canvas');
+		var cobj=canvas.getContext('2d');
+
+		 star(100,100,50,20,5,'fill','red');
+         star(300,300,100,50,4,'fill','yellow');
+    
+    // 声明角度为0
+        var angle=0;
+    // 每调用一次 画一次星星  
+    //   
+        function star(x,y,r1,r2,num,starType,color){
+        // 声明一个数组stararr	
+        	var stararr=[];
+
+            	angle=360/(2*num);
+
+            // 循环的是点
+            for(var i=0;i<2*num;i++){
+            // starobj每一个星星
+                var starobj={};
+                // 偶数是外圆 奇数是里面的圆
+                if(i%2==0){
+                	starobj.x=x+r1*Math.cos(i*Math.PI/180*angle);
+                	starobj.y=y+r1*Math.sin(i*Math.PI/180*angle)
+
+                }else{	
+                	starobj.x=x+r2*Math.cos(i*Math.PI/180*angle);
+                	starobj.y=y+r2*Math.sin(i*Math.PI/180*angle)
+                }
+                stararr.push(starobj)
+            }
+
+            cobj.beginPath();
+            
+            cobj.fillStyle=color;
+            cobj.strokeStyle=color;
+
+            cobj.moveTo(stararr[0].x,stararr[0].y);
+            for(var i=1;i<stararr.length;i++){
+            	cobj.lineTo(stararr[i].x,stararr[i].y);	
+            }
+            cobj.closePath();
+            if(starType=='fill'){
+            	cobj.fill()
+            }else{
+            	cobj.stroke();
+            }
+
+
+        }       
+
+	</script>
+</body>
+</html>

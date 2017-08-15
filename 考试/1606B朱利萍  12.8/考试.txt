@@ -1,0 +1,338 @@
+1.break和continue的区别？ 
+   break用于完全结束一个循环，跳出循环体执行循环后面的语句
+   continue是跳过当次循环中剩下的语句，执行下一次循环。
+
+2.循环计算出0-100的和
+   var num = 0;
+   for(var i=0;i<=100;i++){
+    num +=i;
+      }
+     alert(num);
+
+3.请定义一个函数，该函数的功能传入一个值，返回这个值的平方值。
+     function （b）{ return b*b }
+
+4.js的难点？   浏览器的兼容性问题，js的语法松散性，自由性
+
+5.'hello world'的正确语法？  A document.write
+
+6.js的特性不包括什么？  D面向对象
+
+7.使用web程序的正确文件？  B script src
+
+8.下面四个变量申明语句中哪一个变量是正确的？  B var my_house
+
+9. 下列js的语句中哪一个是合法的？  D "join soid,\"Hi!\""
+
+10.下列js的判断语句中那个是正确的？   A.if(i==0)
+
+11.下列js循环语句中哪个是正确的？    选D.for(i=0;i<=10;i++)
+A.if(i<10;i++)             B.for(i=0;i<10)
+C.for i=1 to 10       D.for(i=0;i<=10;i++)
+
+12.下列的结果是什么？  123%7    结果是4
+
+13.下列哪个表达式返回的是假？ B.(4>=4)&&(5<=2)	
+；
+14.var i=100;i++;j++;y=++j; j=?y=?       结果是102  102
+
+15.下列选项中不是网页中的是事件？ D onpressbutton
+
+16.有语句“var x=0;while(____) x+=2;”，要使while循环体执行10次，空白处的循环判定式应写为：
+A．x<10	B. x<=10	C.x<20	D.x<=20        选( C)
+
+17.js数组中的序列是从几开始的？   0
+
+18.有一个js数组长度为3，其中x0=a，x1=b，x2=c，可不可以在数组后边添加新的东西？   (B)
+    A.不可以的	B.只要x[3]=”d”,就可以了C.应该重新定义一个新数组,其长度为4,然后循环赋值
+
+19.下面js语句中var a1=10;  var a2=20;  alert(“a1+a2=”+a1+a2)    (B)
+     A.a1+a2=30	B.a1+a2=1020		C.a1+a2=a1+a2
+
+20.将字符串所有字母变为小写字母的方法？   ( B )
+   A.s.toSmallCase()B.s.toLowerCase(）  C.s.toUpperCase()  D.s.toUpperChars()
+
+21.以下哪个表达式会弹出0-7且包含0-7的随机整数？  ( C)
+   A.Math.floor(Math.random()*6)B.Math.floor(Math.random()*7)
+   C.Math. floor(Math.random()*8)D.Math.ceil(Math.random()*8)  
+
+22.产生当前日期的方法？   C
+   A.Now();B.Date()C.new Date()D.new Now()     
+
+23.如果想在网页显示后动态的改变网页的标题，下边哪个改变？     ( C)
+    A.是不可能的 B.通过document.write(“新的标题内容”) 
+    C. 通过document.title=(“新的标题内容”）D. 通过document.changeTitle(“新的标题内容”)
+
+24.某网页中有一个窗体对象，名字mainForm，其窗体对象myButton    (B)
+  A.document.forms.myButton	B.document.mainForm.myButton	
+  C.document.forms[0].element[0]		D.以上都可以
+
+25.如果要改变表格中某一个单元格的内容，要怎么弄？    (C)
+   A.是不可能的
+   B.在单元格中先插入一个文本框元素,
+ 即<td><input type=”text” name=”twxtName” value=”已有的内容”></td>,然后改变其value值	
+   C. 在单元格先插入id,即<td id=”txtId”>已有的内容</td>,
+然后通document.getElementById.innerHTML改变其内容		
+   D.?直接通过document.table.tr.td改变内容
+
+26.单行注释语句以什么开始？    //
+
+27. 通过JS改变网页中的内容，实际上就是通过调用JS函数改变文档对象的(属性值)，
+或使用文档对象的（方法），模仿用户操作的效果。
+
+28.通过字符串的(length)方法，可以得到字符串的长度
+
+29.js语句中常用的弹出对话框有哪些？  
+         alert（）  prompt("","")  confirm("")
+
+30.请写出常用的事件名称 onclick  ondblclick onkeyup onkeypress onfoucs onmousemove
+
+31.空字符串（“”）也是字符串常量	(√)
+
+32．任何循环语句的循环体至少要执行一次      (×) 
+
+33.在不同的函数中可以定义同名的变量是否正确？   (√)
+
+34.要使用任何一个JavaScript对象的方法和属性，必须先使用new运算符创建它	(×)
+
+35.在HTML页面中css样式的属性名为background img     B
+  A.background  B.backgroundImage C.image D.background
+
+36.在HTML文档对象模型中,history对象的()用来加载下一个url页面？   （C）
+    A．next()  B.back()  C.forward()  D.go(-1)
+
+37.在js中要改变页面文档的背景色，需要修改document的什么属性？    bgcolor
+
+38.在html页面中不能与onchange相关联的元素有哪个？    (D)
+
+39.在html中编写代码时应该编写在什么标签中？   script
+
+40.在js对象浏览模型中，window对象的什么可以用来显示浏览器的临时消息？status 设置窗口状态栏的文本
+
+41.编写背景函数，实现网页选择器       ( B)
+   A.function change(color){
+	window.bgColor=color;
+}B. function change(color){
+	document.bgColor=color;
+}
+C. function change(color){
+	body.bgColor=color;
+}
+D. function change(color){
+	form.bgColor=color;
+}
+
+
+43.在Javascript中，可以使用Date对象的()方法返回一个月中的每一天()        A.getDate
+
+44.在js中对于浏览器的层次关系理解正确的是？    (AD)
+  A.window对象是所有页面内容的根对象   B.document对象包含location对象和history对象
+  C.location对象包含history                     D.document对象包含form对象
+
+45.下列选项中关于浏览器说法错误的是？        (C)
+     A.history对象记录了用户在一个浏览器中已经访问过的URLs
+     B.location对象相当于IE浏览器中的地址栏，包含关于当前URL地址的信息
+     C.location对象是history对象的父对象
+     D.location对象是window对象的子对象
+
+45.在html页面中包含一个按钮控件，如果要实现点击按钮时调用要点击的函数要编写的html代码是？   (D)
+ A.<input name=”mybutton” type=”button” onBlur=”compute()”value=”计算”>
+B.<input name=”mybutton” type=”button” onFocus=”compute()”value=”计算”>
+C.<input name=”mybutton” type=”button” onClick=”function compute()”value=”计算”>
+D.<input name=”mybutton” type=”button” onClick=”compute()”value=”计算”>
+
+46.分析下面的Javascript代码段，输出结果是             (C) 
+var mystring=”I am a student”; var a=mystring.substring(9,13); document.write(a); 
+ A．stud  B.tuden  C.uden  D.udent  30、Javascript中制作图片代替按钮的提交
+
+47.js中制作图片代替按钮的提交效果需要手动提交方法submit()，以下调用正确的是（C）
+   A.submit();B.myform.submit() C.document.myform.submit()  D.window.myform.submit();
+
+48.在html页面中，包含如下代码，判断是否按下键盘回车键正确的是？   (C)
+  <input name=”password” type=”text” onkeydown=”myKeyDown()”>
+A.function myKeyDown(){
+if (window.keyCode==13)
+		alert(“你按下了回车键”);
+B.function myKeyDown(){
+if (document.keyCode==13)
+		alert(“你按下了回车键”);
+C.function myKeyDown(){
+if (event.keyCode==13)
+		alert(“你按下了回车键”);
+D.function myKeyDown(){
+if (keyCode==13)
+		alert(“你按下了回车键”);
+
+49.如果在HTML页面中包含如下图片标签，则选项中的（）语句能够实现隐藏该图片的功能。  ( D )                                                                    
+<img id=”pic” src=”Sunset.jpg” width=”400” height=”300”>
+   A.document.getElementById(“pic”).style.display=”visible”;
+   B.document.getElementById(“pic”).style.display=”disvisible”;
+   C.document.getElementById(“pic”).style.display=”block”;
+   D.document.getElementById(“pic”).style.display=”none”;
+
+50.如果在HTML页面中包含如下图片标签，则在下划线处添加（）代码能够实现隐藏该图片的功能。        ( D )  
+ <img id=”pic” src=”Sunset.jpg” width=”400” height=”300”  ____________ >
+  A. style=”display:visible”; B. style=”display:disvisible”; 
+  C. style=”display:block”; D. style=”display:none”;
+
+51.下列选项中，（）段HTML代码所表示的“返回”链接能够正确实现IE工具栏中“后退”按钮的功能。  (AD) 
+ A. <a href=”javascript:history.go(-1)”>返回</a> B. <a href=”javascript:location.back()”>返回</a> 
+C. <a href=”javascript: location go(-1)”>返回</a> D. <a href=”javascript:history.back()”>返回</a> 
+
+52.在html中包含如下超链接，变为30px，正确的是    （ A ）
+   A.<a href=”#” onmouseover=”this.style.fontSize=30px”>注册</a>
+   B.<a href=”#” onmouseout=”this.style.fontsize=30px”>注册</a>
+   C.<a href=”#” onmouseover=”this.style.font-size=30px”>注册</a>
+   D.<a href=”#” onmouseout=”this.style.font-size=30px”>注册</a>
+
+53.在html中，按下键盘是会触发什么事件    ( D)
+A.onFocus  B.onBlur  C.onSubmit   D.onKeyDown
+
+54.在HTML页面中，定义了如下所示的Javascript函数，则正确调用该函数的HTML代码是  (AB)
+  function compute(op){
+alert(op);
+}
+A.<input name=”a” type=”button” onclick=”compute(this.value)” value=”+”>
+B.<input name=”b” type=”button” onclick=”compute(‘-‘)” value=”-”>
+C.<input name=”c” type=”button” onclick=”compute(“*”)” value=”*”>
+D.<input name=”d” type=”button” onclick=”compute(/ )” value=”/”>
+
+55.在HTML页面上包含如下创建层的语句，那么编写js语句实现显示该层的语句错误的是（D)
+   A. document.getElementByTagName(“div”)[0].style.display=”block”
+   B.document.getElementById(“imageLayer”).style.display=”block”;
+   C.document.getElementByName(“imageLayer”)[0].style.display=”block”;
+   D.document.getElementByName(“imageLayer”).get(0).style.display=”block”;
+
+56.分析下面的Javascript代码段，输出结果是    （C）  
+var s1=parseInt(“101中学”); document.write(s1); 
+ A. NaN   B.101中学  C.101   D.出现脚本错误
+
+57.在html中，点击图片上的超级链接后页面将加载历史列表中的上一个url页面  （A）
+  <a href=_________><img src=”previous.gif” width=”67” height=”21”></a>[单元十四]
+ A.”javascript:history.go(-1)”; B. “history.go(1)”
+ C. “history.go(-1)” D. “javascript:history.go(1)”
+
+58.在HTML页面上包含如下所示的层对象，则js语句document.getElementById(“info”).innerHTML的值是（B）
+   <div id=”info” style=”display:block”>
+         <p>请填写</p>
+   </div>
+   A.请填写               B.<p>请填写</p>           C.id=”info” style=”display:block”
+   D.<div id=”info” style=”display:block”><p>请填写</p>
+
+59.下列哪个语句运行错误？   ( A )
+   ?? A.varobj?=? (??? );????? B.varobj =?[??? ];???? C.varobj?= {??? };????? D.var?obj?=/??? /;??
+
+60.键盘事件分为哪些？  onkeydown  onkeyup
+
+61.事件分为哪几种？    鼠标 键盘  表单  页面
+
+62.网页的设计目标？  ABCD
+
+63.函数的概念?  
+    答：将完成某一特定功能的代码集合起来，可以重复使用的代码块。
+
+64.：函数的优点？ 
+    答：   一、使程序更加简洁
+             二、逻辑性更调理
+             三、调用更加方便
+             四、维护更加容易
+
+65.函数的调用方式有？ 
+    答：1、通过括号来调用  2、通过事件来调用   3、自调用
+
+66.：如何声明一个函数？ ABC  
+    答：A.function  aa(){函数体}
+           B．var aa=function(){函数体}
+           C．var 变量=new Function("参数1","参数2"...,"函数体");
+           D.以上都不对
+
+67.声明一个变量未赋值，如：var aa; console.log(aa);的结果是什么？ A  
+答：A.undefined     B.null     C.0       D.Number
+
+68.JavaScript的组成部分： ABC 
+   答：A、ECMAScript语法
+          B、BOM
+          C、DOM
+          D、对象
+
+69.：JavaScript的命名规范是：D  
+    答：A、可以用数字开头
+        B、不区分大小写
+        C、不能用$开头
+    D、必须以字母或 _或 $开头
+
+70.获得屏幕的实际高度和宽度？   
+    offsetWidth   offsetHeight
+
+71.选择结构分为？ ABCD  
+    答：A、单路分支
+        B、双路分支
+        C、多路分支
+       D、嵌套分支
+
+72.什么是事件对象？
+   用来记录一些事件发生时的相关信息的对象
+
+73.文档有什么节点？ 
+   元素 文档  属性  文本  注释   
+
+74.下面哪个选项用js方法可以获取到一个对象：  ( A ) 
+答：A、getElementById(idname)
+    B、getElementsByClassName(idname)
+    C、getElementsById(idname)
+    D、getElementByClassName(idname)
+
+75.怎样获取一个类名？
+   document.getElementByClassName
+
+76.怎样获取一个标签名？
+   document.getElementsByTagName
+
+77.怎样获取一个name名？
+   document.getElementsByName
+
+78.window中的两个计时器   	（AB）
+  A、setintervalB、settimeout
+  C、pop()D、splice()
+
+79.常用的鼠标事件？   
+  onmousever  onmouseout  onclick  ondblclick
+
+80.获得屏幕的高度和宽度是?  ( BD ) 
+    答：A、clientWidth   B、screenX   C、clientHeight   D、screenY
+
+81.元素节点的nodeType的值是多少？ D  
+   答：A.3       B.8        C.9        D.1
+元素节点的nodetype值：
+                节点类型                  节点名字                节点值
+            nodeType(数值)       nodeName          nodeValue
+元素节点         1                        标签名                    null   
+属性节点         2                        属性名                   属性值
+文本节点         3                        #text                     文本
+注释节点         8                     #comment           注释的文字
+文档节点         9                     #document              null
+————————————————————————
+
+82.getDay()的意思是什么？  返回一周的某一天
+
+83.document.getElementById("c4").style.width="300px"; 什么意思？
+      id为c4的元素的宽度设为300像素（意思对即可）
+
+84.问：字符串的方法有？  （ABCD）
+    A.获取类型   B.截取类型   C.查找类型 D.以上都对
+
+85.clientX,clientY,offsetX,offsetY,screenX,screenY
+    获取浏览器的相对位置
+    获取事件源的相对位置
+    获取屏幕的相对位置
+
+86.scrolltop,scrollleft,offsertop,offsetleft
+   获得具有滚动条元素的位置属性
+   返回元素相对于父元素的坐标
+
+87.兼容函数一般处理哪几种浏览器？
+   IE(7,8以下)   FF
+
+如何获取事件对象：var ev=e||window.event;
+ 
+ 

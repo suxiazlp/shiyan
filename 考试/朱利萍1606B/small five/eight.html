@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>eight</title>
+</head>
+<body>
+<p>8.删除数组arr第一个元素，不要直接修改数组arr，结果返回新的数组</p>
+<p>原数组:arr[1,2,3,4,1,3]</p>
+<script>
+    //
+    var arr=new Array(1,2,3,4,1,3)
+    function shift(arr){
+        var newarr=arr
+        newarr.shift()
+        return newarr;
+    }
+    document.write('返回结果：'+shift(arr))
+</script>
+</body>
+</html>

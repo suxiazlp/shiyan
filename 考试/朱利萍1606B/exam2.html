@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="Vue.js"> </script>
+    <style>
+        #app{
+            margin-left:500px;margin-top:50px;
+        }
+        table,th,td
+        {
+            border:1px solid blue;
+            width:300px;
+        }
+        table tr:nth-child(odd){background:#EBF2FE;}
+        table tr:nth-child(even){background:#B4CDE6;}
+        table td:nth-child(even){color:#C00;}
+        table td:nth-child(3){color:red;}
+        table tr:nth-child(1){background:#f5f5f5;}
+        input{
+            display:inline-block;
+            width:250px;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div>
+        <input type="text" v-model="star" placeholder="请输入添加的姓名"><button v-on:click="add">add</button>
+    </div>
+    <table>
+        <tr><td>姓名</td><td>删除</td><td>修改</td></tr>
+        <tr v-for="(item,key) in stars">
+            <td>{{item}}</td>
+            <td v-on:click="del(key)">删除</td>
+            <td v-on:click="edit(key,item)">修改</td>
+        </tr>
+    </table>
+    <div v-show="see">
+        <input type="text" v-model="val"><button v-on:click="save">save</button>
+    </div>
+</div>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            stars:['白敬亭','刘诗诗','井柏然','郑凯','唐嫣'],
+            see:false,
+            val:'val',
+            key:'',
+            star:''
+        },
+        methods:{
+            add:function () {
+                if(this.star!=''){
+                    this.stars.push(this.star)
+                    this.star=''
+                }
+             },
+            save:function (val) {
+               this.stars[this.key]=this.val
+                this.see=false
+            },
+            del:function (key) {
+                this.stars.splice(key,1)
+            },
+            edit:function (key,val) {
+                this.see=true
+                this.val=val
+                this.key=key
+            }
+        }
+    })
+</script>
+</body>
+</html>

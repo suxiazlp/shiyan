@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <script src="animate.js"></script>
+	<style>
+	.bigbox{
+		width:100%;height:630px;background:lightblue;
+	}
+    .leftbox{
+    	width:50px;height:300px;position: fixed;top:150px;
+    	left:20px;
+    }
+    .left{
+    	width:50%;height:30px;border:1px solid blue;
+    	box-sizing:border-box;cursor:pointer;
+    }
+    .rightbox{
+    	width:500px;height:5000px;margin:0 auto;
+    }
+    .right{
+    	width:500px;height:500px;font-sizr:100px;line-height:500px;text-align: center;color:#000;
+    	border:1px solid blue;
+    }
+
+	</style>
+</head>
+<body>
+	<div class="bigbox"></div>
+	<div class="leftbox">
+		<div class="left">1</div>
+		<div class="left">2</div>
+		<div class="left">3</div>
+		<div class="left">4</div>
+		<div class="left">5</div>
+		<div class="left">6</div>
+		<div class="left">7</div>
+		<div class="left">8</div>
+		<div class="left">9</div>
+		<div class="left">10</div>
+	</div>
+	<div class="rightbox">
+		<div class="right">001</div>
+		<div class="right">002</div>
+		<div class="right">003</div>
+		<div class="right">004</div>
+		<div class="right">005</div>
+		<div class="right">006</div>
+		<div class="right">007</div>
+		<div class="right">008</div>
+		<div class="right">009</div> 
+		<div class="right" style="height:500px;width:500px;">010</div>
+	</div>
+	<script>
+    var leftbox=document.getElementsByClassName("leftbox")[0]
+    var left=leftbox.getElementsByClassName('left');
+    var right=document.getElementsByClassName('right');
+
+    for(var i=0;i<left.length;i++){
+    	left[i].index=i
+    	left[i].onclick=function(){
+    		var obj=document.documentElement.scrollTop!=0?
+    		        document.documentElement:document.body;
+    		var hh=right[this.index].offsetTop;
+    		animate(obj,{scrollTop:hh},1000)
+    	}
+    }
+    var arr=['red','orange','yellow','green','blue','purple','gray','brown','lightgreen','yellow']
+    document.onscroll=function(){
+    	var obj=document.documentElement.scrollTop!=0?
+    		    document.documentElement:document.body;
+    	if(obj.scrollTop>=600){
+    		leftbox.style.display="block"
+    	}else{
+    		leftbox.style.display="none"
+    	}
+
+    	var scr=obj.scrollTop;
+    	for(var i=0;i<right.length;i++){
+    		if(scr>right[i].offsetTop-100){
+    			for(var j=0;j<left.length;j++){
+    				left[j].style.backgroundColor="#fff"
+    			}
+    			left[i].style.backgroundColor=arr[i]
+    		}
+    	}
+
+    }
+
+
+
+
+
+	</script>
+</body>
+</html>

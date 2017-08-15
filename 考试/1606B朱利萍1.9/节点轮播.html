@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>节点轮播</title>
+	<style>
+    .bgbox{
+    	width:700px;height:525px;margin:0 auto;overflow: hidden;position: relative;
+    }
+    .box{
+    	width:3500px;height:525px;
+    }
+    .smbox img{
+    	width:700px;height:525px;float: left;
+    }
+    .left{
+    	width:30px;height:60px;background: rgba(0,0,0,0.5);color:#000;font-size:35px;position: absolute;left:0;top:210px;text-align: center;line-height:60px;
+    }
+    .right{
+    	width:30px;height:60px;background: rgba(0,0,0,0.5);color:#000;font-size:35px;position: absolute;right:0;top:210px;text-align: center;line-height:60px;
+    }
+    .left:hover{
+         background: #fff;
+    }
+    .right:hover{
+         background: #fff;
+    }
+	</style>
+</head>
+<body>
+	<div class="bgbox">
+		<div class="box">
+			<div class="smbox"><img src="img/1.jpg" alt=""></div>
+			<div class="smbox"><img src="img/2.jpg" alt=""></div>
+			<div class="smbox"><img src="img/3.jpg" alt=""></div>
+			<div class="smbox"><img src="img/4.jpg" alt=""></div>
+			<div class="smbox"><img src="img/5.jpg" alt=""></div>
+		</div>
+		<div class="left">&lt;</div>
+		<div class="right">&gt;</div>
+	</div>
+	<script src="jquery-1.11.2.js"></script>
+	<script>
+        var box=$('.box')
+        var smbox=$('.smbox')
+        var left=$('.left')
+        var right=$('.right')
+        var t=setInterval(move,2000)
+        function move(){
+        	if(!box.is(':animated')){
+        		    box.animate({'marginLeft':-700},500,function(){
+        			box.children().first().appendTo(box)
+        			box.css('marginLeft',0)
+        		}
+        		)
+        	}
+        }
+        $('.bgbox').hover(function(){
+            clearInterval(t)
+        },function(){
+            t=setInterval(move,2000)
+        })
+        left.click(function(){
+         if(!box.is(':animated')){
+    		$('.smbox').last().insertBefore($('.smbox').first())
+    		box.css('marginLeft',-700)
+    		box.animate({'marginLeft':0},500)
+    	}
+        })
+        right.click(function(){
+        	move()
+        })
+	</script>
+</body>
+</html>

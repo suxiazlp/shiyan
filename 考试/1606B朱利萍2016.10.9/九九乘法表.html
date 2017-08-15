@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>九九乘法表</title>
+</head>
+<body background="1.jpg">
+	<script>
+	  
+document.write("<table>")
+for(var a=0;a<10;a++){
+	if(a%2==0){
+		document.write("<tr bgcolor='pink'>")
+	}else{
+		document.write("<tr bgcolor='yellow'>")
+	}
+	
+ for(var b=0;b<=a;b++){
+ 	document.write("<td>"+a+"*"+b+"="+a*b+"&nbsp;"+"</td>")
+ }
+    document.write("</tr>")
+}
+document.write("</table>")
+</script>
+</body>
+</html>

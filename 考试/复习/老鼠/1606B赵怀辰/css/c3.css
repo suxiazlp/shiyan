@@ -1,0 +1,284 @@
+html,body{
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+
+#laoshu{
+  position: absolute;
+  top: 40px;
+  left: 280px;
+}
+
+#laoshu_tou {
+  width: 200px;
+  height: 200px;
+  background-color: #8F9595;
+  border-radius: 100px;
+}
+
+#laoshu_toufa1{
+	width: 5px;
+	height: 30px;
+	background-color: #777;
+	position: absolute;
+	top: -20px;
+	left: 85px;
+	transform:rotate(-10deg);
+	animation:a1 1s infinite;
+}
+
+@keyframes a1{
+	0%{
+		background-color: red;
+	}
+	50%{
+		background-color: blue;
+	}
+	100%{
+		background-color: orange;
+	}
+}
+
+#laoshu_toufa2{
+	width: 5px;
+	height: 30px;
+	background-color: #777;
+	position: absolute;
+	top: -20px;
+	left: 95px;
+	animation:a2 1s infinite;
+}
+
+@keyframes a2{
+	0%{
+		background-color: pink;
+	}
+	50%{
+		background-color: purple;
+	}
+	100%{
+		background-color: plum;
+	}
+}
+
+#laoshu_toufa3{
+	width: 5px;
+	height: 30px;
+	background-color: #777;
+	position: absolute;
+	top: -20px;
+	left: 105px;
+	transform:rotate(10deg);
+	animation:a3 1s infinite;
+}
+
+@keyframes a3{
+	0%{
+		background-color: yellow;
+	}
+	50%{
+		background-color: green;
+	}
+	100%{
+		background-color: lightblue;
+	}
+}
+
+#laoshu_ear_left {
+  display: inline-block;
+  position: relative;
+  top: -230px;
+  left: -25px;
+  border: 12px solid #6E6E6E;
+  width: 75px;
+	  height: 75px;
+  background: #E5A95F;
+  	border-radius: 50%;
+}
+
+#laoshu_ear_right {
+  display: inline-block;
+  position: relative;
+  top: -230px;
+  left: 25px;
+  border: 12px solid #6E6E6E;
+  width: 75px;
+	  height: 75px;
+  background: #E5A95F;
+  	border-radius: 50%;
+}
+
+#laoshu_eye_left_bai {
+    width: 40px;
+  	height: 40px;
+    position: absolute;
+    top: 55px;
+    left: 50px;
+	background: white;
+	border-radius: 50px;
+	border-radius: 50px;
+}
+
+#laoshu_eye_right_bai {
+    width: 40px;
+  	height: 40px;
+    position: absolute;
+    top: 55px;
+    left: 110px;
+	background: white;
+	border-radius: 50px;
+	border-radius: 50px;
+}
+
+#laoshu_eye_left_hei {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 75px;
+    left: 63px;
+	background: black;
+	border-radius: 50px;
+	border-radius: 50px;
+	animation:aa 1s infinite;
+}
+
+@keyframes aa{
+	0%{
+		top: 65px;
+	}
+	50%{
+		top: 75px;
+	}
+	100%{
+		top: 65px;
+	}
+}
+
+#laoshu_eye_right_hei {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 75px;
+    left: 122px;
+	background: black;
+	border-radius: 50px;
+	border-radius: 50px;
+	animation:bb 1s infinite;
+}
+
+@keyframes bb{
+	0%{
+		top: 65px;
+	}
+	50%{
+		top: 75px;
+	}
+	100%{
+		top: 65px;
+	}
+}
+
+#laoshu_nose {
+    width: 0;
+	height: 0;
+    position: absolute;
+    top: 110px;
+    left: 80px;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 50px solid #6E6E6E;
+    z-index: 1;
+}
+
+#laoshu_huzi_left_1 {
+    width: 80px;
+    height: 1.5px;	
+    background-color: black;
+    position: absolute;
+    top: 115px;
+    left: 25px;
+    transform: rotate(10deg);
+}
+
+#laoshu_huzi_left_2 {
+    width: 80px;
+    height: 1.5px;	
+    background-color: black;
+    position: absolute;
+    top: 118px;
+    left: 28px;
+}
+
+
+
+#laoshu_huzi_right_1 {
+    width: 80px;
+    height: 1.5px;
+    background-color: black;
+    position: absolute;
+    top: 115px;
+    left: 90px;
+    transform: rotate(-10deg);
+}
+
+#laoshu_huzi_right_2 {
+    width: 80px;
+    height: 1.5px;
+    background-color: black;
+    position: absolute;
+    top: 118px;
+    left: 90px;
+}
+
+#laoshu_yachi_left{
+	width: 10px;
+	height: 30px;
+	background-color: white;
+	position: absolute;
+	top: 150px;
+	left: 80px;
+	transform:rotate(20deg);
+	animation:cc 1s infinite;
+}
+
+@keyframes cc{
+	0%{
+		transform:rotate(10deg);
+	}
+	25%{
+		transform:rotate(0deg);
+	}
+	50%{
+		transform:rotate(10deg);
+	}
+	100%{
+		transform:rotate(20deg);
+	}
+}
+
+#laoshu_yachi_right{
+	width: 10px;
+	height: 30px;
+	background-color: white;
+	position: absolute;
+	top: 150px;
+	left: 110px;
+	transform:rotate(-20deg);
+	animation:dd 1s infinite;
+}
+
+@keyframes dd{
+	0%{
+		transform:rotate(-10deg);
+	}
+	25%{
+		transform:rotate(0deg);
+	}
+	50%{
+		transform:rotate(-10deg);
+	}
+	100%{
+		transform:rotate(-20deg);
+	}
+}

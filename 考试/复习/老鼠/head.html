@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="doraemon">
+    <canvas id="face" width="600" height="1500"></canvas>
+</div>
+<script>
+       var face = document.getElementById('face').getContext("2d");
+       face.arc(252,252,250,0,360*Math.PI/180); 
+       face.fillStyle = '#07beea';
+         face.fill();
+         face.lineWidth = 2;
+         face.strokeStyle = '#333';
+         face.stroke();
+
+         face.beginPath();
+         face.moveTo(160,450);
+         face.bezierCurveTo(0,400,0,110,210,115);   
+         face.lineTo(290,115);   
+        face.bezierCurveTo(500,110,500,400,340,450);  
+        face.bezierCurveTo(280,470,220,470,160,450);  
+        face.fillStyle = '#fff';
+        face.fill();
+        face.stroke()
+
+         face.beginPath();      
+         face.moveTo(150,150);
+        face.lineTo(150,100);       
+         face.bezierCurveTo(160,50,240,50,250,100);   
+         face.lineTo(250,150);           
+         face.bezierCurveTo(240,200,160,200,150,150);   //左眼上面
+         face.moveTo(250,150);
+        face.lineTo(250,100);              //右眼左竖线
+         face.bezierCurveTo(260,50,340,50,350,100);   //右眼上面
+         face.lineTo(350,150);               //右眼右竖线
+         face.bezierCurveTo(340,200,260,200,250,150);   //右眼下面
+         face.fillStyle = '#fff';
+        face.fill();
+        face.stroke();
+
+        
+         face.beginPath(); 
+         face.arc(225,155,10,0,360*Math.PI/180);   //眼珠
+          face.arc(275,155,10,0,360*Math.PI/180);
+         face.fillStyle = '#333';   
+         face.fill();
+
+         face.beginPath();    //鼻子
+          face.arc(250,197,25,0,360*Math.PI/180);   
+         face.fillStyle = '#c93e00';   
+         face.fill();
+         face.stroke();
+
+         face.beginPath(); 
+         face.arc(260,190,10,0,360*Math.PI/180);
+         var grd = face.createRadialGradient(260,190,2,260,190,10);    
+          grd.addColorStop(0,'#fff');
+         grd.addColorStop(1,'#c93e00');
+         face.fillStyle = grd;
+         face.fill();
+
+         //嘴巴
+         face.beginPath();
+         face.moveTo(250,222);
+         face.lineTo(250,395);
+         face.moveTo(100,320);
+         face.bezierCurveTo(180,420,320,420,400,320);
+         face.lineWidth = 3;
+         face.stroke();
+
+         //胡须
+          face.beginPath();
+         face.moveTo(80,200);
+         face.lineTo(180,220);
+         face.moveTo(80,245);
+         face.lineTo(180,245);
+         face.moveTo(80,290);
+         face.lineTo(180,270);
+
+         face.moveTo(320,220);
+         face.lineTo(420,200);
+         face.moveTo(320,245);
+         face.lineTo(420,245);
+         face.moveTo(320,270);
+         face.lineTo(420,290);
+         face.stroke();
+
+</script>
+
+</body>
+</html>

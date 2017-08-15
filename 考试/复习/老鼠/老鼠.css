@@ -1,0 +1,178 @@
+#mouse{
+  position: absolute;
+  top: 40px;
+  left: 280px;
+}
+
+#mouse_head {
+  width: 200px;
+  height: 200px;
+  background-color: #8F9595;
+  border-radius: 100px;
+}
+
+#mouse_ear_left {
+  display: inline-block;
+  position: relative;
+  top: -230px;
+  left: -25px;
+  border: 12px solid #6E6E6E;
+  width: 75px;
+	  height: 75px;
+  background: #E5A95F;
+  	border-radius: 50%;
+}
+
+#mouse_ear_right {
+  display: inline-block;
+  position: relative;
+  top: -230px;
+  left: 25px;
+  border: 12px solid #6E6E6E;
+  width: 75px;
+	  height: 75px;
+  background: #E5A95F;
+  	border-radius: 50%;
+}
+
+#mouse_eye_left_outer {
+  width: 40px;
+  	height: 40px;
+  position: absolute;
+  top: 55px;
+  left: 50px;
+	  background: white;
+	  border-radius: 50px;
+	  border-radius: 50px;
+}
+
+#mouse_eye_right_outer {
+  width: 40px;
+  	height: 40px;
+  position: absolute;
+  top: 55px;
+  left: 110px;
+	  background: white;
+	  border-radius: 50px;
+	  border-radius: 50px;
+}
+
+#mouse_eye_left_inner {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 75px;
+  left: 63px;
+	background: black;
+	border-radius: 50px;
+	border-radius: 50px;
+}
+
+#mouse_eye_right_inner {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 75px;
+  left: 122px;
+	background: black;
+	border-radius: 50px;
+	border-radius: 50px;
+}
+
+#mouse_nose {
+  width: 0;
+	  height: 0;
+  position: absolute;
+  top: 110px;
+  left: 75px;
+	  border-left: 25px solid transparent;
+	  border-right: 25px solid transparent;
+	  border-top: 50px solid #6E6E6E;
+  z-index: 1;
+}
+
+#mouse_whisker_left_1 {
+  width: 80px;
+  height: 1.5px;
+  border-radius: 2px;
+  background-color: black;
+  position: absolute;
+  top: 115px;
+  left: 25px;
+  transform: rotate(10deg);
+}
+
+#mouse_whisker_left_2 {
+  width: 80px;
+  height: 1.5px;
+  border-radius: 2px;
+  background-color: black;
+  position: absolute;
+  top: 118px;
+  left: 28px;
+  }
+
+#mouse_whisker_left_3 {
+  width: 80px;
+  height: 1.5px;
+  border-radius: 2px;
+  background-color: black;
+  position: absolute;
+  top: 120px;
+  left: 25px;
+  transform: rotate(-10deg);
+}
+
+#mouse_whisker_right_1 {
+  width: 80px;
+  height: 1.5px;
+  border-radius: 2px;
+  background-color: black;
+  position: absolute;
+  top: 115px;
+  left: 90px;
+  transform: rotate(-10deg);
+}
+
+#mouse_whisker_right_2 {
+  width: 80px;
+  height: 1.5px;
+  border-radius: 2px;
+  background-color: black;
+  position: absolute;
+  top: 118px;
+  left: 90px;
+  }
+
+#mouse_whisker_right_3 {
+  width: 80px;
+  height: 1.5px;
+  border-radius: 2px;
+  background-color: black;
+  position: absolute;
+  top: 121px;
+  left: 92px;
+  transform: rotate(10deg);
+}
+
+#mouse_tooth_left {
+  width: 15px;
+  height: 22px;
+  background-color: white;
+  position: absolute;
+  top: 170px;
+  left: 84px;
+  transform: rotate(10deg);
+}
+
+#mouse_tooth_right {
+  width: 15px;
+  height: 22px;
+  background-color: white;
+  position: absolute;
+  top: 170px;
+  left: 102px;
+  transform: rotate(-10deg);
+}
+
+

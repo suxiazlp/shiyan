@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>seven</title>
+</head>
+<body>
+<p>7.在数组arr开头处添加元素item，不要直接修改数组arr,结果返回新的数组</p>
+<p>原数组:arr[1,2,3,4,1,3]</p>
+<script>
+    //
+    var arr=new Array(1,2,3,4,1,3)
+    function prepend(arr,item){
+        var newarr=arr
+        newarr.unshift(item)
+        return newarr;
+    }
+    document.write('返回结果：'+prepend(arr,7))
+</script>
+</body>
+</html>

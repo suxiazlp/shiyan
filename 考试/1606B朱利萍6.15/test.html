@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="enter/Vue.js"></script>
+    <link rel="stylesheet" href="enter/bootstrap.css">
+    <style>
+        #app{
+            margin:100px auto;
+            margin-left: 300px;
+        }
+        #app p{
+            font-size: 30px;
+        }
+        #app button{
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <p v-zlp="one">今天是6.15号:自定义指令仿做v-show效果</p>
+    <button v-on:click="go" class="btn btn-info btn-lg">隐藏</button>
+    <button v-on:click="goes" class="btn btn-danger btn-lg">显示</button>
+</div>
+<script>
+    Vue.directive('zlp',{
+       update:function (el,binding) {
+            if(binding.value){
+                el.style.display = 'block'
+            }else{
+                el.style.display = 'none'
+            }
+        }
+    })
+    new Vue({
+        el:'#app',
+        data:{
+            one:true,
+        },
+        methods:{
+            go:function () {
+               this.one=false
+            },
+            goes:function () {
+                this.one=true
+            }
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>京东部分响应式</title>
+	<style>
+*{
+	margin:0;
+	padding:0;
+	}
+@media screen and (max-width:1000px){
+    .two{
+    	width:100%;
+    	height:350px;
+    	margin:0 auto;
+        overflow: hidden;
+    }
+    .two-top{
+    	width:100%;
+    	height:170px;
+    	overflow: hidden;
+    }
+    .two-bottom{
+    	width:100%;
+    	height:170px;
+    	margin-top:10px;
+    	overflow: hidden;
+    }
+    .two-b{
+     	margin:0 10px;
+    }
+    .two-one{
+    	width:324px;
+    	height:170px;
+    	float: left;
+    }
+    .two-two{
+    	width:324px;
+    	height:170px;
+    	float: left;
+    }
+}
+@media screen and (max-width:1160px){
+	.two{
+     	width:1002px;
+     	height: 350px;
+     	margin:0 auto;
+     }
+     .two-top{
+     	width:1002px;
+     	height: 170px;
+     }
+     .two-bottom{
+     	width:1002px;
+     	height: 170px;
+     	margin-top:10px;
+     }
+     .two-one{
+     	width:324px;
+     	height:170px;
+     	float: left;
+     }
+     .two-two{
+     	width:324px;
+     	height:170px;
+     	float: left;
+     	
+     }
+     .two-b{
+     	margin:0 10px;
+     }
+    .two-one-left{
+        width:130px;
+        height:170px;
+        background:rgba(213, 135, 23,0.5);
+        position: absolute;
+    }
+    .two-one-left-center{
+        width:100px;
+        height:129px;
+        margin:25px 20px 0;
+      
+    }
+    .two-one-left-center h4{
+        width:100px;
+        height:44px;
+        text-align: center;
+        line-height: 40px;
+        color:white;
+        border-top:2px solid #fff;
+        border-bottom:2px solid #fff;
+        box-sizing:border-box;
+        font-size:20px;
+    }
+    .two-one-left-center p{
+        width:100px;
+        height:45px;
+        color:#fff;
+        font-size: 14px;
+        margin-top:10px;
+        text-align: center;
+    }
+    .jpg5a{
+        z-index:1;
+    }
+    .two-one{
+    overflow: hidden;
+  }
+    .two-one img{
+        transition:all 0.5s;
+        position: absolute;
+    }
+    .two-one img{
+        width:324px;
+        height: 170px;
+    }
+    .two-two img{
+        width:324px;
+        height: 170px;
+    }
+    .two-one:hover .jpg5a{
+        margin-left:-5px;
+    }
+   
+   .two-one-left{
+    z-index:5;
+  }
+  .two-one-leftb{
+    background: rgba(59, 131, 140,0.5);
+  }
+  .two-one-leftc{
+    background: rgba(83, 75, 93,0.5);
+  }
+
+  .two-two{
+    overflow: hidden;
+  }
+  .two-two img{
+        transition:all 0.5s;
+        position: absolute;
+    }
+  .two-two:hover .jpg5a{
+        margin-left:-5px;
+    }
+    .two-one-leftd{
+    background:rgba(169, 57, 49,0.5)
+  }
+  .two-one-lefte{
+    background:rgba(100, 38, 99,0.5);
+  }
+  .two-one-leftf{
+    background:rgba(126, 89, 68);
+  }
+
+  
+}
+@media screen and (min-width:1160px){
+     .two{
+        width:1220px;
+        height: 350px;
+        margin:0 auto;
+
+     }
+     .two-top{
+        width:1220px;
+        height: 170px;
+     }
+     .two-bottom{
+        width:1220px;
+        height: 170px;
+        margin-top:10px;
+     }
+     .two-one{
+        width:400px;
+        height:170px;
+        float: left;
+        overflow: hidden;
+     }
+     .two-two{
+        width:400px;
+        height:170px;
+        float: left;
+     }
+     .two-b{
+        margin:0 10px;
+     }
+    .two-one-left{
+        width:140px;
+        height:170px;
+        background:rgba(213, 135, 23,0.5);
+        position: absolute;
+    }
+    .two-one-left-center{
+        width:100px;
+        height:129px;
+        margin:25px 20px 0;
+      
+    }
+    .two-one-left-center h4{
+        width:100px;
+        height:44px;
+        text-align: center;
+        line-height: 40px;
+        color:white;
+        border-top:2px solid #fff;
+        border-bottom:2px solid #fff;
+        box-sizing:border-box;
+        font-size:20px;
+    }
+    .two-one-left-center p{
+        width:100px;
+        height:45px;
+        color:#fff;
+        font-size: 14px;
+        margin-top:10px;
+        text-align: center;
+    }
+    .jpg5a{
+        z-index:1;
+    }
+     .two-one{
+    overflow: hidden;
+  }
+    .two-one img{
+        transition:all 0.5s;
+        position: absolute;
+    }
+    .two-one:hover .jpg5a{
+        margin-left:-5px;
+    }
+   
+   .two-one-left{
+    z-index:5;
+  }
+  .two-one-leftb{
+    background: rgba(59, 131, 140,0.5);
+  }
+  .two-one-leftc{
+    background: rgba(83, 75, 93,0.5);
+  }
+
+  .two-two{
+    overflow: hidden;
+  }
+  .two-two img{
+        transition:all 0.5s;
+        position: absolute;
+    }
+  .two-two:hover .jpg5a{
+        margin-left:-5px;
+    }
+    .two-one-leftd{
+    background:rgba(169, 57, 49,0.5)
+  }
+  .two-one-lefte{
+    background:rgba(100, 38, 99,0.5);
+  }
+  .two-one-leftf{
+    background:rgba(126, 89, 68);
+  }
+}
+/* .jpg1{
+    float: right;
+    position: absolute;
+    right:25px;
+    top:10px;
+    transition:all 0.5s;
+} */
+.two-one{
+    overflow: hidden;position: relative;
+}
+.two-two{
+    overflow: hidden;position: relative;
+}
+	</style>
+</head>
+<body>
+<div class="two">
+		<div class="two-top">
+		    <div class="two-one">
+                <div class="two-one-left">
+                    <div class="two-one-left-center">
+                        <h4>京东超市</h4>
+                        <p>天天打折 款款实惠“尽情购”</p>
+                    </div>
+                </div>
+                <img src="img/5.jpg" class='jpg5a'>
+                <img src="img/5.jpg" class='jpg5b jbgsy'>       
+            </div>
+		    <div class="two-one two-b">
+                   <div class="two-one-left two-one-leftb">
+                    <div class="two-one-left-center">
+                        <h4>智能生活</h4>
+                        <p>天天打折 款款实惠“尽情购”</p>
+                    </div>
+                </div>
+                <img src="img/6.png" class='jpg5a'>
+                <img src="img/6.png" class='jpg5b'>       
+            </div>
+		    <div class="two-one">
+                  <div class="two-one-left two-one-leftc">
+                    <div class="two-one-left-center">
+                        <h4>奢侈大牌</h4>
+                        <p>天天打折 款款实惠“尽情购”</p>
+                    </div>
+                </div>
+                <img src="img/7.jpg" class='jpg5a'>
+                <img src="img/7.jpg" class='jpg5b'>       
+            </div>
+		</div>
+		<div class="two-bottom">
+		    <div class="two-two">
+                  <div class="two-one-left two-one-leftd">
+                    <div class="two-one-left-center">
+                        <h4>设计师推荐</h4>
+                        <p>天天打折 款款实惠“尽情购”</p>
+                    </div>
+                </div>
+                <img src="img/8.jpg" class='jpg5a'>
+                <img src="img/8.jpg" class='jpg5b'>        
+            </div>
+		    <div class="two-two two-b">
+                  <div class="two-one-left two-one-lefte">
+                    <div class="two-one-left-center">
+                        <h4>全球尖货</h4>
+                        <p>天天打折 款款实惠“尽情购”</p>
+                    </div>
+                </div>
+                <img src="img/9.jpg" class='jpg5a'>
+                <img src="img/9.jpg" class='jpg5b'>        
+            </div>
+		    <div class="two-two">
+                 <div class="two-one-left two-one-leftf">
+                    <div class="two-one-left-center">
+                        <h4>白条商城</h4>
+                        <p>天天打折 款款实惠“尽情购”</p>
+                    </div>
+                </div>
+                <img src="img/10.jpg" class='jpg5a'>
+                <img src="img/10.jpg" class='jpg5b'>        
+            </div>
+		</div>
+	</div>
+</body>
+</html>
