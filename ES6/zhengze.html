@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*'hello world'.replace(/(\w+)\s(\w+)/,'$2 $1')
+
+    'abc'.replace('b','[$`-$&-$\']')*/
+
+
+   /* var prices = {
+        'pr_1': '$1.99',
+        'pr_2': '$9.99',
+        'pr_3': '$5.00'
+    };
+
+    var template = '/!* ... *!/'; // 这里可以放网页模块字符串
+
+    template.replace(
+        /(<span id=")(.*?)(">)(<\/span>)/g,
+        function(match, $1, $2, $3, $4){
+            return $1 + $2 + $3 + prices[$2] + $4;
+        }
+    );*/
+
+
+    // 非正则分隔
+  //  'a,  b,c, d'.split(',')
+    // [ 'a', '  b', 'c', ' d' ]
+
+    // 正则分隔，去除多余的空格
+    //'a,  b,c, d'.split(/, */)
+    // [ 'a', 'b', 'c', 'd' ]
+
+    // 指定返回数组的最大成员
+    //'a,  b,c, d'.split(/, */, 2)
+     //   [ 'a', 'b' ]
+
+
+
+
+//
+//    var str='a,  b,c, d'
+//    var aa=str.split(',') // 非正则分隔
+//    var bb=str.split(/, */)// 正则分隔，去除多余的空格
+//    var cc=str.split(/, */,2) // 指定返回数组的最大成员
+//    console.log(aa)
+//    console.log(bb)
+//    console.log(cc)
+
+
+
+</script>
+</body>
+</html>

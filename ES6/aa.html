@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="div1"></div>
+	<script>
+//字符串编译
+var template=`
+  <ul>
+  <% for(var i=0;i<data.supplies.length;i++){%>
+  	<li><%= datasupplies[i] %></li>
+   <%}%>
+  </ul>
+`;
+   function compile(template){
+   	     var evalExpr=/<%=(.+?)%>/g;
+   	     var expr=/<%([\s\S]+?)%>/g;
+
+   	template =template
+   	    .replace(evalExpr,'`);\n echo( $1 )
+   	     \n echo(`')
+   	    .replace(expr,'`);\n $1 \n echo(`');
+     
+     template ='echo(`'+template+'`);';
+
+     var script=
+         `(function parse(data){
+         	var output = '';
+         	function echo(html){
+         		output+=html
+         	}
+         	$( template )
+         	return output
+         })`
+         return script
+
+   }
+   console.log(compile(template))
+   var div1=document.getElementById('div1')
+   var parsse=eval(compile(template))
+   var rr= parse({supplies:['broom','mop','cleaner'] })
+   div1.innerHTML=rr
+
+	</script>
+</body>
+</html>
