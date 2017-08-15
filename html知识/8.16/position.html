@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定位</title>
+	<style type="text/css">
+
+	div{width: 100px;height: 100px;}
+	.d1{background: red;}
+	.d2{background: green;}
+	.d3{background: blue;}
+	.d2{position: relative;left:-110px;top:0px;}
+	
+
+	.c1{background: red;}
+	.c2{background: green;}
+	.c3{background: blue;}
+	.c2{position: absolute;left:0px;top:200px;}
+	/*.c2{position: relative;left:0px;top:0px;}*/
+	.f{position: relative;width: 600px;height: 400px;background: pink;}
+	</style>
+</head>
+<body>
+	定位是CSS的属性：
+		position:relative相对定位（原来的位置不会被占掉）
+		<div class="d1">1</div>
+		<div class="d2">2</div>
+		<div class="d3">3</div>
+		<hr/>
+		position:absolute绝对定位（原来的位置会被占）
+		<div class="f">
+		<div class="c1">1</div>
+		<div class="c2">2</div>
+		<div class="c3">3</div>
+</div>
+</body>
+</html>

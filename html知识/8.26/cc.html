@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- 
+		这三个样式的优先级是：
+		行内样式>内部样式>外部样式 -->
+		<!-- 外部样式是比较流行的 -->
+	<!-- 引入外部样式 -->
+	<link rel="stylesheet" type="text/css" href="css.css"/>
+	<!-- 内部样式 -->
+	<style type="text/css">
+	div{width:200px;height:400px;padding:0px;}
+	</style>
+</head>
+<body>
+	<!-- 行内样式 -->
+	<div style="width:500px;height:100px;background: blue;"></div>
+</body>
+</html>

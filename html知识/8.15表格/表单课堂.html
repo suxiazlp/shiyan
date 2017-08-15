@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单</title>
+</head>
+<body>
+<from action="https://www.baidu.com">
+    <!--文本框可以输入任何字符-->
+    用户名<input type="text"/><br/>
+    <!--密码输入的字符都是不可见的-->
+    密&nbsp;码<input type="password"/>
+    <input type="checkbox"/>记住用户名密码<br/>
+    <!--radio是单选框；注意点要给一个name属性值要相等-->
+    <input type="radio" name="dd"/>男<br/>
+    <input type="radio" name="dd"/>女<br/>
+    评论<br/>
+    <!--cols是宽（里面代表可以横着放多少字）；rows是高（里面的值代表可以放多少行）-->
+    <textarea name="" id="" cols="60" rows="5"></textarea><br/>
+    <!--submit是提交按钮，点击它就会把表单数据提交到指定的action的位置-->
+    <input type="submit" value="登录"/>
+    <!--button就是一个单纯的按钮；如果没有js的支持他就没有任何效果；-->
+    <input type="button" value="注册"/>
+    <!--select就是下拉列表，option就是下拉列表的每一个条目；
+    selected属性就是用来指定默认显示项的；-->
+    <select>
+        <option>微博</option>
+        <option selected="selected">评论</option>
+        <option>@我</option>
+    </select>
+</from>
+</body>
+</html>

@@ -1,0 +1,61 @@
+��һ��
+<!DOCTYPE html>
+<html>
+
+<head></head>
+<body>
+�����ִ�С���Ӵ�С��<h1></h1><h2></h2><h3></h3><h4></h4><h5></h5><h6></h6>
+�����У�<br/>    ����ָ��ߣ�<hr/>  �����ǩ��<p>....</p>
+�Ӵֱ�ǩ<b></b>   �»��ߣ�<u></u>     ��б��ǩ��<i></i>
+�Ӵ�ǿ����ǩ��<strong></strong>  ��бǿ����ǩ��<em></em>
+�ո�&nbsp;  ���ӣ�<a href=""></a>    <meta  charset="">
+</body>
+</html>
+�ڶ���
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+�����ִ�С���Ӵ�С��<h1></h1><h2></h2><h3></h3><h4></h4><h5></h5><h6></h6>
+�����У�<br/> ����ָ��ߣ�<hr/>  �����ǩ;<p></p>
+�Ӵֱ�ǩ��<b></b>  �»��ߣ�<u></u>  ��б��ǩ��<i></i>
+�Ӵ�ǿ����ǩ��<strong></strong>  ��бǿ����ǩ��<em></em>
+�ո�&nbsp; ���ӣ�<a href=""></a>   <meta charset="">
+</body>
+</html>
+������
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+�����ִ�С���Ӵ�С��<h1></h1><h2></h2><h3></h3><h4></h4><h5></h5><h6></h6>
+�����У�<br/> ����ָ��ߣ�<hr/>  �����ǩ��<p></p>
+�Ӵֱ�ǩ��<b></b> �»��ߣ�<u></u>��б��ǩ��<i></i>
+�Ӵ�ǿ����ǩ��<strong></strong> ��бǿ����ǩ��<em></em>
+�ո�:&nbsp; ���ӣ�<a href=""></a>   <meta charset="">
+</body>
+</html>
+���ı�
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+�Ӵ�С��<h1></h1><h2></h2><h3></h3><h4></h4><h5></h5><h6></h6>
+������;<br/>����ָ��ߣ�<hr/>�����ǩ<p></p>
+�Ӵֱ�ǩ��<b></b>�»��ߣ�<u></u>��б��ǩ<i></i>
+�Ӵ�ǿ����ǩ��<strong></strong> ��бǿ����ǩ��<em></em>
+�ո�&nbsp������<a href="">  <meta charest="">
+</body>
+</html>
+�����
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+�Ӵ�С��<h1></h1><h2></h2><h3></h3><h4></h4><h5></h5><h6></h6>
+������<br/>����ָ���<hr>�����ǩ<p></p>
+�Ӵֱ�ǩ<b></b>�»���,<u></u>��б��ǩ<i></i>
+�Ӵ�ǿ����ǩ<strong></strong>��бǿ����ǩ<em></em>
+�ո�&nbsp;����<a href=""> <meta charest="">
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定位&透明度</title>
+	<style type="text/css">
+	.img{border:red solid 1px;position:relative;margin: 100px;}
+	.img_text
+	{
+		width: 250px;
+		height:50px;
+		line-height: 50px;
+		position:absolute;left:0;top:90%;
+		/*background:rgba(0,0,0,1);
+		属性前三个参数表示背景颜色取值范围是0~255；
+		第四个参数是表示透明度取值范围是0~1；*/
+		background:rgba(255,255,255,0.7);
+	}
+
+	</style>
+</head>
+<body>
+	<div class="img">
+		<img src="2.JPG"/>
+		<div class="img_text">无证司机加油站“练手”险酿惨剧</div>
+	</div>
+</body>
+</html>

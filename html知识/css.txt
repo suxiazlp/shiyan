@@ -1,0 +1,247 @@
+CSS:层叠样式表；（Cascading Style Sheets）
+1、引入方式
+（1）行内样式：优先级最高；
+eg：
+<div style="width:100px;height:100px;background:green;">
+</div>
+（2）嵌入样式：可以放在页面的任何位置，习惯放在                                  head标签中；
+eg:
+<style>
+div{
+     width: 200px;height:100px;
+     background: yellow;	
+}
+</style>
+（3）外部样式：
+<link rel="stylesheet" href="../bb/aa.css">
+（4）导入样式：
+@import url(aa.css);
+2、起名方式
+类名：class="_或字母开头"；
+        用法：   .类名{        }
+id名：id="_或字母开头";
+        用法：   #名字{        }
+3、选择器
+（1）标签选择器；
+    标签{      }
+（2）类名选择器；
+   .类名{        }
+（3）id选择器；
+   #名字{        }
+（4）交叉选择器；
+   #id.class{ };                  .class#id{ };   
+   biaoqian.class{  }          biaoqian#id{  }
+ ( 5 ) 群组选择器；
+  biaoqian,biaoqian,xxx{   }
+ ( 6 )后代选择器；
+   当子无名时：父亲 子标签{  }；
+   当子有名时：父亲 子名字{   }
+（7）通用选择器：
+    *
+（8）伪类选择器：
+：hover(鼠标放上去时显示的效果)
+：visited（访问过的链接）三
+：link(未访问的链接)    一
+：active（选定时的链接）二
+
+8.12上午
+1、伪类选择器
+：first-letter(选中文本中的第一个字体)【只适用于块标签】
+：first-line(选中文本中的第一行字体)【只适用于块标签】
+2、标签分类：
+（1）块标签：独占一行，可以设置宽高；
+eg:
+p、div、ul、li、ol、dl、dt、dd、h1、h2、h3、h4     、h5、h6、table、tr、td、caption、th、pre、hr、     thead、tbody、tfoot、form；
+（2）行标签【内联标签】：不可以设置宽高，盒子大小要靠内容来撑开；
+eg:
+a、b、strong、em、i、u、del、textarea、select、br、span
+（3）行内块级元素：既可以设宽高，也可以自动排成行；
+eg:
+input、img
+
+8.12下午：
+1、文字属性：
+(1) font-size:文字大小；（一般浏览器默认文字大小为14px；少数浏览器默认文字大小是16px）
+(2) color:文字颜色；
+(3) font-weight: 文字加粗；
+     【 normal(默认)；bold（加粗）】
+(4) font-family:文字字体；
+     【宋体，黑体，微软雅黑，楷体 ......】
+(5) font-style:文字风格；
+       【 normal(默认)；italic（斜体）】
+(6) text-decoration:文字修饰；
+        【underline（下划线）、overline（上划线）、            line-through（删除线）、none(去除修饰)】
+(7) font-variant:设置大小写；
+        【 small-caps( 大写)、normal（默认值小写）】
+2、文本段落：
+（1）text-align:水平对齐方式；
+      【center(居中)、left(居左)、right（居右）、justify      （两端对齐） 】
+（2） line-height：行高；
+      【line-height：大盒子高度；】
+（3）vertical-align：垂直对齐方式；
+        【 sub：下标；super：上标；top:头部；bottom：底部；middle：中间；】
+       *****作用于行元素、行内块级元素的垂直对齐方式；
+（4）text-indent：首行缩进；
+          【px:像素；em:文字的倍数；】
+（5）word-break：是否换行；
+         【break-all：自动换行；】
+         white-space:nowrap;强制不换行；
+（6）word-spacing：字与字之间空格的大小；
+（7）letter-spacing：字与字之间的距离；
+
+8.15上午
+1、继承性：
+  文字属性和文本段落都可以继承；
+2、叠加性：
+  同一个标签不同的属性会叠加；
+  相同点属性，后边的会覆盖前面的；
+
+8.15下午
+1、优先级：
+     行内样式优先级最高
+     id名选择器>类名选择器>标签名选择器>通用
+    交叉选择器（除了标签类名）>id选择器
+    交叉选择器>后代选择器（除了后代选择器全部是                                            id名组成）
+   后代选择器（除了后代选择器都是类名的情况）>id选择   器
+   【行内样式>交叉>后代>ID>类名>标签>通用>浏览器默认样式>继承样式】
+
+8.16上午：
+1、盒子模型：
+                                【上边同左右】
+外边距---边框---内边距--宽高--内边距--边框--外边距
+                                【下边同左右】
+2、外边距：margin
+四个方向：top(上)、 right(右)、 bottom(下)、 left(左)
+eg：
+margin:100px;【上下左右】
+margin：100px 200px; 【上下   左右】
+margin:100px 200px 300px;【上  左右  下】
+margin:100px 200px 300px 400px;【上 右 下 左】(顺时针)
+eg:
+margin-top:100px;
+3、内边距：padding
+四个方向：top(上)、 right(右)、 bottom(下)、 left(左)
+eg：
+padding:100px;【上下左右】
+padding：100px 200px; 【上下   左右】
+padding:100px 200px 300px;【上  左右  下】
+padding:100px 200px 300px 400px;【上 右 下 左】(顺时针)
+eg:
+padding-top:100px;
+
+margin与padding区别：
+盒子的实际大小包含padding值；不包含margin值；
+
+8.17上午
+1、border:大小   线条类型   颜色；
+     solid：实线； dotted：点线；dashed：虚线；
+   double：双线；groove：槽线；ridge：脊线；
+    inset：内凹；outset：外凸；none：无样式；
+   border：四个方向；
+2、去默认值
+body,p,h1,h2,h3,h4,h5,h6,ul,li,dl,dt,dd,ol,form,input,pre{
+	margin: 0;padding: 0;
+	list-style:none;
+}
+a{
+	text-decoration: none;
+}
+b,strong,i,em{
+	font-weight: normal;
+	font-style:normal;
+}
+img{
+	border: 0;
+}
+
+3、块元素居中：margin：0 auto；
+
+8.17下午
+1、display：行与块的转化；
+    block：行变块；
+    inline：块变行；
+    inline-block：行内块级元素；
+   display：none；完成隐藏；
+   display：block；完成显示
+ 2、float:浮动；
+   float：left；浮动到左边；
+   float：right；浮动到右边；
+注意：
+ 【1】任何元素都可以浮动。浮动元素会生成一个块级框，而不论它本身是何种元素。
+ 【2】float受父框大小影响，在父框范围内，浮动成一排，超 出父框大小，会在下一行浮动；
+ 【3】float:left的元素会脱离原始的文档流；
+ 【4】什么是文档流？
+         文档从上到下、从左到右的执行顺序；
+
+8.18下午：
+margin-top:当父盒子只有宽高的属性时，作用在子盒子                   上的margin-top会作用在父盒子上。
+解决方法：
+（1）给父盒子加边框；
+
+8.22下午：
+1、overflow：对超出部分的作用；
+   hidden：超出隐藏；
+   scroll：一直出现滚动条；
+    auto：超出有滚动条，不超出没有滚动条；
+   visible：内容可见；（默认）
+overflow-x，overflow-y(分别代表x、y轴方向)
+2、清除浮动
+（1）父盒子加overflow:hidden;
+（2）clear:both；
+（3）.box:after{
+     	content: "";
+     	display: block;
+     	clear:both;
+             }
+3、margin可为负值，方向和正直方向相反；
+4、行元素居中：text-align: center;
+
+8.23上午：
+1、定位属性：
+ 相对定位：position:relative；
+【1】没有脱离文档流，是占据一定的位置的；
+【2】相对于本身定位，top/left/right/bottom；
+【3】相对定位默认层级比没有定位的元素要高；
+2、绝对定位：position:absolute;
+【1】脱离文档流，不占据位置；
+【2】找具有定位属性的父辈元素；
+3、固定定位：position:fixed;
+【1】脱离文档流，不占据位置；
+4、静态定位：position:static;(默认定位)
+2、改变定位层级关系
+z-index:数值；（数值越大，层级越高，也可以是负值）
+
+8.24下午：
+1、透明度opacity:（0~1）；
+2、rgb(red、green、blue)
+3、rgba(R,G,B,A)
+区别：
+rgba()不作用于盒子里的文字与图片，只改变盒子本身透明度；
+opacity：作用于盒子里的所有东西；
+
+8.29上午
+1、background：
+引入背景图片：
+background-image:url(图片路径)；
+背景图片重复方式：
+background-repeat:repeat(默认重复)；
+【no-repeat(不重复)、repeat-x(x轴重复)、repeat-y（y轴重复）】
+背景图片位置：
+background-position:x轴方向   y轴方向；
+【可以设数值、百分比、方向（left\right\bottom\top\center）】
+背景图片大小：
+background-size：
+【cover（完全覆盖盒子）、contain（以盒子最短的边为基准，覆盖盒子）、百分比、数值】
+应用：
+图片精灵技术
+2、鼠标样式：
+cursor:
+【pointer：手型； crosshair：十字型；
+     text：文本类型；wait:等待样式；
+    default：默认情况；help:帮助情况下；】
+
+
+
+
+
+

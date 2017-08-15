@@ -1,0 +1,214 @@
+8.3上午
+web世界：互联网
+互联网：网站
+网站：网页
+前端基础：
+（1）html：html是网页内容的载体（内容：文字、图片、视频）；
+（2）css：网页的样式；
+（3）js：js是实现网页动态效果的语言；
+html的基本语法：（xx.html,xx.htm）
+(1).标签由<>包起来；
+(2).标签是成对出现的，分为开始标签和结束标签，结束标签加“/”；
+(3).标签可以嵌套，但是先后顺序要一致；
+(4).标签不分大小写，建议用小写；
+html文件基本结构：
+<!doctype html>：申明文件是html类型的；
+<html></html>:为html根标签，所有标签都包含在其中；
+<head></head>：为html的头部标签；
+head标签的组成部分：
+<meta>:设置页面的元信息（编码方式、是否缩放、关键词、描述内容）；
+<link><style>:引css文件；
+<script>:引js文件的；
+<title></title>:起文件名字的；
+<body></body>:  为包裹html内容的标签；
+
+8.3下午
+Sublime Text2编辑器
+优点：启动快，界面简洁；
+          自动保存未保存于硬盘上的文件；
+文件：文件操作区；
+编辑：对文件编辑命令；
+选择：选择功能区；
+查找：查找替换区；
+查看：查看对本身界面的配置；
+转到：对本界面内或文件夹快速导航；
+工具：命令模式；
+项目：配置文件；
+首选项：设置编辑器样式；
+帮助：简单说明；
+
+基本标签：
+<font>文字标签</font>（color、size(1-7)）
+hx为标题标签
+<h1>一级标题</h1>
+<h2>二级标题</h2>
+<h3>三级标题</h3>
+<h4>四级标题</h4>
+<h5>五级标题</h5>
+<h6>六级标题</h6>
+加粗标签
+<b>加粗标签</b>
+<strong>加粗标签</strong>(强调)
+斜体标签
+<i>斜体标签</i>
+<em>斜体标签</em>(强调)
+下划线标签
+<u>下划线标签</u>
+删除标签
+<s>删除标签</s>
+<strike>删除标签</strike>	
+<del>删除标签</del>
+换行标签
+<br/>
+水平线标签
+<hr/>(color="#000" size width)
+段落标签
+<p></p>
+<pre></pre>
+区别：p只识别一个空格
+          pre无限识别空格与换行
+
+字体加实体名称：
+&nbsp;空格
+&amp;&符号；
+&lt;小于符号；
+&gt;大于符号；
+&quot;引号符号；
+
+8.4上午
+a标签：表链接；
+（1）属性：href：指向链接地址
+绝对地址：网上固定地址
+相对地址：本地地址
+（2）属性：target：_blank;_self;
+_blank:在新窗口中打开链接；
+_self:在当前窗口打开链接（浏览器默认值）；
+（3）属性：title：提示文字
+访问文件夹的路径
+后退（从当前文件出来，进入新文件）：../新文件/链接地址
+eg：../大文件夹/a.html(退一层)
+eg：../../小文件夹/a.html(退两层)
+前进（直接进新文件）：./新文件/链接地址
+eg：./学过的/a.html
+eg：./大文件夹/小文件夹/a.html(进两层)
+总结：进文件夹时，需要加文件夹名称；
+           退文件夹时，需要加../
+锚链接:一种链接方式，一般用#指向name名称；
+            作用：可以快速定位；
+
+8.4下午
+图片标签img：
+属性：src：是用来指向图片地址与名称；
+          alt：用来提示图片加载失败时的文字；
+（src也是有路径问题的，和a标签的href属性相似；）
+给图片加链接方式：
+（1）a标签
+（2）usemap属性
+eg：
+ <img src="map.jpg" alt="" usemap="#ditu">
+     <map name="ditu">
+     <area shape="rect" coords="0,0,287,386" href="新疆.html" alt="">
+     </map>
+
+8.5上午
+有序列表：带有顺序的列表，他由ol、li组成；
+                 （ol、li一起使用，不可单独使用）
+                type：A、a、I、i、1
+无序列表：没有顺序的列表，他由ul，li组成；
+                 （ul、li一起使用，不可单独使用）
+                type：disc（实心圆）、circle（空心圆）、square                        （方块）
+自定义列表：由dl、dt、dd组成；
+                     dl（定义列表）、dt（定义条件）、dd（定义描                      述）
+
+8.5下午
+注释方式：ctrl+/或者ctrl+shift+？
+表格：
+table：（大框）【8】
+width：宽度；height：高度；border：边框；
+bordercolor：边框颜色；bgcolor：背景色；
+align：水平对齐方式（left、center、right）；
+cellspacing：单元格间隔；
+cellpadding：内间距；
+tr：（行）
+height：高度；bgcolor：背景色；
+align：水平对齐方式（left、center、right）；
+valign：垂直对齐方式（top、middle、bottom）
+td：（单元格）
+width：宽度；bgcolor：背景色；
+align：水平对齐方式（left、center、right）；
+valign：垂直对齐方式（top、middle、bottom）
+标题标签：caption；
+表头标签：th；
+td与th用法一样，th有加粗的效果；
+colspan：合并列；（成为一行）
+rowspan：合并行；（成为一列）
+
+8.8上午
+语义化：标签的用途（即什么情况下用什么样的标签）
+好处：更容易被搜索引擎理解；
+          跟容易让屏幕阅读器读出网页内容；
+表格语义化标签
+thead：表头
+tbody：表身
+tfoot：表脚
+注意事项：
+三个标签是一体的，用的时候缺一不可；
+
+8.8下午
+form表单（5）
+action：指向表单提交地址；
+name：给表单起名字；
+method：提交数据的方法（get、post）；
+target：_blank;  _self; 
+enctype：提交数据的编码方式；
+                （application/x-www-form-urlencoded）
+                 （multipart/form-data(用于上传文件)）
+
+表单元素
+input标签name属性：起名字；
+input标签value属性：文本框默认文字；
+input标签的type属性：
+text：单行文本；
+password：密码文本；
+radio：单选按钮；
+checkbox：多选按钮；
+file:文本域按钮；
+submit：提交查询按钮；
+reset：重置按钮；
+button：空白按钮；
+image：图像形式的提交按钮；
+hidden：隐藏域；
+
+下拉选项：select>option
+select属性：multiple（多选）、size（）
+option属性：selected（默认选中）、value（选项值）
+
+多行文本：textarea
+name    id
+cols：规定宽度；
+rows：规定高度；
+style="resize:none;"限制文本大小；
+ 
+8.9上午
+label：关联标签；
+属性：for（用来关联表单的id,不写#号）
+
+fieldset：表单控件标签；（用来打包表单）
+legend：表单控件名称；
+
+滚动标签：marquee
+behavior：滚动方式；
+                 （slide：只动一次；
+                    scroll：来回滚动；
+                   alternate：来回滑动；）
+direction：滚动方向；
+                  （up、down、left、right）
+loop : 滚动次数；
+滚动区间：
+width：滚动区间宽度；
+height：滚动区间高度；
+bgcolor：滚动区间背景；
+scrollmount:滚动速度；
+scrolldelay：滚动时间；
+onmouseover="this.stop()"：鼠标放上去停
+onmouseout="this.start()"：鼠标放上去动
