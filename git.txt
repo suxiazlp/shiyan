@@ -1,0 +1,61 @@
+第一步：
+1.找到D盘  用d:
+
+2.打开D盘中的git   用cd git
+
+3.在git中创建一个文件夹  用   mkdir learngit       (learngit文件夹名)
+
+4.打开这个创建的文件夹  cd learngit
+
+5.git init   通过git init命令把这个目录变成Git可以管理的仓库：
+
+6.   git config --global user.name "lllppp"
+
+     git config --global user.email "321719184@qq.com"    (输入邮箱和name)
+
+
+编写一个readme.txt文件，放在自己创建的文件夹里面    内容如下：
+
+Git is a version control system.
+Git is free software.
+(在文档里输入点内容，内容不是固定的)
+
+一定要放到learngit目录下（子目录也行），因为这是一个Git仓库，放到其他地方Git再厉害也找不到这个文件。
+
+7.git add用命令git add告诉Git，把文件添加到仓库：
+   git add aaa.txt
+(_执行上面的命令，没有任何显示，这就对了，Unix的哲学是“没有消息就是好消息”，说明添加成功。)
+
+8.用命令git commit告诉Git，把文件提交到仓库
+   git commit -m "wrote a readme file"
+-m后面输入的是本次提交的说明，可以输入任意内容
+
+9.
+如果再往文档里添加内容
+（Git is a distributed version control system.
+Git is free software.）
+git status命令可以让我们时刻掌握仓库当前的状态
+
+10. git diff aaa.txt  查看修改内容
+
+知道之后然后再提交到仓库git add  
+可以在运行git commit  之前查一下当前仓库的状态git status（modified:   readme.txt说明可以提交） 
+然后git commit -m"add distributed”   提交    
+之后再用git status Git告诉我们当前没有需要提交的修改，而且，工作目录是干净（working directory clean）的。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
