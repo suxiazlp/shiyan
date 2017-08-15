@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>基点</title>
+	<style>
+#canvas{
+	background-color: #ccc;
+}
+	</style>
+</head>
+<body>
+	<canvas id='canvas' height='600' width='1200'></canvas>
+	<script>
+var canvas=document.getElementById('canvas')
+var cobj=canvas.getContext('2d')
+// 1.
+/*cobj.fillRect(0,0,40,40)
+// scale/translate只对下面的内容起作用
+cobj.save()  //保存原有状态
+cobj.scale(0.5,0.5)
+cobj.translate(100,100)
+cobj.rect(0,0,100,100)
+cobj.stroke()
+cobj.beginPath()
+cobj.restore()  //针对于圆恢复原有的状态
+cobj.arc(150,150,50,0,2*Math.PI)
+cobj.fill()*/
+
+// 2.
+  /*不加save和restore是加速运动
+   加save和restore是匀速运动*/
+/*var num=0
+setInterval(function(){
+   cobj.clearRect(0,0,1200,600)
+   num++
+   cobj.save()
+   cobj.translate(num,0)
+   cobj.fillRect(0,0,100,100)
+   cobj.restore()
+ },100)*/
+
+//3.清除画布
+   /* cobj.translate(100,100)
+    cobj.fillRect(-50,-50,100,100)
+    cobj.clearRect(0,0,1200,600)  //留下四分之三
+    /*cobj.clearRect(-50,-50,1200,600)*/  //清除全部*/
+
+//4.
+   /* cobj.translate(100,100)
+    cobj.scale(0.8,0.8)
+    cobj.rotate(40*Math.PI/180)
+    cobj.fillRect(100,100,100,100)   */
+    
+    // 旋转点击时变大变小
+    var num=0
+    canvas.onclick=function(e){
+     alert(1)
+    setInterval(function(){
+     cobj.clearRect(0,0,900,600)
+     num++
+     cobj.save()
+     cobj.translate(100,100)
+        cobj.rotate(num*Math.PI/180)
+        cobj.fillRect(-50,-50,100,100)
+        cobj.restore()
+
+    },60)
+    }
+	</script>
+</body>
+</html>

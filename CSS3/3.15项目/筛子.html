@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	body{
+        height:100%;background: blue;
+    }
+    .box{
+        margin:20px;
+        width:200px;
+        height:200px;
+        background: #aaa;
+        box-shadow: 5px 5px 5px #000;
+        border-radius: 20px;
+        float: left;
+        display: flex;
+        justify-content:space-between;
+    }
+    .inner{
+        width:40px;height:40px;
+        background: #222;
+        box-shadow: 3px 3px 3px #000 inset;
+        border-radius: 50%;
+    }
+.box:nth-of-type(1){
+	align-items:center;
+	justify-content:center;
+
+} 
+.box:nth-of-type(2) .col{
+    display: flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+  /* .col:nth-of-type(2){
+  	justify-content:center;
+  } */
+.box:nth-of-type(3){
+	justify-content:center;
+} 
+.box:nth-of-type(3) .col{
+    display: flex;
+    flex-direction:column;
+    justify-content:space-between;
+    flex-wrap:wrap;
+}
+.box:nth-of-type(3) .col .inner{
+	margin:20px;
+}
+.box:nth-of-type(4) .col{
+    display: flex;
+    flex-direction:column;
+    justify-content:space-between;
+    flex-wrap:wrap;
+}
+.box:nth-of-type(5) .col{
+    display: flex;
+    flex-direction:column;
+    justify-content:space-between;
+    flex-wrap:wrap;
+}
+.box:nth-of-type(5) .col:nth-of-type(2){
+  	justify-content:center;
+  } 
+.box:nth-of-type(6) .col{
+    display: flex;
+    flex-direction:column;
+    justify-content:space-between;
+    flex-wrap:wrap;
+}
+.box:nth-of-type(6) .col:nth-of-type(2){
+  	justify-content:center;
+  } 
+.box:nth-of-type(7) .col{
+	margin:0 20px;
+    display: flex;
+    flex-direction:column;
+    justify-content:space-between;
+    flex-wrap:wrap;
+}
+.box:nth-of-type(8) .col{
+	margin:0 20px;
+    display: flex;
+    flex-direction:column;
+    justify-content:space-between;
+    flex-wrap:wrap;
+}
+.box:nth-of-type(9){
+	justify-content:space-between;
+	display: flex;
+	/*flex-direction:column;*/
+}
+.box:nth-of-type(9) .col{
+    display: flex;
+    /*flex-direction:column;*/
+    /*justify-content:space-between;*/
+    /*flex-wrap:wrap;*/
+}
+.box:nth-of-type(9) .col:nth-of-type(2){
+    display: flex;
+    /*flex-direction:column;*/
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+}
+.box:nth-of-type(9) .col:nth-of-type(3){
+    display: flex;
+    /*flex-direction:flex-end;*/
+    /*justify-content:center;*/
+    align-items:flex-end;
+    /*flex-wrap:wrap;*/
+}
+	</style>
+</head>
+<body>
+    <div class="box">
+		<div class="col">
+			<div class="inner"></div>
+		</div>
+	</div>
+
+    <div class="box">
+		<div class="col">
+			<div class="inner"></div>
+			<div class="inner"></div>
+			<div class="inner"></div>
+		</div>
+		<div class="col">
+			<div class="inner"></div>
+			<div class="inner"></div>
+			<div class="inner"></div>
+		</div>
+		<div class="col">
+			<div class="inner"></div>
+			<div class="inner"></div>
+			<div class="inner"></div>
+		</div>
+	</div>
+
+	<div class="box">
+		<div class="col">
+			<div class="inner"></div>
+			<div class="inner"></div>
+		</div>
+	</div>
+
+	<div class="box">
+		<div class="col">
+			<div class="inner"></div>
+			<div class="inner"></div>
+		</div>
+		<div class="col">
+			<div class="inner"></div>
+			<div class="inner"></div>
+		</div>
+	</div>
+
+	<div class="box">
+		<div class="col">
+			<div class="inner"></div>
+			<div class="inner"></div>
+		</div>
+		<div class="col">
+			<div class="inner"></div>
+		</div>
+		<div class="col">
+			<div class="inner"></div>
+			<div class="inner"></div>
+		</div>
+	</div>
+
+	    <div class="box">
+		<div class="col">
+			<div class="inner"></div>
+			<div class="inner"></div>
+			<div class="inner"></div>
+		</div>
+		<div class="col">
+			<div class="inner"></div>
+		</div>
+		<div class="col">
+			<div class="inner"></div>
+			<div class="inner"></div>
+			<div class="inner"></div>
+		</div>
+	</div>
+
+    <div class="box">
+		<div class="col">
+			<div class="inner"></div>
+			<div class="inner"></div>
+			<div class="inner"></div>
+			<div class="inner"></div>
+		</div>
+		<div class="col">
+			<div class="inner"></div>
+			<div class="inner"></div>
+			<div class="inner"></div>
+			<div class="inner"></div>
+		</div>
+	</div>
+
+	<div class="box">
+		<div class="col">
+			<div class="inner"></div>
+			<div class="inner"></div>
+			<div class="inner"></div>
+		</div>
+		<div class="col">
+			<div class="inner"></div>
+			<div class="inner"></div>
+			<div class="inner"></div>
+		</div>
+	</div>
+
+	<div class="box">
+		<div class="col">
+			<div class="inner"></div>
+		</div>
+		<div class="col">
+			<div class="inner"></div>
+		</div>
+		<div class="col">
+			<div class="inner"></div>
+		</div>
+	</div>
+</body>
+</html>

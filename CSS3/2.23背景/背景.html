@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>背景</title>
+	<style>
+   .box{
+   	width:100px;
+   	height: 100px;
+   	/*float: left;*/
+   	background-color: lightblue;
+    /*background-image: url(1.png) url(2.png) url(3.png);*/
+    /*引入多张背景图*/
+    background-image: url(1.png);
+
+    background-repeat: no-repeat;
+    /*平铺*/
+    /* repeat-x： 背景图像在横向上平铺 
+    repeat-y： 背景图像在纵向上平铺 
+    repeat： 背景图像在横向和纵向平铺 
+    no-repeat： 背景图像不平铺 
+    round： 背景图像自动缩放直到适应且填充满整个容器。（CSS3） 
+    space： 背景图像以相同的间距平铺且填充满整个容器或某个方向 */
+    
+    background-position:-551px -25px;
+    /*图片放在100 。200的位置*/
+    /*left top左上角*/
+    /*right bottom右下角*/
+    background-attachment: fixed;
+    /*背景图相对于窗体固定
+      scroll相对于元素固定
+    */
+   }
+  /*  .aa{
+  	width:150px;
+  	height: 100px;
+  	float: left;
+  	background-image: url(1.png);
+  	background-position: -40px -182px;
+  }
+  .bb{
+  	width:100px;
+  	height: 100px;
+  	float: left;
+  	background-image: url(1.png);
+  	background-position: -756px -25px;
+  }
+  .cc{
+  	width:100px;
+  	height: 100px;
+  	float: left;
+  	background-image: url(1.png);
+  	background-position: -985px -175px;
+  }
+  .dd{
+  	width:150px;
+  	height: 100px;
+  	float: left;
+  	background-image: url(1.png);
+  	background-position: -1204px -29px; 
+  } */
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<!-- <div class="aa"></div>
+	<div class="bb"></div>
+	<div class="cc"></div>
+	<div class="dd"></div> -->
+</body>
+</html>

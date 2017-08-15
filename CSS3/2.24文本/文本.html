@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>text-overflow_CSS参考手册_web前端开发参考手册系列</title>
+<meta name="author" content="Joy Du(飘零雾雨), dooyoe@gmail.com" />
+<meta name="copyright" content="www.doyoe.com" />
+<style>
+/* .test li{margin-top:10px;}
+text-overflow:clip;超出部分裁剪与overflow搭配使用
+white-space:nowrap;强制不换行
+.test .clip p{overflow:hidden;width:200px;white-space:nowrap;text-overflow:clip;}
+超出部分用省略号
+.test .ellipsis p{overflow:hidden;width:200px;white-space:nowrap;text-overflow:ellipsis;}
+超出部分用字符串
+.test .str p{overflow:hidden;width:200px;white-space:nowrap;text-overflow:'ppp';}
+ */
+
+/*字体阴影*/
+/* .test li{margin-top:10px;}
+.test .mormal p{text-shadow:1px 1px rgba(0,0,0,.3);}
+.test .blur p{text-shadow:1px 1px 1px rgba(0,0,0,.3);}
+.test .group p{text-shadow:1px 1px 0 rgba(255,255,255,1),1px 1px 2px rgba(0,85,0,.8);} */
+
+/*字体渐变色*/
+/* html,body{
+	margin:50px 0;
+}
+.text-fill-color{
+	width:950px;
+	margin:0 auto;
+	background:-webkit-linear-gradient(top,#eee,#aaa 50%,#333 51%,#000);
+	-webkit-background-clip:text;
+	-webkit-text-fill-color:transparent;
+	font:bold 95px/1.231 georgia,sans-serif;
+	text-transform:uppercase;
+} */
+
+html,body{font:bold 14px/1.5 georgia,simsun,sans-serif;text-align:center;}
+.stroke h1{margin:0;padding:10px 0 0;}
+.stroke p{
+	margin:50px auto 100px;font-size:100px;
+	-webkit-text-stroke:1px #f00;
+}
+.copyright,.info{font-style:italic;}
+
+</style>
+</head>
+<body>
+<!-- <ul class="test">
+	<li class="clip">
+		<strong>clip: 直接将溢出的文字裁剪</strong>
+		<p>测试用文字测试用文字测试用文字测试用文字测试用文字测试用文字</p>
+	</li>
+	<li class="ellipsis">
+		<strong>ellipsis: 将溢出的文字显示省略标记（...）</strong>
+		<p>测试用文字测试用文字测试用文字测试用文字测试用文字测试用文字</p>
+	</li>
+	<li class="str">
+		<strong>ellipsis: 将溢出的文字显示省略标记（...）</strong>
+		<p>测试用文字测试用文字测试用文字测试用文字测试用文字测试用文字</p>
+	</li>
+</ul> -->
+
+<!-- <ul class="test">
+	<li class="mormal">
+		<strong>普通文字阴影</strong>
+		<p>测试普通文字阴影效果</p>
+	</li>
+	<li class="blur">
+		<strong>模糊文字阴影效果</strong>
+		<p>测试模糊文字阴影效果</p>
+	</li>
+	<li class="group">
+		<strong>多重模糊文字阴影效果</strong>
+		<p>测试多重模糊文字阴影效果</p>
+	</li>
+</ul> -->
+
+<!-- <div class="text-fill-color">text-fill-color</div> -->
+<div class="stroke">
+	<h1>描边的文字：</h1>
+	<p>我是被描了1像素红边的文字</p>
+</div>
+</body>
+</html>

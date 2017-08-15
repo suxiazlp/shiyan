@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>小动画</title>
+	<style>
+	*{
+		margin:0;padding: 0;
+	}
+	body,html{
+		height:100%;
+		background: blue;
+	}
+	@keyframes fly{
+		0%{
+			background: 0 0;
+		}
+		100%{
+			background: 0 -15435px;
+		}
+	}
+.box{
+	width: 640px;
+height: 1029px;
+text-align: center;
+position: absolute;
+top: 50%;
+left: 50%;
+margin-left: -320px;
+margin-top: -520px;
+background-position: 0px 0px;
+       /*  width:640px;
+       height:100%;
+       background: lime;
+       margin:0 auto; */
+        background:url(1.png) no-repeat 0 0;
+        transform: matrix(0.625, 0, 0, 0.625, 0, 0);
+         animation:fly 1s steps(15) infinite;
+}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>

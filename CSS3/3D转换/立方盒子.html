@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>立方盒子</title>
+	<style>
+   *{
+		margin:0;
+		padding:0;
+    }
+    /*第一种方法*/
+ /* @keyframes aa{
+ 	0%{
+ 		transform:rotate3d(1,1,1,0deg);
+ 		
+ 	}
+ 	25%{
+ 		transform:rotate3d(1,1,1,90deg);
+ 		transform-origin:top left;
+ 	}
+ 	50%{
+ 		transform:rotate3d(1,1,1,180deg);
+        transform-origin:top left;
+ 	}
+ 	75%{
+ 		transform:rotate3d(1,1,1,270deg);
+ 		transform-origin:top left;
+ 	}
+ 	100%{
+ 		transform:rotate3d(1,1,1,360deg);
+ 		transform-origin:top left;
+ 	}
+ }  */
+ /*第二种方法*/
+ @keyframes aa{
+ 	100%{
+ 		transform:perspective(1000px) rotate3d(1,1,1,360deg);
+ 		transform-origin:top left;
+ 	}
+ }
+/* body{
+		perspective:1000px;
+} */
+    .box{
+    	width:200px;
+    	height:200px;
+    	border:1px solid green;
+    	margin:200px auto;
+    	position: relative;
+        transform-style:preserve-3d;
+    	transform-origin:50% 50% 100px;
+    	transform:perspective(1000px) rotate3d(1,1,1,0deg);
+    	animation:aa 1s ease infinite;
+    	backface-visibility:hidden;
+    	/*规定背面是否可见*/
+    }
+    .box li{
+    	width:200px;
+    	height:200px;
+    	font-size:30px;
+    	line-height:200px;
+    	text-align: center;
+    	list-style:none;
+    	position: absolute;
+    }
+    li:first-of-type{
+    	top:0;left:0;
+    	background: lightgreen;
+    }
+    .box li:nth-child(2){
+    	top:0;
+    	left:-200px;
+    	background: pink;
+    	transform-origin:right;
+    	transform:rotateY(90deg);
+    }
+    
+    .box li:nth-child(3){
+    	top:-200px;
+    	left:0;
+    	background: lightgray;
+    	transform-origin:bottom;
+    	transform:rotateX(-90deg);
+    }
+    .box li:nth-child(4){
+    	top:0;
+    	left:200px;
+    	background: lightblue;
+    	transform-origin:left;
+    	transform:rotateY(-90deg);
+    }
+    .box li:nth-child(5){
+    	top:200px;
+    	left:0;
+    	background: lime;
+    	transform-origin:top;
+    	transform:rotateX(90deg);
+    }
+    .box li:nth-child(6){
+    	top:0;
+    	left:0;
+    	background: yellow;
+    	transform:translateZ(200px);
+    	/*opacity: 0.5;*/
+    }
+	</style>
+</head>
+<body>
+	<ul class="box">
+		<li>01</li>
+		<li>02</li>
+		<li>03</li>
+		<li>04</li>
+		<li>05</li>
+		<li>06</li>
+	</ul>
+	<script>
+/*var box=document.getElementsByClassName('box')[0]
+var angle=0
+function aa(){
+	angle+=10;
+	box.style.transform='rotate3d(1,1,1,'+angle+'deg)'
+}
+    setInterval(aa,50)*/
+	</script>
+</body>
+</html>

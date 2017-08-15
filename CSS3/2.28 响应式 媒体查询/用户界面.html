@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+/* .box{
+	width:1000px;
+    margin:0 auto;
+
+    分成4列
+    -moz-column-count:4;
+    column-count:4;
+    列与列之间隔
+    -moz-column-gap:30px;
+    column-gap:30px;
+    列的线
+    -moz-column-rule:5px solid pink;
+    column-rule:5px solid pink;
+    每列的宽
+    -moz-column-width:200px;
+    column-width:200px;
+
+    简写
+    -moz-columns:200px 4;
+    columns:200px 4;
+} */
+.two{
+	width:200px;
+	height:200px;
+	background: pink;
+	/*调节大小的与overflow:auto;一起用*/
+	/*resize:both;*/  /*调节高和宽*/
+	/*resize:vertical; */ /*上下调节*/
+     resize:horizontal;/* 左右调节*/
+	overflow: auto;
+}
+.test{
+	width:200px;height:70px;padding:10px;border:20px solid #999;
+	-webkit-box-sizing:content-box;
+	-moz-box-sizing:content-box;
+	-ms-box-sizing:content-box;
+	box-sizing:content-box;
+	background:#eee;
+}
+.test2{
+	width:200px;height:70px;padding:10px;
+	border:5px solid #999;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	background:#eee;margin-top:20px;
+}
+
+h1{margin:0;font-size:16px;font-family:Arial;}
+.testa{zoom:normal;}
+.testb{zoom:5;}
+.testc{zoom:300%;}
+
+.testd{width:100px;padding:10px;outline:2px solid #f00;border:3px solid #333;outline-offset:10px;}
+	</style>
+</head>
+<body>
+<!-- 	<div class="box">
+	
+
+闺中女儿惜春暮，愁绪满怀无处诉。手把花锄出绣帘，忍踏落花来复去？
+
+柳丝榆荚自芳菲，不管桃飘与李飞。桃李明年能再发，明岁闺中知有谁？
+
+三月香巢已垒成，梁间燕子太无情！明年花发虽可啄，却不道人去梁空巢也倾。
+
+一年三百六十日，风刀霜剑严相逼。明媚鲜妍能几时？一朝飘泊难寻觅。
+
+花开易见落难寻，阶前闷杀葬花人。独把香锄泪暗洒，洒上空枝见血痕。
+
+杜鹃无语正黄昏，荷锄归去掩重门。青灯照壁人初睡，冷雨敲窗被未温。
+
+怪奴底事倍伤神？半为怜春半恼春。怜春忽至恼忽去，至又无言去不闻。
+
+昨宵庭外悲歌发，知是花魂与鸟魂。花魂鸟魂总难留，鸟自无言花自羞。
+
+愿奴胁下生双翼，随花飞落天尽头。天尽头，何处有香丘？
+
+未若锦囊收艳骨，一抔净土掩风流。质本洁来还洁去，强于污淖陷渠沟。
+
+尔今死去奴收葬，未卜奴身何日丧？奴今葬花人笑痴，他年葬奴知是谁？
+
+试看春残花渐落，便是红颜老死时。一朝春尽红颜老，花落人亡两不知！
+</div> -->
+<div class="two"></div>
+
+<div class="test">content-box</div>
+<div class="test2">border-box</div>
+
+<h1>zoom:normal</h1>
+<div class="testa">zoom:normal</div>
+
+<h1>zoom:5</h1>
+<div class="testb">zoom:5</div>
+
+<h1>zoom:300%</h1>
+<div class="testc">zoom:300%</div>
+
+
+<div class="testd">注意边框线外面的红色轮廓</div>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3D</title>
+	<style>
+	/* body{
+		perspective:500px;
+	} */
+.box{
+	width:200px;
+	height:200px;
+	border:2px solid red;
+	padding:150px;
+	transition:all 1s;
+	perspective:500px;
+	/*transform-style:preserve-3d;*/
+	perspective-origin:0 0;
+}
+/*perspective近大远小，近实远虚*/
+/*transform-style:preserve-3d;表示子元素受其父元素的影响，跟随父元素变化*/
+.inner{
+	width:150px;
+	height:150px;
+	border:2px solid blue;
+	transition:all 1s;
+	transform-origin:100px 100px;
+}
+
+/* .inner:hover{
+    transform:rotateX(40deg);
+} */
+/*旋转*/
+/* .inner:hover{
+    transform:rotate3d(1,0,1,40deg);
+} */
+/*前三个值代表x,y,z轴，1代表旋转 0代表不旋转 负值代表相反方向*/
+/*平移 */
+/* .inner:hover{
+    transform:translate3d(20px,30px,40px);
+} */
+/*前三个值代表x,y,z轴 负值代表相反方向*/
+/*缩放*/
+/* .inner:hover{
+    transform:scale3d(0.2,0.3,1);
+} */
+/*简写*/
+/* .inner:hover{
+    transform:perspective(500px) rotate3d(1,0,1,40deg);
+} */
+
+
+/* .box:hover{
+	transform:rotateX(40deg);
+} */
+.inner:hover{
+    transform:rotateX(70deg);
+} 
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="inner"></div>
+	</div>
+</body>
+</html>

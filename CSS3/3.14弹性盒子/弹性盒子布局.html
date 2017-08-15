@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+     .box{
+     	width:400px;
+     	height:300px;
+     	border:2px solid #000;
+     	/*让内容垂直居中，也适用于行标签*/
+     	display: flex;
+     	/*容器的属性flex-direction*/
+     	/*1.排序方式*/
+     	/*(1)row:默认从左到右;
+     	(2)row-reverse:从右到左;
+     	(3)column:从上到下;
+     	(4)column-reverse:从下到上; */
+     	/* flex-direction:row/row-reverse/column/column-reserve; */
+     	flex-direction:column-reverse;
+
+     	/*2.flex-wrap 如果一条轴线排不下 是否换行*/
+     	/*(1)nowrap强制不换行 内容变形
+     	  (2)wrap强制换行 
+     	  (3)wrap-reverse强制换行,第一行在下*/
+        /*flex-wrap:wrap-reverse;*/
+
+       /* 3.flex-flow:是flex-direction属性和flex-wrap属性的简写 默认为:row nowrap; ;*/
+           /*flex-flow:column nowrap;  */
+
+       /* 4.justify-content 主轴上对齐方式*/ 
+       /*(1)flex-start:左对齐;
+       (2)flex-end:右对齐;
+       (3)center:居中;
+       (4)space-between:两边对齐;
+       (5)space-around：每个项目两侧的间隔相等。所以，项目之间的                                间隔比项目与边框的间隔大一倍。 */
+       /*justify-content:space-between;*/
+
+
+        /*5.align-items 交叉轴上对齐方式*/
+        /*(1)flex-start:顶部对齐;
+        (2)flex-end:底部对齐;
+        (3)baseline:基线对齐 文字对齐;
+        (4)stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。;
+        (5)center：交叉轴的中点对齐。 */
+       /* align-items:baseline;*/
+     }
+    .inner{
+     	width:100px;height:100px;
+     	background:pink;
+     	border:1px solid #ef0000;
+     	box-sizing:border-box;
+     	margin:10px;
+     	/*margin:auto;*/
+     }
+     /* .inner:nth-of-type(1){
+     	width:100px;height:150px;
+     	margin:10px;
+     	margin:auto;
+     }
+     .inner:nth-of-type(3){
+     	width:200px;height:200px;
+     	padding-top:10px;
+     	margin:auto;
+     } */
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="inner">1</div>
+		<div class="inner">2</div>
+		<div class="inner">3</div>
+	</div>
+</body>
+</html>

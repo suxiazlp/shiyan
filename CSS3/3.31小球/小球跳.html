@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<canvas id='canvas'></canvas>
+	<script>
+    var canvas=document.getElementById('canvas');
+    var w=document.documentElement.clientWidth;
+    var h=document.documentElement.clientHeight;
+    canvas.height=h;
+    canvas.width=w;
+    var cobj=canvas.getContext('2d');
+    //声明一个ballarr数组
+    var ballarr=[];
+    //构造函数方法
+	function ball(x,y,r,vx,vy,color){
+		//ball的x轴y轴位置
+		this.x=x;
+		this.y=y;
+		//ball的半径
+		this.r=r;
+		//水平和垂直的速度
+		this.vx=vx;
+		this.vy=vy;
+		//重力
+		this.g=0.5;
+		this.color=color;
+		//画小球  函数方法
+		this.drawBall=function(){
+			//开始绘制
+			cobj.beginPath();
+			//填充颜色为ball的color
+			cobj.fillStyle=this.color;
+			//画圆 
+			cobj.arc(this.x,this.y,this.r,0,Math.PI*2);
+			cobj.fill();
+		};
+		//移动  函数方法
+		this.move=function(){
+			//move 的x,y,g
+			this.x+=this.vx;
+	    	this.y+=this.vy;
+	    	this.vy+=this.g;
+	    	//如果它的x位置大于画布的宽-小球的半径或它的x位置小于自己的半径
+		    if(this.x>canvas.width-this.r||this.x<this.r){
+		    	//就让它反向运动等于负的自己
+		    	this.vx=-this.vx;
+		    }
+		    //如果它的y位置大于画布的高-小球的半径
+		    if(this.y>canvas.height-this.r){
+		    	//就让它的速度乘以-0.8
+		    	this.vy=this.vy*-0.8;
+		    }
+		    //如果当前y轴速度的绝对值小于0.2且它的纵坐标大于画布的高减去自己半径-6
+		    if(Math.abs(this.vy)<0.2&&this.y>canvas.height-this.r-6){
+		    	//就让ball的y轴速度等于0，重力等于0
+		    	this.vy=0;
+		    	this.g=0;
+		    }
+		    //如果y轴速度等于0，就让x轴速度缓慢减小
+		    if(this.vy==0){
+		    	this.vx=0.98*this.vx;
+		    }
+		};
+	}
+	//鼠标在画布上移动的时候
+	canvas.onmousemove=function(e){
+		//设置随机颜色的取值范围
+		var str='rgb('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')';
+		//够着函数   声明对象  也就是调用上面那个构造函数
+		var newBall=new ball(e.clientX,e.clientY,Math.random()*20+20,Math.random()*10-5,2,str);
+		//把每个newBall放入到ballarr
+		ballarr.push(newBall); 
+		// newBall.drawBall();
+	}
+	setInterval(function(){
+		cobj.clearRect(0,0,w,h);
+		//循环ballarr  小于它的长度
+		for(var i=0;i<ballarr.length;i++){
+			//每循环一次  每个循环的ballarr[i]调用一次drawBall()和move()
+			ballarr[i].drawBall();
+			ballarr[i].move();
+		}
+		//如果ballarr.length>300
+		if(ballarr.length>300){
+			//把数组的第一个元素从其中删除，并返回第一个元素的值。
+			ballarr.shift();
+		}
+	},10)
+	</script>
+</body>
+</html>

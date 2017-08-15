@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>气泡</title>
+	<style>
+	*{
+		margin:0;padding: 0;
+	}
+	body{
+		overflow: hidden;
+	}
+#canvas{
+	background: #000;
+}
+	</style>
+</head>
+<body>
+	<canvas id='canvas'></canvas>
+	<script>
+      var canvas=document.getElementById('canvas')
+      var cobj=canvas.getContext('2d')
+      //获取浏览器的宽高
+      var h=document.documentElement.clientHeight
+      var w=document.documentElement.clientWidth
+      // 设置画布大小
+      canvas.width=w;
+      canvas.height=h;
+      // 声明一个放颜色的数组
+      var colors=['#2CC65F','#C62C58','#C62CB9','#ED6408','#B2ED08','#55ED08','#08ED8E']
+      // 声明一个放小球的数组
+      var balls=[]
+      // 计时器
+      var timer;
+      // 假如ball是一个小球
+      /*var ball={
+      	r:半径；
+      	x:圆心x轴位置
+      	y:圆心y轴位置
+      	color:颜色
+            vx:小球x轴速度
+            vy:小球y轴速度
+      }*/
+      // 模拟小球
+      function draw(ball){
+            // 绘制小球
+      	cobj.beginPath()
+      	cobj.arc(ball.x,ball.y,ball.r,0,2*Math.PI)
+            // 重复的地方颜色变亮
+            cobj.globalCompositeOperation='lighter';
+      	cobj.fillStyle=ball.color
+      	cobj.fill()
+      }
+      // 声明一个函数  设置最大最小值
+      function random(min,max){
+        return Math.round(Math.random()*(max-min)+min)
+      }
+      // 声明一个开关开着的
+      var flag=true
+      canvas.onmousemove=function(e){
+            for(var i=0;i<2;i++){
+                var ball={
+                  r:random(15,40),
+                  color:colors[random(0,colors.length-1)],
+                  vx:Math.random()-0.5,
+                  vy:Math.random()-0.5,
+                  x:e.clientX+random(-5,5),
+                  y:e.clientY+random(-5,5)
+                }
+                balls.push(ball)
+                if(balls.length>300){
+                  balls.shift()
+                }
+            }
+            if(flag){
+                  flag=false;
+            clearInterval(timer)
+            timer=setInterval(drawBall,50)
+            }
+      }
+      // 实现小球
+      function drawBall(){
+            cobj.clearRect(0,0,canvas.width,canvas.height)
+            for(var i=0;i<balls.length;i++){
+                  balls[i].x+=balls[i].vx*8
+                  balls[i].y+=balls[i].vy*8
+                  balls[i].r=balls[i].r*0.94
+                  balls[i].index=i
+                  if(balls[i].r<1){
+                       balls.splice(balls[i].index,1)
+                       continue;
+                  }
+                  draw(balls[i])
+            }
+             if(!balls.length){
+                  clearInterval(timer)
+                  flag=true
+               }
+               console.log(1)
+      }
+	</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>lizi</title>
+</head>
+<style type="text/css">
+	#box{
+		width:400px;height:400px;
+		border:2px solid #aaa;
+		border-radius:50%;
+		box-shadow:0 0 10px #000;
+		background:radial-gradient(#d37,blue);
+		margin:100px auto;
+		position:relative;
+	}
+</style>
+<body>
+	<div id="box">
+		<div id="inner1"></div>
+		<div id="inner2"></div>
+		<div id="inner3"></div>
+	</div>
+	<script>
+		var box=document.getElementById('box');
+		// 时针
+		var inner1=document.getElementById('inner1');
+		// 分针
+		var inner2=document.getElementById('inner2');
+		// 秒针
+		var inner3=document.getElementById('inner3');
+
+		kedu(box)
+		sfm(inner1,10,60,'blue')
+		sfm(inner2,10,120,'green')
+		sfm(inner3,10,160,'#000')
+		// 时分秒一一对应
+		setInterval(function(){
+			var date=new Date();
+			var hour=date.getHours();
+			var min=date.getMinutes();
+			var sec=date.getSeconds();
+			inner3.style.transform='rotate('+sec*6+'deg)';
+			inner2.style.transform='rotate('+min*6+'deg)';
+			inner1.style.transform='rotate('+(hour+min/60)*30+'deg)';
+		},1000)
+
+		// 时分秒原函数
+		// w代表的是每一个针的宽度
+		function sfm(obj,w,h,bg){
+            obj.style.cssText='width:'+w+'px;height:'+h+'px;background:'+bg+';position:absolute;bottom:200px;left:200px;transform-origin:50% 100%'
+		}	
+		function kedu(obj){
+			for(var i=0;i<60;i++){
+				var crediv=document.createElement('div');
+            var dw=6;
+            var dh=10;
+            var db='#fff';
+            if(i%5==0){
+            	dw=8;
+            	dh=16;
+            	db='red';
+            }
+            crediv.style.cssText='width:'+dw+'px;height:'+dh+'px;background:'+db+';position:absolute;top:0;left:200px;transform:rotate('+i*6+'deg);transform-origin:50% 200px;';
+            obj.appendChild(crediv)
+
+			}
+		}
+	</script>
+</body>
+</html>

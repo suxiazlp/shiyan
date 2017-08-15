@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+     #canvas{
+     	background: #f5f5f5;
+     }
+	</style>
+</head>
+<body>
+	<canvas id='canvas' width='500' height='500'></canvas>
+	<audio src="1.wav" id='audio'></audio>
+	<script>
+    var canvas=document.getElementById('canvas')
+    var cobj=canvas.getContext('2d')
+    var audio=document.getElementById('audio')
+    var cx=200
+    var cy=200
+    var r=100
+    audio.ontimeupdate=function(){
+    	//截取音乐的0.1s
+    	if(audio.currentTime>=0.1){
+    		audio.pause()
+    	}
+    }
+    // 14.让秒针动
+    setInterval(function(){
+    	audio.currentTime=0
+    	audio.play()
+    	cobj.clearRect(0,0,500,500)
+    // 2.添加阴影
+    cobj.shadowColor="#000"
+    cobj.shadowOffsetX=1
+    cobj.shadowOffsetY=1
+    cobj.shadowBlur=5
+    // 3.背景加渐变
+    var colorobj=cobj.createRadialGradient(cx,cy,1,cx,cy,100)
+    colorobj.addColorStop(0,'#efefef')
+    colorobj.addColorStop(0.5,'#ccc')
+    colorobj.addColorStop(1,'#aaa')
+    cobj.fillStyle=colorobj
+    // 4.设置边框粗细与颜色
+    cobj.strokeStyle='#aaa'
+    cobj.lineWidth=8
+    // 1.画表盘
+    cobj.beginPath()
+    cobj.arc(cx,cy,r,0,2*Math.PI)
+    cobj.stroke()
+    cobj.fill()
+    // 5.画零度的刻度与大小
+    /*cobj.lineWidth=4
+    cobj.beginPath()
+    cobj.moveTo(cx+r*Math.cos(0),cy+r*Math.sin(0))
+    cobj.lineTo(cx+(r-8)*Math.cos(0),cy+(r-8)*Math.sin(0))
+    cobj.stroke()*/
+    // 7.去刻度阴影
+    cobj.shadowColor="#000"
+    cobj.shadowOffsetX=0
+    cobj.shadowOffsetY=0
+    cobj.shadowBlur=0
+    // 给刻度加边框色
+    
+
+    // 6.写刻度的函数
+    drawMark()
+    function drawMark(){
+    	for(var i=0;i<60;i++){
+    		var angle=i*6*Math.PI/180
+    		cobj.lineWidth=2
+    		cobj.strokeStyle='#ddd'
+    		var r1=r-4
+        // 8.将5的倍数刻度单独设置
+            if(i%5==0){
+            	cobj.lineWidth=4
+            	 cobj.strokeStyle='#777'
+            	 r1=r-8
+            }
+            cobj.beginPath()
+            cobj.moveTo(cx+r*Math.cos(angle),cy+r*Math.sin(angle))
+            cobj.lineTo(cx+(r1)*Math.cos(angle),cy+(r1)*Math.sin(angle))
+            cobj.stroke()
+    	}
+    }
+    // 9.画默认零度的表针
+    /*cobj.beginPath()
+    cobj.moveTo(200,200)
+    cobj.lineTo(cx+70*Math.cos(0),cy+70*Math.sin(0))
+    cobj.stroke()*/
+    // 13.指针指向正确的时间
+     var date=new Date()
+     var hour=date.getHours()
+     var min=date.getMinutes()
+     var sec=date.getSeconds()
+    // 11.画出三种指针
+    drawPointer(50,4,'pink',hour*30-90+(min*6-90)/12)
+    drawPointer(70,3,'lightblue',min*6-90+(sec*6-90)/60)
+    drawPointer(80,2,'lightgreen',sec*6-90)
+
+    // 12.在指针上画圆
+    cobj.fillStyle='#666'
+    cobj.shadowColor='#000'
+    cobj.shadowOffsetX=1
+    cobj.shadowOffsetY=1
+    cobj.shadowBlur=3
+    cobj.beginPath()
+    cobj.arc(cx,cy,4,0,Math.PI*2)
+    cobj.fill()
+    // 10.写指针函数
+    function drawPointer(r,w,color,angle){
+    	cobj.strokeStyle=color
+    	cobj.lineWidth=w
+        cobj.beginPath()
+        cobj.moveTo(200,200)
+        cobj.lineTo(cx+r*Math.cos(Math.PI/180*angle),cy+r*Math.sin(Math.PI/180*angle))
+        cobj.stroke()
+    }
+    },1000)
+	</script>
+</body>
+</html>

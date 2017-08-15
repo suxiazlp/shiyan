@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+    #canvas{
+    	background: #eee;
+    }#canvas1{
+    	background: #eee;
+    }
+	</style>
+</head>
+<body>
+	<canvas id='canvas' width='400' height='300'></canvas>
+	<canvas id='canvas1' width='400' height='300'></canvas>
+	<video src="iceage4.mp4" id='video' controls='controls' hidden=''></video>
+	<script>
+     var canvas=document.getElementById('canvas')
+     var cobj=canvas.getContext('2d')
+     var video=document.getElementById('video')
+     var canvas1=document.getElementById('canvas1')
+     var cobj1=canvas1.getContext('2d')
+     var img=new Image()
+     img.src='18.jpg'
+     img.onload=function(){
+     	cobj.drawImage(img,0,0,200,200)
+     }
+     // cobj.isPointInPath(ox,oy)识别填充或绘制的方法
+     cobj.strokeStyle='rgba(0,0,0,0)';
+     cobj.rect(0,0,200,200);
+     cobj.stroke();
+     canvas.onclick=function(e){
+        var ox=e.offsetX;
+        var oy=e.offsetY;
+        if(cobj.isPointInPath(ox,oy)){
+        	video.play();
+        	setInterval(function(){
+        		cobj.drawImage(video,0,0,200,200);
+        		cobj1.drawImage(video,0,0,200,200);
+        	},20)
+        }
+     }
+	</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+    /* .box{
+    	width:100px;
+    	height:100px;
+    	background: pink;
+    	只有宽有过渡属性
+    	transition:width 1s;
+    	全部都有过渡属性
+    	transition:all 1s;
+    }
+    .box:hover{
+    	width:300px;
+    	height:300px;
+    	border:1px solid #000;
+    	background: white;
+    } */
+   .box{
+	width:300px;height:300px;
+	background:yellow;
+	position:relative;
+  }
+  h1{
+	position:absolute;
+	top:-100px;left:0;
+	transition:top 2s ease;
+ }
+  p{
+  	width:300px;
+	position:absolute;
+	left:-300px;top:100px;
+	transition:left 2s ease 1s;
+	word-wrap:nowrap;
+ }
+   .box:hover h1{
+	top:0;
+  }
+  .box:hover p{
+	left:0;
+  }
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<h1>我是标题</h1>
+		<p>股份及开工时间考虑把那些充满女不是科技公司肯定放假放道具卡老师教的佛奥阿卡就饿哦为日本开飞机稿为进而飞机改变</p>
+	</div>
+	<script>
+	   var h1=document.getElementsByTagName('h1')[0]
+       var p=document.getElementsByTagName('p')[0]
+       h1.addEventListener('transitionend',function(){
+       	h1.style.top='0'
+       },false)
+       p.addEventListener('transitionend',function(){
+       	p.style.left='0'
+       },false)
+	</script>
+</body>
+</html>

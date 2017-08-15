@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<canvas id='canvas' width='400' height='400' style='background:#eee;'></canvas>
+	<script>
+    var canvas=document.getElementById('canvas');
+    var cobj=canvas.getContext('2d');
+    var angle=0;
+    setInterval(function(){
+        angle+=2;
+        cobj.clearRect(0,0,400,400);
+        cobj.save();
+    	cobj.beginPath();
+        cobj.translate(100,100);
+        cobj.rotate(angle*Math.PI/180);
+        cobj.scale(Math.sin(angle*Math.PI/180),Math.sin(angle*Math.PI/180));
+        cobj.globalAlpha=Math.abs(Math.sin(angle*Math.PI/180));
+        star(0,0,70,25,5,'fill','red');
+        cobj.restore();
+    },40)
+
+    // star(100,100,50,20,5,'fill','lime')
+    function star(x,y,r1,r2,num,starType,color){
+    	var angle=360/(num*2);
+    	var arr=[];
+    	for(var i=0;i<2*num;i++){
+    		var starobj={};
+    		if(i%2==0){
+    			starobj.x=x+r1*Math.cos(i*angle*Math.PI/180);
+    			starobj.y=y+r1*Math.sin(i*angle*Math.PI/180)
+    		}else{
+    			starobj.x=x+r2*Math.cos(i*angle*Math.PI/180);
+    			starobj.y=y+r2*Math.sin(i*angle*Math.PI/180)
+    		}
+    		arr.push(starobj);
+    	}
+    	// 连线
+    	cobj.beginPath();
+    	cobj.fillStyle=color;
+    	cobj.strokeStyle=color;
+    	cobj.moveTo(arr[0].x,arr[0].y);
+    	for(var i=1;i<arr.length;i++){
+    		cobj.lineTo(arr[i].x,arr[i].y);
+    	}
+    	cobj.closePath();
+    	if(starType=='fill'){
+    		cobj.fill()
+    	}else{
+    		cobj.stroke();
+    	}
+    }
+	</script>
+</body>
+<ml>

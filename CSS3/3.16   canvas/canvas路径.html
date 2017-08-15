@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+     #canvas{
+     	background: #f5f5f5;
+     }
+	</style>
+</head>
+<body>
+	<canvas id='canvas' width='500' height='400'></canvas>
+	<script>
+     var canvas=document.getElementById('canvas')
+     var cobj=canvas.getContext('2d')
+
+     // 1.绘制矩形
+     // cobj.rect(0,0,100,100)
+     //创建路径
+     // cobj.stroke()
+     // 填充
+     // cobj.fill()
+     // cobj.strokeRect(0,0,100,100)
+     // rect()与strokeRect()区别
+     /*drawRect(100,100,100,100)
+     function drawRect(x,y,w,h){
+     	cobj.rect(x,y,w,h)
+     	cobj.stroke()
+     }*/
+
+     // 2.绘制线条
+     cobj.moveTo(0,0)
+     cobj.lineTo(100,200)
+     cobj.stroke()
+     cobj.beginPath()
+     cobj.lineTo(200,100)
+     cobj.lineTo(100,300)
+     cobj.lineTo(300,100)
+     cobj.closePath()
+     cobj.stroke()
+     cobj.beginPath()
+     cobj.lineTo(50,30)
+     cobj.lineTo(70,80)
+     cobj.stroke()
+	</script>
+</body>
+</html>

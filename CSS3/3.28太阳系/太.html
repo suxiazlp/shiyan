@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+    #canvas{
+    	background: lightgreen;
+    }
+	</style>
+</head>
+<body>
+	<canvas id='canvas' width='600' height='400'></canvas>
+	<script>
+	// 采用 window.requestAnimationFrame()实现动画效果。这个方法提供了更加平缓并更加有效的方式来执行动画，因为它只在系统准备好重绘时，才调用绘制动画帧。一般每秒钟回调函数执行60次，也有可能会被降低。
+	var canvas=document.getElementById('canvas');
+	var cobj=canvas.getContext('2d');
+	var x=200,y=200;
+
+	var sun=new Image();
+	var moon=new Image();
+	var earth=new Image();
+	sun.src = '1.png';
+	moon.src = '2.png';
+	earth.src = '3.png';
+	var num=0;
+	window.requestAnimationFrame(move)
+	function move(){
+		// 引入太阳的图片
+		cobj.drawImage(sun,50,50,300,300);
+		draw();
+		drawEarth();
+		window.requestAnimationFrame(move)
+	}
+	// 画太阳外的蓝线
+	function draw(){
+		cobj.beginPath();
+		cobj.strokeStyle='rgba(54,75,229,0.5)';
+		cobj.arc(x,y,100,0,2*Math.PI)
+		cobj.stroke();	
+	}
+	function drawEarth(){
+		cobj.beginPath();
+		num+=0.2;
+		var starx=x+100*Math.cos(num*Math.PI/180)-12,
+			stary=y+100*Math.sin(num*Math.PI/180)-12;
+		// 引入地球图片
+		cobj.drawImage(earth,starx,stary,24,24);
+		// 画地球外的圈
+		cobj.strokeStyle='rgba(0,0,0,0)';
+		cobj.arc(starx+12,stary+12,24,0,Math.PI*2);
+		cobj.stroke();
+		// 引入月球的图片
+		cobj.drawImage(moon,(starx+12)+24*Math.cos(6*num*Math.PI/180)-3.5,(stary+12)+24*Math.sin(6*num*Math.PI/180)-3.5,7,7);	
+	};
+	
+	</script>
+</body>
+</html>

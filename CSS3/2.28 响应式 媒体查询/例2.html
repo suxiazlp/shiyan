@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+.box{
+	width:100%;height:200px;
+	/*background: pink;*/
+    overflow: hidden;
+}
+.box1{
+	width:100%;height:200px;
+	/*background: pink;*/
+    overflow: hidden;
+}
+.inner{
+		width:24%;
+		height:200px;
+		border:1px solid #000;
+		box-sizing:border-box;
+        margin-left:1%;
+        float: left;
+	}
+.inner1{
+		width:32.3%;
+		height:200px;
+		border:1px solid #000;
+		box-sizing:border-box;
+        margin-left:1%;
+        float: left;
+	}
+@media screen and (min-width: 600px){
+	.innerc,.innerd{
+		display: none;
+	}
+	.innera,.innerb{
+		display: block;
+	}
+	.innerf,.innerg{
+		display: none;
+	}
+	.innere{
+		display: block;
+	}
+}
+@media screen and (min-width: 800px){
+	.innerd{
+		display: none;
+	}
+	.innera,.innerb,.innerc{
+		display: block;
+	}
+	.innere,.innerf{
+		display: block;
+	}
+	.innerg{
+		display: none;
+	}
+}
+@media screen and (min-width: 1200px){
+	.innera,.innerb,.innerc,.innerd{
+		display: block;
+	}
+	.innere,.innerf,.innerg{
+		display: block;
+	}
+}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="inner innera"></div>
+		<div class="inner innerb"></div>
+		<div class="inner innerc"></div>
+		<div class="inner innerd"></div>
+	</div>
+	<div class="box1">
+		<div class="inner1 innere"></div>
+		<div class="inner1 innerf"></div>
+		<div class="inner1 innerg"></div>
+	</div>
+</body>
+</html>

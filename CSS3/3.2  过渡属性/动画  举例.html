@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>animation</title>
+	<style>
+@keyframes aa{
+       0%{
+       	width:0px;
+       }
+       100%{
+       	width:600px;
+       }
+}
+.box{
+	width:300px;height:200px;border:solid 1px red;
+	animation: aa 1s;
+    animation:aa 1s steps(3,start) 1s;
+    /*到最终的范围  第一步不兼顾初始值*/
+    animation:aa 1s steps(3,end) 1s;
+    /*不到最终的范围  第一步兼顾初始值*/
+
+
+	/*打开页面就执行动画或暂停*/
+	/*animation-play-state:running;*/
+	/*animation-play-state:paused;*/
+
+    /*定格在结束状态*/
+	/*animation-fill-mode: forwards;*/
+	/*从0运动到400，再返回到默认宽度200*/
+	/*animation-fill-mode:backwards;*/
+    /*从0开始运动，400结束*/
+	/*animation-fill-mode:both;*/
+}
+
+
+
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		
+	</div>
+	<script>
+	// 动画结束，就定格在那个状态，需要用js
+	
+	 var div=document.getElementsByTagName('div')[0];
+	 // 只执行一次动画
+      setTimeout(function(){
+         div.style.animationPlayState='paused'
+      },999)
+     
+     // 定格动画
+     // div.addEventListener('animationend',function(){
+     // 	this.style.width="400px";
+     // })
+
+	</script>
+</body>
+<ml>

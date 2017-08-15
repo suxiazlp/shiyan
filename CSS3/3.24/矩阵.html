@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>基点</title>
+	<style>
+#canvas{
+	background-color: #ccc;
+}
+	</style>
+</head>
+<body>
+	<canvas id='canvas' height='600' width='1200'></canvas>
+	<script>
+var canvas=document.getElementById('canvas')
+var cobj=canvas.getContext('2d')
+/*cobj.translate(-100,-100)
+cobj.setTransform(1,0,0,1,200,200)
+cobj.fillRect(100,100,200,200)*/
+
+cobj.globalCompositeOperation='destination-over'
+/*source-over（默认值）:在原有图形上绘制新图形
+destination-over:在原有图形下绘制新图形
+source-in:显示原有图形和新图形的交集，新图形在上，所以颜色为新图形的颜色
+destination-in:显示原有图形和新图形的交集，原有图形在上，所以颜色为原有图形的颜色
+source-out:只显示新图形非交集部分
+destination-out:只显示原有图形非交集部分
+source-atop:显示原有图形和交集部分，新图形在上，所以交集部分的颜色为新图形的颜色
+destination-atop:显示新图形和交集部分，新图形在下，所以交集部分的颜色为原有图形的颜色
+lighter:原有图形和新图形都显示，交集部分做颜色叠加
+xor:重叠飞部分不现实
+copy:只显示新图形
+*/
+cobj.fillStyle='blue'
+cobj.fillRect(50,50,100,100)
+cobj.beginPath()
+cobj.fillStyle='red'
+cobj.arc(150,150,60,0,Math.PI*2)
+cobj.fill()
+	</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选择器</title>
+</head>
+<style>
+
+/*1.匹配div的后代p 包括儿子孙子*/
+    /* div p{
+    	color:red;
+    } */
+    
+/*2.匹配父为div儿子为p*/
+	/* div>p{
+		color:pink;
+	} */
+	
+/*3.匹配父元素中唯一的p元素*/
+	/* p:only-child{
+		font-size:40px;
+	} */
+
+/*4.匹配父元素中第二个子元素p(下标从1开始)*/
+    /* p:nth-child(2){
+    	color:red;
+    } */
+/*5.匹配父元素中倒数第二个子元素    */
+    /* p:nth-last-child(2){
+    	color:red;
+    }  */
+/*6.选择父元素中的第一个子元素p  */
+    /* p:first-child{
+    	color:red;
+    } */
+
+/*7.选择父元素中的第一个子元素p  */
+    /* p:last-child{
+         color:red;
+    }*/
+
+/*8.改变文档的颜色  */
+   /* :root{
+   	background: pink;
+   }  */
+
+/*9.匹配p标签中没有内容的p标签*/
+  /* p:empty{
+   width:50px;height: 10px;background: lightblue;
+   } */
+ :target{
+	border:2px solid #666;
+	background: lightyellow;
+} 
+a{
+  text-decoration:none;
+  color: green;
+}
+
+</style>
+<body>
+	<!-- <div>
+		<p>0</p>
+		<p>1</p>
+		<p>2</p>
+		<p>3</p>
+	</div>
+	<div>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+	</div>
+	<div>
+		<p>
+			5
+		</p>
+	</div> -->
+	<a href="#one">跳转内容一</a><br/>
+	<a href="#two">跳转内容二</a>
+	
+	<p id='one'>第一个</p>
+	<p id='two'>第二个</p>
+</body>
+</html>

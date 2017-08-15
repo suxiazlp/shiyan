@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	         <!-- 第一种方式   -->
+	<!-- 当屏幕大于等于800时引入该CSS -->
+	<!-- <link rel="stylesheet" href="css1.css" media='screen and (min-width:800px)'> -->
+	<!-- 当屏幕小于等于800时引入该CSS -->
+	<!-- <link rel="stylesheet" href="css.css" media='screen and (max-width:800px)'> -->
+
+	<style>
+	/*小于500*/
+/* @media screen and (max-width:500px){
+ 	.box{
+ 		width:100px;
+ 		height: 100px;
+ 		background:pink;
+ 	}
+ } */
+ /*500到800*/
+ /* @media screen and (min-width:500px){
+ 	.box{
+ 		width:100px;
+ 		height: 100px;
+ 		background: blue;
+ 	}
+ } */
+
+ /*800以上*/
+ /* @media screen and (min-width:800px){
+ 	.box{
+ 		width:100px;
+ 		height: 100px;
+ 		background: yellow;
+ 	}
+ } */
+
+ .box{
+ 	width:100%;
+ 	height:200px;
+ 	overflow: hidden;
+ }
+ /*小于400一个盒子*/
+@media screen and (max-width:400px){
+ 	.inner{
+ 		width:99%;
+ 		height: 200px;
+ 		border:2px solid #000;
+ 		box-sizing:border-box;
+ 		margin-left:1%;
+ 		float: left;
+ 	}
+ }
+ /*大于等于400两个盒子*/
+@media screen and (min-width:400px){
+ 	.inner{
+ 		width:49%;
+ 		height: 200px;
+ 		border:2px solid #f00;
+ 		box-sizing:border-box;
+ 		margin-left:1%;
+ 		float: left;
+ 	}
+ }
+ /*大于等于600三个盒子*/
+@media screen and (min-width:600px){
+ 	.inner{
+ 		width:32.3%;
+ 		height: 200px;
+ 		border:2px solid #bbb;
+ 		box-sizing:border-box;
+ 		margin-left:1%;
+ 		float: left;
+ 	}
+ }
+ /*大于等于800四个盒子*/
+@media screen and (min-width:800px){
+ 	.inner{
+ 		width:24%;
+ 		height: 200px;
+ 		border:2px solid #ff0f0f;
+ 		box-sizing:border-box;
+ 		margin-left:1%;
+ 		float: left;
+ 	}
+ }
+ /*大于等于1000五个盒子*/
+ @media screen and (min-width:1000px){
+ 	.inner{
+ 		width:19%;
+ 		height: 200px;
+ 		border:2px solid #ade332;
+ 		box-sizing:border-box;
+ 		margin-left:1%;
+ 		float: left;
+ 	}
+ }
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="inner"></div>
+		<div class="inner"></div>
+		<div class="inner"></div>
+		<div class="inner"></div>
+		<div class="inner"></div>
+	</div>
+</body>
+</html>

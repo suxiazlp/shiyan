@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>太阳系</title>
+</head>
+<body>
+	<canvas id='canvas' width='1349px' height='633px'></canvas>
+	<script>
+var canvas=document.getElementById('canvas')
+var cobj=canvas.getContext('2d')
+var x=630,y=360;
+var num=0,num1=0
+function move(){
+	cobj.clearRect(0,0,1349,633)
+// 第一个星
+    cobj.beginPath();
+    cobj.fillStyle='lightblue';
+    cobj.arc(x,y,20,0,Math.PI*2);
+    cobj.fill()
+//大环    
+    cobj.beginPath();
+    cobj.arc(x,y,200,0,Math.PI*2);
+    cobj.stroke()
+ // 第二颗星
+  	num+=10;
+    cobj.beginPath();
+    cobj.fillStyle='yellow';
+    cobj.arc(x+200*Math.cos(num*Math.PI/180),y+200*Math.sin(num*Math.PI/180),12,0,Math.PI*2);
+    cobj.fill();
+//二环    
+    cobj.beginPath();
+    cobj.arc(x+200*Math.cos(num*Math.PI/180),y+200*Math.sin(num*Math.PI/180),50,0,Math.PI*2);
+    // cobj.stroke()
+
+// 第3颗星
+    var hx=x+200*Math.cos(num*Math.PI/180)
+  	var hy=y+200*Math.sin(num*Math.PI/180)
+  	num1+=15;
+  	cobj.beginPath();
+    cobj.fillStyle='red';
+    cobj.arc(hx+50*Math.cos(num1*Math.PI/180),hy+50*Math.sin(num1*Math.PI/180),12,0,Math.PI*2);
+    cobj.fill();
+}
+setInterval(move,150)    
+</script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>九星连珠</title>
+	<style>
+     
+	</style>
+</head>
+<body>
+	<canvas id='canvas' width='1349px' height='633px'></canvas>
+	<script>
+var canvas=document.getElementById('canvas')
+var cobj=canvas.getContext('2d')
+/*    var x=750,y=360;
+    var num=0,num1=0,num2=0,num3=0,num4=0,num5=0,num6=0,num7=0,num8=0,num9=0;
+    function move(){
+    cobj.clearRect(0,0,1200,800)
+    // 第一个星
+    cobj.beginPath();
+    cobj.fillStyle='lightblue';
+    cobj.arc(x,y,12,0,Math.PI*2);
+    cobj.fill()
+    // 第一个圈
+    cobj.beginPath();
+    for(var i=0;i<360;i++){
+    	cobj.lineTo(x+35*Math .cos(i*Math.PI/180),y+35*Math.sin(i*Math.PI/180));
+    	cobj.stroke();
+    }
+     // 第二颗星
+  	num+=17;
+    cobj.beginPath();
+    cobj.fillStyle='yellow';
+    cobj.arc(x+35*Math.cos(num*Math.PI/180),y+35*Math.sin(num*Math.PI/180),12,0,Math.PI*2);
+    cobj.fill();
+  
+
+
+
+
+   // 第二个圈
+    cobj.beginPath();
+    for(var i=0;i<360;i++){
+    	cobj.lineTo(x+70*Math.cos(i*Math.PI/180),y+70*Math.sin(i*Math.PI/180));
+    	cobj.stroke();
+    } 
+     // 第三颗星
+  	num1+=13;
+    cobj.beginPath();
+    cobj.fillStyle='blue';
+    cobj.arc(x+70*Math.cos(num1*Math.PI/180),y+70*Math.sin(num1*Math.PI/180),12,0,Math.PI*2);
+    cobj.fill();
+
+
+
+
+ // 第三个圈
+    cobj.beginPath();
+    for(var i=0;i<360;i++){
+    	cobj.lineTo(x+105*Math.cos(i*Math.PI/180),y+105*Math.sin(i*Math.PI/180));
+    	cobj.stroke();
+    } 
+     // 第四颗星
+  	num2+=12;
+    cobj.beginPath();
+    cobj.fillStyle='red';
+    cobj.arc(x+105*Math.cos(num2*Math.PI/180),y+105*Math.sin(num2*Math.PI/180),12,0,Math.PI*2);
+    cobj.fill();
+
+
+
+ // 第4个圈
+    cobj.beginPath();
+    for(var i=0;i<360;i++){
+    	cobj.lineTo(x+140*Math.cos(i*Math.PI/180),y+140*Math.sin(i*Math.PI/180));
+    	cobj.stroke();
+    } 
+     // 第5颗星
+  	num3+=11;
+    cobj.beginPath();
+    cobj.fillStyle='gray';
+    cobj.arc(x+140*Math.cos(num3*Math.PI/180),y+140*Math.sin(num3*Math.PI/180),12,0,Math.PI*2);
+    cobj.fill();
+
+// 第5个圈
+    cobj.beginPath();
+    for(var i=0;i<360;i++){
+    	cobj.lineTo(x+175*Math.cos(i*Math.PI/180),y+175*Math.sin(i*Math.PI/180));
+    	cobj.stroke();
+    } 
+     // 第6颗星
+  	num4+=10;
+    cobj.beginPath();
+    cobj.fillStyle='gray';
+    cobj.arc(x+175*Math.cos(num4*Math.PI/180),y+175*Math.sin(num4*Math.PI/180),12,0,Math.PI*2);
+    cobj.fill();
+
+
+// 第6个圈
+    cobj.beginPath();
+    for(var i=0;i<360;i++){
+    	cobj.lineTo(x+210*Math.cos(i*Math.PI/180),y+210*Math.sin(i*Math.PI/180));
+    	cobj.stroke();
+    } 
+     // 第7颗星
+  	num5+=10;
+    cobj.beginPath();
+    cobj.fillStyle='gray';
+    cobj.arc(x+210*Math.cos(num5*Math.PI/180),y+210*Math.sin(num5*Math.PI/180),12,0,Math.PI*2);
+    cobj.fill();
+
+
+// 第7个圈
+    cobj.beginPath();
+    for(var i=0;i<360;i++){
+    	cobj.lineTo(x+245*Math.cos(i*Math.PI/180),y+245*Math.sin(i*Math.PI/180));
+    	cobj.stroke();
+    } 
+     // 第8颗星
+  	num6+=9;
+    cobj.beginPath();
+    cobj.fillStyle='yellow';
+    cobj.arc(x+245*Math.cos(num5*Math.PI/180),y+245*Math.sin(num5*Math.PI/180),12,0,Math.PI*2);
+    cobj.fill();
+
+
+
+// 第7个圈
+    cobj.beginPath();
+    for(var i=0;i<360;i++){
+    	cobj.lineTo(x+280*Math.cos(i*Math.PI/180),y+280*Math.sin(i*Math.PI/180));
+    	cobj.stroke();
+    } 
+// 第8颗星
+  	num7+=8;
+    cobj.beginPath();
+    cobj.fillStyle='blue';
+    cobj.arc(x+280*Math.cos(num7*Math.PI/180),y+280*Math.sin(num7*Math.PI/180),12,0,Math.PI*2);
+    cobj.fill();
+
+
+}
+setInterval(move,100)*/
+
+
+
+
+
+
+
+
+var arr=['pink','orange','yellow','green','lime','blue','purple','gray','red']
+
+for(var i=0;i<10;i++){
+	cobj.beginPath()
+ 	cobj.arc(635,300,15+i*30,0,Math.PI*2)
+ 	cobj.stroke()
+ }
+ cobj.beginPath()
+ cobj.arc(635,300,15,0,Math.PI*2)
+ cobj.fillStyle='red'
+ cobj.stroke()
+ cobj.fill()
+
+ for(var j=0;j<9;j++){
+ 	cobj.beginPath()
+ 	cobj.arc(635,300-45-j*30,15,0,Math.PI*2)
+ 	cobj.fillStyle=arr[j]
+ 	cobj.stroke()
+ 	cobj.fill()
+ }
+
+/*setInterval(xz,50)
+function xz(){
+ for(var j=0;j<9;j++){
+ 	cobj.beginPath()
+ 	var zx=300-45-j*30
+ 	var xd=Math.cos(10*Math.PI/180)
+ 	var yd=Math.sin(10*Math.PI/180)
+ 	cobj.arc(635+(15+i*30)*xd,zx-(15+i*30)*yd,15,0,Math.PI*2)
+ 	cobj.fillStyle=arr[j]
+ 	cobj.stroke()
+ 	cobj.fill()
+ }
+ }*/
+	</script>
+</body>
+</html>

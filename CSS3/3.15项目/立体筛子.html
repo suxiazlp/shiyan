@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+    body{
+    	height:100%;
+    	background: lightgreen;
+    	perspective:10000px;
+    }
+    .click{
+        width:60px;
+    }
+    .bgbox{
+    	width:200px;
+    	height:200px;
+    	position: relative;
+    	margin:200px auto;
+    	transform-style:preserve-3d;
+    }
+    .box{
+        width:200px;
+        height:200px;
+        position: absolute;
+        top:0;left:0;
+    }
+    /*点一*/
+    .innerbox1{
+    	width:200px;
+    	height:200px;
+    	background: rgba(255,255,0,0.5);
+    	display: flex;
+    	justify-content:center;
+    	align-items:center;
+    }
+     .innerbox2{
+    	width:200px;
+    	height:200px;
+    	background: rgba(255,0,0,0.5);
+    	display: flex;
+    	flex-direction:column;
+    	justify-content:space-around;
+    	align-items:center;
+    }
+    .innerbox3{
+    	width:200px;
+    	height:200px;
+    	background: rgba(0,255,0,0.5);
+    	display: flex;
+    	flex-direction:column;
+    	justify-content:space-around;
+    	align-items:cener;
+   }
+   .innerbox3 .inner:nth-of-type(2){
+   	   align-self:center;
+   }
+   .innerbox3 .inner:nth-of-type(3){
+   	   align-self:flex-end;
+   }
+   .innerbox4{
+    	width:200px;
+    	height:200px;
+    	background: rgba(0,0,255,0.5);
+    	display: flex;
+    	justify-content:space-around;
+    	
+   }
+   .colbox{
+   	    display: flex;
+        flex-direction:column;
+        justify-content:space-around;
+   }
+
+   .innerbox5{
+    	width:200px;
+    	height:200px;
+    	background: rgba(0,255,255,0.5);
+    	display: flex;
+    	justify-content:space-around;
+    	
+   }
+   .innerbox6{
+    	width:200px;
+    	height:200px;
+    	background: rgba(188,188,188,0.5);
+    	display: flex;
+    	justify-content:space-around;
+    	
+   }
+/*小圆点*/
+    .inner{
+    	width:40px;
+    	height:40px;
+    	background: #000;
+    	border-radius: 50%;
+    }
+    /*立方体*/
+    .box:nth-of-type(1){
+    	animation:box1 3s ease;
+    }
+    .box:nth-of-type(2){
+    	left:-200px;
+    	top:0;
+    	transform-origin:right;
+    	transform:rotateY(90deg);
+    	animation:box2 3s ease;
+    }
+    .box:nth-of-type(3){
+    	top:-200px;
+    	left:0;
+    	transform-origin:bottom;
+    	transform:rotateX(-90deg);
+    	animation:box3 3s ease;
+    }
+    .box:nth-of-type(4){
+    	left:200px;
+    	top:0;
+    	transform-origin:left;
+    	transform:rotateY(-90deg);
+    	animation:box4 3s ease;
+    }
+    .box:nth-of-type(5){
+    	left:0px;
+    	top:200px;
+    	transform-origin:top;
+    	transform:rotateX(90deg);
+    	animation:box5 3s ease;
+    }
+   .box:nth-of-type(6){
+    	transform:translateZ(200px);
+    	animation:box6 3s ease;
+    }
+    .bgbox{
+    	
+    	transform-origin:center center 100px;
+    }
+    .bgbox:hover{
+    	transition:all 3s;
+    	transform:rotateY(270deg)
+    }
+/*动画扩张进程*/
+@keyframes box1{
+	0%{
+       transform:translateZ(0px);
+	}
+	50%{
+       transform:translateZ(-200px);
+	}
+
+}
+ @keyframes box2{
+	0%{
+		transform:rotateY(90deg);
+       transform:translateZ(0px);
+	}
+	50%{
+		transform:rotateY(90deg);
+       transform:translateZ(-200px);
+	}
+
+} 
+@keyframes box3{
+	0%{
+		transform:rotateX(-90deg);
+       transform:translateZ(0px);
+	}
+	50%{
+		transform:rotateX(-90deg);
+       transform:translateZ(200px);
+	}
+
+} 
+@keyframes box4{
+	0%{
+		transform:rotateY(-90deg);
+       transform:translateY(0px);
+	}
+	50%{
+		transform:rotateY(-90deg);
+       transform:translateY(-200px);
+	}
+
+} 
+@keyframes box5{
+	0%{
+	   transform:rotateX(90deg);
+       transform:translateZ(0px);
+	}
+	50%{
+		transform:rotateX(90deg);
+       transform:translateZ(200px);
+	}
+
+} 
+@keyframes box6{
+	0%{
+       transform:translateZ(0px);
+	}
+	50%{
+       transform:translateZ(200px);
+	}
+
+} 
+	</style>
+</head>
+<body>
+	<div class="click"></div>
+	<div class="bgbox">
+		<div class="box">
+			<div class="innerbox1">
+				<div class="inner"></div>
+			</div>
+		</div>
+		<div class="box">
+			<div class="innerbox2">
+				<div class="inner"></div>
+				<div class="inner"></div>
+			</div>
+		</div>
+		<div class="box">
+			<div class="innerbox3">
+				<div class="inner"></div>
+				<div class="inner"></div>
+				<div class="inner"></div>
+			</div>
+		</div>
+		<div class="box">
+			<div class="innerbox4">
+				<div class="colbox">
+				    <div class="inner"></div>
+				    <div class="inner"></div>
+				</div>
+				<div class="colbox">
+				    <div class="inner"></div>
+				    <div class="inner"></div>
+				</div>
+			</div>
+		</div>
+		<div class="box">
+			<div class="innerbox5">
+				<div class="colbox">
+					<div class="inner"></div>
+					<div class="inner"></div>
+				</div>
+				<div class="colbox">
+					<div class="inner"></div>
+				</div>
+				<div class="colbox">
+					<div class="inner"></div>
+					<div class="inner"></div>
+				</div>
+			</div>
+		</div>
+		<div class="box">
+			<div class="innerbox6">
+				<div class="colbox">
+					<div class="inner"></div>
+					<div class="inner"></div>
+					<div class="inner"></div>
+				</div>
+				<div class="colbox">
+					<div class="inner"></div>
+					<div class="inner"></div>
+					<div class="inner"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+var num=0,
+    num1=0,
+    bigbox=$('.bgbox');
+    function move(){
+     num+=90*Math.ceil(Math.random()*4)
+     num1+=90*Math.ceil(Math.random()*4)
+     bigbox.css({'transform'})
+    }
+	</script>
+</body>
+</html>

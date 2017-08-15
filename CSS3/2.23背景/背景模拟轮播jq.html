@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+.box{
+     	width:400px;height: 560px;
+     	margin:10px auto;
+     	background-color: pink;
+     	background-image: url(a.jpg),url(b.jpg),url(c.jpg),url(d.jpg), url(e.jpg);
+     	background-repeat: no-repeat;
+     	background-position: -800px 0,0 0,-800px 0,-800px 0,-800px 0;
+       background-size: cover;
+
+
+     }
+	</style>
+</head>
+<body>
+	<div class="box box1" id='box'></div>
+	<script src='jquery-1.11.2.js'></script>
+	<script>
+    var box=$('#box')
+    var bp=box.css("background-position")
+    var arr=bp.split(',')
+    // alert(typeof arr)
+    var num=0
+    setInterval(function(){
+         num++
+         if(num>=arr.length){
+           num=0
+      }
+         for(var i=0;i<arr.length;i++){
+            if(num==i){
+                arr[i]='0 0' 
+            }else{
+                arr[i]='-800px 0'
+            }
+         }
+         var newarr=arr.join(',')
+         box.style.backgroundPosition=newarr
+      },1000)
+    
+
+	</script>
+</body>
+</html>

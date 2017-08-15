@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>基点</title>
+	<style>
+#canvas{
+	background-color: #ccc;
+}
+	</style>
+</head>
+<body>
+	<canvas id='canvas' height='600' width='1200'></canvas>
+	<script>
+var canvas=document.getElementById('canvas')
+var cobj=canvas.getContext('2d')
+cobj.rect(50,50,100,100)
+cobj.fill()
+  var angle=0
+  var scale=1
+    canvas.onclick=function(e){
+    var cx=e.offsetX
+     var cy=e.offsetY
+     if(cobj.isPointInPath(cx,cy)){
+        setInterval(function(){
+        cobj.clearRect(-50,-50,900,600)
+     	angle+=5
+     	scale++
+     	/*if(scale<=0){
+     		scale=1
+     	}else{
+            scale-=0.02
+        }*/
+     	cobj.save()
+     	cobj.beginPath()
+     	cobj.translate(100,100)
+     	cobj.rotate(angle*Math.PI/180)
+     	cobj.scale(Math.sin(scale*Math.PI/180),Math.sin(scale*Math.PI/180))
+     	cobj.rect(-50,-50,100,100)
+     	cobj.fill()
+     	cobj.restore()
+     	},60)
+     }
+    }
+	</script>
+</body>
+</html>

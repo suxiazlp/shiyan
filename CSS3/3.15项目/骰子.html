@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>骰子</title>
+    <style>
+    body{
+        height:100%;background:lightgreen;
+        perspective:10000px;
+    }
+    .bigbox{
+        width:200px;height:200px;
+        margin:200px auto;
+        position: relative;
+        transform-origin:center center 150px;
+        transform-style:preserve-3d;
+        transition:all 3s;
+    }
+     /* .bigbox:hover{  
+        transform:rotateY(270deg);
+         }  */
+    .box{
+        width:200px;height:200px;
+        position: absolute;
+        top:0;left:0; 
+/*      perspective:10000px;*/
+    }
+    /*点一*/
+    .innerbox1{
+        width:200px;height:200px;
+        background: rgba(255,255,0,0.5);
+        display: flex;
+        justify-content:center;
+        align-items:center;
+    }
+    /*点二*/
+    .innerbox2{
+        width:200px;height:200px;
+        background: rgba(255,0,0,0.5);
+        display: flex;
+        flex-direction:column;
+        justify-content:space-around;
+        align-items:center;
+    }
+    /*点三*/
+    .innerbox3{
+        width:200px;height:200px;
+        background: rgba(0,255,0,0.5);
+        display: flex;
+        flex-direction:column;
+        justify-content:space-around;
+    }
+    .innerbox3 .inner:nth-of-type(2){
+        align-self:center;
+    }
+    .innerbox3 .inner:nth-of-type(3){
+        align-self:flex-end;
+    }
+    /*点四*/
+    .innerbox4{
+        width:200px;height:200px;
+        background: rgba(0,0,255,0.5);
+        display: flex;
+        justify-content:space-around;
+    }
+    .colbox{
+        display: flex;
+        flex-direction:column;
+        justify-content:space-around;
+    }
+    /*点五*/
+    .innerbox5{
+        width:200px;height:200px;
+        background: rgba(0,255,255,0.5);
+        display: flex;
+        justify-content:space-around;
+    }
+    /*点六*/
+    .innerbox6{
+        width:200px;height:200px;
+        background: rgba(255,0,255,0.5);
+        display: flex;
+        justify-content:space-around;
+    }
+    /*小圆点*/
+    .inner{
+        width:40px;height:40px;
+        background: #000;
+        border-radius: 50%;
+    }
+    /*动画扩张进程*/
+    @keyframes box1{
+        0%{
+            transform:translateZ(0);
+        }
+        50%{
+           transform:translateZ(-150px); 
+        }
+    }
+    @keyframes box2{
+        0%{
+            transform:rotateY(90deg) translateZ(0);
+        }
+        50%{
+           transform:rotateY(90deg) translateZ(-150px); 
+        }
+    }
+    @keyframes box3{
+        0%{
+            transform:rotateX(-90deg) translateZ(0);
+        }
+        50%{
+           transform:rotateX(-90deg) translateZ(-150px); 
+        }
+    }
+    @keyframes box4{
+        0%{
+            transform:rotateY(-90deg) translateZ(0);
+        }
+        50%{
+           transform:rotateY(-90deg) translateZ(-150px); 
+        }
+    }
+    @keyframes box5{
+        0%{
+            transform:rotateX(90deg) translateZ(0);
+        }
+        50%{
+           transform:rotateX(90deg) translateZ(-150px); 
+        }
+    }
+    @keyframes box6{
+        0%{
+            transform:translateZ(200px);
+        }
+        50%{
+           transform:translateZ(350px); 
+        }
+    }
+    /*立方体*/
+    .box:nth-of-type(1){
+        animation:box1 2s ease infinite;
+    }
+    .box:nth-of-type(2){
+        left:-200px;top:0;
+        transform-origin:right;
+        transform:rotateY(90deg);
+        animation:box2 2s ease infinite;
+    }
+    .box:nth-of-type(3){
+        left:0;top:-200px;
+        transform-origin:bottom;
+        transform:rotateX(-90deg);
+        animation:box3 2s ease infinite;
+    }
+    .box:nth-of-type(4){
+        left:200px;top:0;
+        transform-origin:left;
+        transform:rotateY(-90deg);
+        animation:box4 2s ease infinite;
+    }
+    .box:nth-of-type(5){
+        left:0;top:200px;
+        transform-origin:top;
+        transform:rotateX(90deg);
+        animation:box5 2s ease infinite;
+    }
+    .box:nth-of-type(6){
+        transform:translateZ(200px);
+        animation:box6 2s ease infinite;
+    }
+    .bigbox .box{
+        animation-play-state:paused;
+    }
+    .click{
+        width:60px;height:60px;
+        box-shadow: 0 0 10px #000;
+        border-radius: 50%;
+        background: #222;
+        position: fixed;
+        top:20px;
+        left:20px;
+    }
+    </style>
+</head>
+<body>
+    <div class="bigbox">
+        <div class="box">
+            <div class="innerbox1">
+                <div class="inner"></div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="innerbox2">
+                <div class="inner"></div>
+                <div class="inner"></div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="innerbox3">
+                <div class="inner"></div>
+                <div class="inner"></div>
+                <div class="inner"></div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="innerbox4">
+                <div class="colbox">
+                    <div class="inner"></div>
+                    <div class="inner"></div>
+                </div>
+                <div class="colbox">
+                    <div class="inner"></div>
+                    <div class="inner"></div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="innerbox5">
+                <div class="colbox">
+                    <div class="inner"></div>
+                    <div class="inner"></div>
+                </div>
+                <div class="colbox">
+                    <div class="inner"></div>
+                </div>
+                <div class="colbox">
+                    <div class="inner"></div>
+                    <div class="inner"></div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="innerbox6">
+                <div class="colbox">
+                    <div class="inner"></div>
+                    <div class="inner"></div>
+                    <div class="inner"></div>
+                </div>
+                <div class="colbox">
+                    <div class="inner"></div>
+                    <div class="inner"></div>
+                    <div class="inner"></div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <div class="click"></div>
+    <script src='jquery-1.11.2.js'></script>
+    <script>
+    var num=0,
+        num1=0,
+        bigbox=$('.bigbox'),
+        btn=$('.click'),
+        box=$('.box');
+    function move(){
+        num+=90*Math.ceil(Math.random()*4);
+        num1+=90*Math.ceil(Math.random()*4);
+        bigbox.css({'transform':'rotateX('+num+'deg) rotateY('+num1+'deg)'})
+    }
+    btn.click(function(){
+        move();
+        box.css({'animationPlayState':'running'});
+        // 当一个box盒子动画完成时
+        // webkitAnimationIteration是用来检测infinite属性的
+        $('.box')[0].addEventListener('webkitAnimationIteration',function(){
+            box.css({'animationPlayState':'paused'});
+        })
+    })
+    </script>
+</body>
+</html>

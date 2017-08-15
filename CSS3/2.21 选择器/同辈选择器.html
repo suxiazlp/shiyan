@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>同辈选择器</title>
+	<style>
+	/*1.选择紧接在div后的p元素*/
+   /* div+p{
+   	color:yellow;
+   	font-size: 20px;
+   } */
+   /*2.选择前面有p元素的所有ul*/
+   /* p~ul{
+   	color:red;
+   	font-size:25px;
+   } */
+   /*3.匹配同级兄弟中第一个p元素*/
+   /* p:first-of-type{
+   	color:orange;
+   	font-size:25px;
+   } */
+    /*4.匹配同级兄弟中第一个p元素*/
+   /* p:last-of-type{
+        color:orange;
+        font-size:25px;
+    }  */
+    /*5.匹配同类型中只有唯一兄弟的标签*/
+  /*   span:only-of-type{
+  	color:red;
+  } */
+  /*6.匹配同类型中的第n个同级兄弟元素*/
+  /* p:nth-of-type(2){
+    color:green;
+    font-size: 20px;
+  } */
+ /*7.匹配同类型中的倒数第n个同级兄弟元素*/
+   p:nth-last-of-type(1){
+    color:green;
+    font-size: 20px;
+  } 
+	</style>
+</head>
+<body>
+	<div>
+	  <span>777</span>
+      <p>444</p>
+      <p>555</p>
+      <p>666</p>
+	</div>
+	<p>111</p>
+	<p>222</p>
+	<p>333</p>
+	<ul>
+		<li>one</li>
+		<li>two</li>
+	</ul>
+	<ul>
+		<li>three</li>
+		<li>four</li>
+	</ul>
+</body>
+</html>

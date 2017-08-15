@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>练习属性选择器</title>
+	<style>
+/*1.带有target属性所有元素*/
+     /* a[target]{
+         background: yellow;
+     } */
+/*2.带有target=_blank的所有元素*/
+     /* a[target=_blank]{
+         background: red;
+     } */
+/*3.选择class的属性值以two开头的所有元素   */
+    /* div[class=two]{
+    	background: lightblue;
+    } */
+/*4.选择class的属性值以three结尾的所有元素   */
+     /* div[class$=three]{
+         	background: lightgreen;
+         }  */
+/*5.选择class的属性值中包含e的所有元素   */
+     /*  div[class*=e]{
+        	background: lightgreen;
+        }   */
+
+
+       /*UI伪类选择器*/
+
+
+/*6.选择可以用的文本框       */
+    /* input[type="text"]:enabled
+      {
+         background:#ffff00;
+     }   */
+/*7.选择不可以用的文本框       */
+     /* input[type="text"]:disabled
+           {
+              background:pink;
+          }  */ 
+/*8.选择不可以用的文本框  */
+      /* input[type="text"]:checked
+          {
+           background:pink;
+         }  */ 
+
+   input:checked+span{background:#f00;}
+input:checked+span:after{content:" 我被选中了";}      
+/*9.选择非div的所有元素 */
+  /* :not(p){
+      color:red;
+  } */
+/*10.当鼠标选取文字时。字体颜色发生变化*/
+  ::selection{
+  	color:yellow;
+  }
+  ::-moz-selection
+    {
+    color:#ff0000;
+   }
+	</style>
+</head>
+<body>
+	<!-- <p>
+    <a href="">链接三</a>
+    <a href="" target="_blank">链接一</a>
+    <a href="" target="_top">链接二</a>
+  </p>
+  <p></p>
+  <div class="one">内容1</div>
+  <div class="two">内容2</div>
+  <div class="one">内容3</div>
+  <div class="two">内容4</div>
+  <div class="three">内容5</div>
+  
+  <input type="text" disabled>
+  <input type="text">
+  <input type="text" checked='checked'> -->
+
+
+  <form method="post" action="#">
+<fieldset>
+  <legend>选中下面的项试试</legend>
+  <ul>
+    <li><label><input type="radio" name="colour-group" value="0" /><span>蓝色</span></label></li>
+    <li><label><input type="radio" name="colour-group" value="1" /><span>红色</span></label></li>
+    <li><label><input type="radio" name="colour-group" value="2" /><span>黑色</span></label></li>
+  </ul>
+</fieldset>
+<fieldset>
+  <legend>选中下面的项试试</legend>
+  <ul>
+    <li><label><input type="checkbox" name="colour-group2" value="0" /><span>蓝色</span></label></li>
+    <li><label><input type="checkbox" name="colour-group2" value="1" /><span>红色</span></label></li>
+    <li><label><input type="checkbox" name="colour-group2" value="2" /><span>黑色</span></label></li>
+  </ul>
+</fieldset>
+</form>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>红旗</title>
+	<style>
+	#canvas{
+		background:red;
+	}
+
+</style>
+</head>
+<body>
+	<canvas id='canvas' width=650 height=500></canvas>
+	<script>
+var canvas=document.getElementById('canvas');
+var cobj=canvas.getContext('2d');
+star(130,140,85,35,5,'fill','yellow')
+star(320,70,40,15,5,'fill','yellow')
+star(340,150,40,15,5,'fill','yellow')
+star(325,230,40,15,5,'fill','yellow')
+star(260,300,40,15,5,'fill','yellow')
+// 圆心位置x,y，大圆半径r1,小圆半径r2,例如，五角星，那么num就是5,startype意思是星星是绘制，还是填充
+var angle=0;
+function star(x,y,r1,r2,num,startype,color){
+	// 放每个点的数组
+	var stararr=[];
+	angle=360/(2*num);
+	// 循环每个点
+	for(var i=0;i<2*num;i++){
+      // starobj是画的每个星星
+        var starobj={};
+        // 判断是大圆上的五个偶数点，还是小圆上的五个奇数点
+        if(i%2==0){
+        	starobj.x=x+r1*Math.cos(i*Math.PI/180*angle);
+        	starobj.y=y+r1*Math.sin(i*Math.PI/180*angle);
+        }else{
+        	starobj.x=x+r2*Math.cos(i*Math.PI/180*angle);
+        	starobj.y=y+r2*Math.sin(i*Math.PI/180*angle);
+        }
+        // 把循环的每个点放到数组里
+        stararr.push(starobj);
+	}
+	// 连接每个点
+	cobj.beginPath();
+	cobj.fillStyle=color;
+	cobj.strokeStyle=color;
+	cobj.moveTo(stararr[0].x,stararr[0].y);
+	for(var i=1;i<stararr.length;i++){
+      cobj.lineTo(stararr[i].x,stararr[i].y);
+	}
+	cobj.closePath();
+    // 判断是填充，还是绘制
+    if(startype=='fill'){
+    	cobj.fill()
+    }else{
+    	cobj.stroke()
+    }
+}
+</script>
+</body>
+</html>

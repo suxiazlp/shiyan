@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+    body,html{
+    	margin:0;padding: 0;overflow: hidden;
+    }
+    canvas{
+    	background: #eee;
+    }
+	</style>
+</head>
+<body>
+	<canvas id='canvas'></canvas>
+	<img src="1.jpg" alt="" hidden>
+	<img src="2.jpg" alt="" hidden>
+	<img src="3.jpg" alt="" hidden>
+	<img src="4.jpg" alt="" hidden>
+	<img src="5.jpg" alt="" hidden>
+	<img src="6.jpg" alt="" hidden>
+	<img src="18.jpg" alt="" hidden>
+	<script>
+    var canvas=document.getElementById('canvas');
+    var img=document.getElementsByTagName('img');
+    //获取浏览器的宽高
+    var w=document.documentElement.clientWidth;
+    var h=document.documentElement.clientHeight;
+    //将浏览器的宽高赋值给画布 
+    canvas.width=w;
+    canvas.height=h;
+    var cobj=canvas.getContext('2d');
+    //声明弹性系数和摩擦力为0.8
+    var spring=0.8,friction=0.8;
+    var timer;
+    // 小lv按钮
+    cobj.beginPath();
+    cobj.fillStyle='lime';
+    cobj.rect(0,0,50,50);
+    cobj.fill();
+    // 点击画布
+    canvas.onclick=function(e){
+    	var cx=e.clientX;
+    	var cy=e.clientY; 
+    	//判断鼠标是否在cobj中
+    	if(cobj.isPointInPath(cx,cy)){
+    		//点击一次之后把上次的动画清除掉
+    		clearInterval(timer);
+    		var arr=create();
+    		//加上setInterval每100毫秒动一次
+    		timer=setInterval(function(){
+    			cobj.clearRect(0,0,canvas.width,canvas.height);
+	    		for(var i=0;i<arr.length;i++){
+	    			draw(arr[i]);
+	    		}
+	    		// 小lv按钮 
+			    cobj.beginPath();
+			    cobj.fillStyle='lime';
+			    cobj.rect(0,0,50,50);
+			    cobj.fill();
+
+    		},60)
+    	}
+    }
+    // 绘制每一个线条连着图片的函数
+    function draw(obj){
+    	//弹性公式
+    	obj.vx+=(obj.targetX-obj.spriteX)*spring;
+		obj.vy+=(obj.targetY-obj.spriteY)*spring;
+		obj.spriteX+=(obj.vx*=friction);
+		obj.spriteY+=(obj.vy*=friction);
+        //绘制竖线模型
+		cobj.beginPath();
+		//线宽8
+		cobj.lineWidth=8;
+		cobj.strokeStyle='blue';
+		//开始绘制是初始的位置
+		cobj.moveTo(obj.startX,obj.startY);
+		//结束位置是变化中的位置
+		cobj.lineTo(obj.spriteX,obj.spriteY);
+		cobj.stroke();
+		//引入图片
+		cobj.drawImage(obj.src,obj.spriteX-obj.width/2,obj.spriteY,obj.width,obj.height);
+    }
+    function create(){
+    	var imgarr=[];
+    	//循环每一张图片
+    	for(var i=0;i<img.length;i++){
+    		//创建对象
+	    	var imgobj={
+	    		src:img[i],
+	    		vx:0,
+	    		vy:0,
+	    		targetX:180*(i+1),
+	    		targetY:Math.random()*280+100,
+	    		startX:180*(i+1),
+	    		startY:-100,
+	    		spriteX:180*(i+1),
+	    		spriteY:-100,
+	    		width:180,
+	    		height:180
+	    	}
+	    	//把每次创建的imgobj对象放入imgarr
+	    	imgarr.push(imgobj);
+    	}
+    	//返回数组
+    	return imgarr;
+    }
+	</script>
+</body>
+</html>

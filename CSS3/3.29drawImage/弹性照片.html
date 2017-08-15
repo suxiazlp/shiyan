@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>弹性公式</title>
+	<style>
+    #canvas{
+    	background: #eee;
+    }
+    </style>
+</head>
+<body>
+	<canvas id='canvas' width='1349' height='620'></canvas>
+	<script>
+   /*vx/vy代表的是速度 
+     targetX/targetY目标位置
+     spriteX/spriteY变化中的位置
+     spring:弹性系数;
+     friction:摩擦力;
+    */
+  /*vx += (targetX – spriteX) * spring;
+    vy += (targetY – spriteY) * spring;
+    spriteX += (vx *= friction);
+    spriteY += (vy *= friction) */
+     var canvas=document.getElementById('canvas')
+     var cobj=canvas.getContext('2d')
+     cobj.beginPath()
+     cobj.rect(0,100,50,70)
+     cobj.fillStyle='pink'
+     cobj.fill()
+     cobj.closePath()
+     canvas.onclick=function(e){
+         var ox=e.offsetX;
+         var oy=e.offsetY;
+         if(cobj.isPointInPath(ox,oy)){
+            zp();
+            cobj.restore()
+        }
+         cobj.clearRect(100,0,1349,620)
+    }
+     function zp(){
+        // cobj.clearRect(100,0,1349,620)
+     // 1.
+     cobj.save()
+     var vx=0,vy=0,targetX=400,targetY=200,startX=400,startY=-80,spring=0.8,friction=0.6;
+     var spriteX=startX,
+         spriteY=startY;
+     // 2.
+     var vx1=0,vy1=0,targetX1=600,targetY1=300,startX1=600,startY1=-120,spring1=0.6,friction1=0.6;
+     var spriteX1=startX1,
+         spriteY1=startY1;
+    // 3.
+     var vx2=0,vy2=0,targetX2=800,targetY2=400,startX2=800,startY2=-200,spring2=0.4,friction2=0.6;
+     var spriteX2=startX2,
+         spriteY2=startY2;
+   // 4.
+     var vx3=0,vy3=0,targetX3=950,targetY3=250,startX3=950,startY3=-200,spring3=0.5,friction3=0.6;
+     var spriteX3=startX3,
+         spriteY3=startY3;
+
+     var img=new Image()
+     img.src='18.jpg'
+     var img1=new Image()
+     img1.src='1.jpg'
+     var img2=new Image()
+     img2.src='2.jpg'
+     var img3=new Image()
+     img3.src='3.jpg'
+     setInterval(function(){
+        cobj.clearRect(100,0,1349,620)
+        cobj.beginPath()
+        cobj.strokeStyle='lightgreen'
+        cobj.lineWidth=8
+        vx+=(targetX-spriteX)*spring;
+        vy+=(targetY-spriteY)*spring;
+        spriteX+=(vx*=friction);
+        spriteY+=(vy*=friction)
+        cobj.moveTo(startX,startY)
+        cobj.lineTo(spriteX,spriteY)
+        cobj.stroke()
+        cobj.drawImage(img,spriteX-30,spriteY,100,100)  
+        // 2.
+        cobj.beginPath()
+        cobj.strokeStyle='lightgreen'
+        cobj.lineWidth=8
+        vx1+=(targetX1-spriteX1)*spring1;
+        vy1+=(targetY1-spriteY1)*spring1;
+        spriteX1+=(vx1*=friction1);
+        spriteY1+=(vy1*=friction1)
+        cobj.moveTo(startX1,startY1)
+        cobj.lineTo(spriteX1,spriteY1)
+        cobj.stroke()
+        cobj.drawImage(img1,spriteX1-30,spriteY1,100,100) 
+          // 3.
+        cobj.beginPath()
+        cobj.strokeStyle='lightgreen'
+        cobj.lineWidth=8
+        vx2+=(targetX2-spriteX2)*spring2;
+        vy2+=(targetY2-spriteY2)*spring2;
+        spriteX2+=(vx2*=friction2);
+        spriteY2+=(vy2*=friction2)
+        cobj.moveTo(startX2,startY2)
+        cobj.lineTo(spriteX2,spriteY2)
+        cobj.stroke()
+        cobj.drawImage(img2,spriteX2-30,spriteY2,100,100)
+          //4.
+        cobj.beginPath()
+        cobj.strokeStyle='lightgreen'
+        cobj.lineWidth=8
+        vx3+=(targetX3-spriteX3)*spring3;
+        vy3+=(targetY3-spriteY3)*spring3;
+        spriteX3+=(vx3*=friction3);
+        spriteY3+=(vy3*=friction3)
+        cobj.moveTo(startX3,startY3)
+        cobj.lineTo(spriteX3,spriteY3)
+        cobj.stroke()
+        cobj.drawImage(img3,spriteX3-30,spriteY3,100,100)      
+     },100)    
+}
+	</script>
+</body>
+</html>

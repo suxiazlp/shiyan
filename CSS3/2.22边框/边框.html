@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+.box{
+	margin:100px auto;
+	width:200px;height: 200px;
+	border:2px solid lightblue;
+/*border-radius:20px 50px 100px 80px;*/
+	     /*左上 右上 右下 左下*/
+    /*border-top-left-radius: 50px;*/
+    /*左上角为半径坐标为50px的圆*/
+
+   /* border-top-left-radius: 50px 100px;*/
+
+    /*距离left50px.距离top100px画圆*/
+    /* border-top-right-radius
+    border-bottom-right-radius
+    border-bottom-left-radius
+    同上 */
+    /*box-shadow:2px 5px 20px #000;*/
+   /*  
+    外阴影
+   第三个值是模糊程度
+   第一个是向右偏
+   第二个向下偏 */
+
+   /*box-shadow:2px 2px 20px #000 inset;*/
+
+   /* 内阴影
+   第一个值左右偏
+   第二个上下偏
+   值可为负
+   第三个模糊度 */
+
+    /*用于指定是否用图像定义边框样式或图像来源路径*/
+   /* border-image-source:url(2.png);
+
+   用于指定对边框背景图的分割方式
+   border-image-slice:26;
+
+   用于指定边框宽度
+   border-image-width:26px;
+   
+   用于指定边框背景图的填充方式
+   border-image-repeat:repeat;
+
+   向外扩展的大小
+   border-image-outset:20px; */
+
+   /*简写*/
+   border-image:url(2.png) 26/26px/20px stretch;
+}
+
+   /*倒影*/
+   .aa{
+   	width:100%;
+   	text-align: center;
+   	font-size:60px;
+   	-webkit-box-reflect:below 10px -webkit-linear-gradient(transparent,transparent 5%,rgba(255,255,255,0.2));
+   	/*above向上倒影  below向下倒影 */
+   	/*第二个值代表倒影距离*/
+   }
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<!-- 倒影 -->
+	<div class="aa">一帘幽梦</div>
+</body>
+</html>

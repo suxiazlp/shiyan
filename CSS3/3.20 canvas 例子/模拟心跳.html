@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+     #canvas{
+     	background: #f5f5f5;
+     }
+	</style>
+</head>
+<body>
+	<canvas id='canvas' width='500' height='500'></canvas>
+	<script>
+    var canvas=document.getElementById('canvas')
+    var cobj=canvas.getContext('2d')
+    cobj.arc(150,150,50,0,2*Math.PI)
+    cobj.stroke()
+    var angle=0
+    canvas.onclick=function(e){
+    var cx=e.clientX
+      var cy=e.clientY
+      setInterval(function(){
+      	angle+=0.1
+      	cobj.clearRect(0,0,500,500)
+      if(cobj.isPointInPath(cx,cy)){
+      	cobj.beginPath()
+        cobj.arc(150,150,50+10*Math.sin(angle),0,2*Math.PI)
+        cobj.stroke()
+        cobj.closePath()
+      }
+  },10)
+    }
+	</script>
+</body>
+</html>

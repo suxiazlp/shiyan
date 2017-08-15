@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+@keyframes aab{
+/*from和0%代表从头开始*/
+	0%{
+		width:200px;
+	}
+	50%{
+		width:150px;
+	}
+/*to和100%代表结束	*/
+	100%{
+		width:400px;
+	}
+	
+}
+@keyframes aac{
+/*from和0%代表从头开始*/
+	0%{
+		width:0px;
+	}
+	50%{
+		width:150px;
+	}
+/*to和100%代表结束	*/
+	100%{
+		width:400px;
+	}
+	
+}
+    .box{
+		width:200px;
+		height:200px;
+		border:2px solid red;
+		/*第一个是名称与上面对应*/
+		/*第二个是动画的时间*/
+		/*第三个值linear匀速*/
+		/*第四个值代表延迟的时间*/
+		/*第五个值代表动画的次数  可以为数字   infinite代表无限循环*/
+		/*第六个值alternate代表动画的可以逆转  动画着变大 动画变回原来的模样 */
+		animation:aab 1s linear 1s infinite alternate;
+	}
+	.box2{
+		width:0px;
+		height:200px;
+		border:2px solid red;
+		animation:aac 1s linear 1s infinite alternate;;
+	}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<div class="box2"></div>
+</body>
+</html>

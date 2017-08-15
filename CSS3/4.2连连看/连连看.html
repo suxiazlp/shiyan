@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>连连看</title>
+    <style>
+#canvas{
+     background: lightblue;
+}
+    </style>
+</head>
+<body>
+    <canvas id='canvas' width=500 height=500></canvas>
+    <script>
+var canvas=document.getElementById('canvas');
+var cobj=canvas.getContext('2d');
+// 1.先创建8个种子文件
+var rectArr=[];
+for(var i=0;i<8;i++){
+    // 小矩形的宽高，颜色
+    var rectObj={
+        w:50,
+        h:50,
+        color:'rgba('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')'
+    };
+    rectArr.push(rectObj)
+}
+// 2.第一关小矩形设置
+// 复制种子文件,得到16个种子文件
+var newArr=[];
+var step=2;
+function sum(step){
+    for(var i=0;i<step;i++){
+    // 循环种子文件
+      for(var j=0;j<rectArr.length;j++){
+        var newObj={};
+    // 循环对象
+      for(var k in rectArr[j]){
+        newObj[k]=rectArr[j][k];
+       }
+      newArr.push(newObj)
+      }
+  }
+}
+sum(step)
+// 3.将小矩形画到画布上
+// 声明行列从0开始
+function drawsum(){
+var rows=0,cols=0;
+for(var i=0;i<newArr.length;i++){
+    // 如果i%4==0，就到下一行，列变成0
+    if(i%4==0){
+        rows++;
+        cols=0;
+    }
+    cobj.beginPath();
+    cobj.fillStyle=newArr[i].color;
+    cobj.rect((newArr[i].w+5)*cols,(newArr[i].h+5)*rows,newArr[i].w,newArr[i].h);
+    cobj.fill();
+    
+    // 重新声明两个变量来代替
+    newArr[i].x=(newArr[i].w+5)*cols;
+    newArr[i].y=(newArr[i].h+5)*rows;
+    // 取于不是0，就列增加
+    cols++;
+}
+}
+drawsum()
+// 判断矩形消失的次数
+num=0;
+//为了解决点击同一个小矩形两次，也会消失的情况， 用来存放被点击的小矩形的下标
+var numarr=[];
+// 用来放点击过的小矩形
+var arrs=[];
+//4. 操作每一个小矩形
+// 点击相同颜色矩形，就消失了
+canvas.onclick=function(e){
+    // 获取到鼠标位置
+   var ox=e.offsetX;
+   var oy=e.offsetY;
+   function newDraw(){
+   cobj.clearRect(0,0,500,500);
+   for(var i=0;i<newArr.length;i++){
+      cobj.fillStyle=newArr[i].color;
+      var str=newArr[i].x+','+newArr[i].y+','+newArr[i].w+','+newArr[i].h;
+      // 给每一个矩形添加点击事件,重绘
+      var event1=new addEvent(cobj,'rect',str,function(){
+        if(i==numarr[0]||i==numarr[1]){
+            return;
+        }
+        // 把下标存放到数组里
+        numarr.push(i)
+        arrs.push(newArr[i]);
+        if(arrs.length==2){
+            // 如果点击了两个相同颜色的并且下标不同，就让他颜色变成透明并重绘
+            if(arrs[0].color==arrs[1].color&&numarr[0]!=numarr[1]){
+                arrs[0].color='rgba(0,0,0,0)';
+                arrs[1].color='rgba(0,0,0,0)';
+                // 为了改变点击三下，两个矩形才能变成透明的，所以要重绘
+                newDraw();
+                // 第二关，第三关。。。
+                num++;
+                if(num==newArr.length/2){
+                    step*=2;
+                    // 第二关开始后，把放第一关矩形的数组给清空
+                   newArr=[];
+                   sum(step);
+                   drawsum();
+                   num=0;
+                }
+            }
+            // 放入两个相同颜色的矩形后，清空，可以重新放
+            arrs=[];
+            numarr=[]
+        }
+      });
+      event1.add(ox,oy);
+   }
+   }
+   // 调用点击两个矩形，变透明
+   newDraw()
+}
+
+
+// 构造函数
+function addEvent(cobj,type,data,callback){
+    this.cobj=cobj;
+    this.type=type;
+    this.data=data;
+    this.callback=callback;                     
+    this.draw();
+}
+addEvent.prototype={
+    draw:function(){
+        if(this.type=='arc'){
+            this.cobj.beginPath();
+            var arr=this.data.split(',');
+            this.cobj.arc(arr[0],arr[1],arr[2],arr[3],arr[4]);
+            this.cobj.fill();
+        }
+        if(this.type=='rect'){
+            this.cobj.beginPath();
+            var arr=this.data.split(',');
+            this.cobj.rect(arr[0],arr[1],arr[2],arr[3]);
+            this.cobj.fill();
+        }
+    },
+    add:function(cx,cy){
+       if(this.cobj.isPointInPath(cx,cy)){
+        this.callback();
+       }    
+    }
+}
+
+    </script>
+
+
+</body>
+<html>

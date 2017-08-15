@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>五子棋</title>
+	<style>
+     canvas{
+     	display: block;
+     	margin:50px auto;
+     	box-shadow:-2px -2px 2px #aaa,3px 3px 3px #121212;
+     }
+	</style>
+</head>
+<body>
+	<canvas id='canvas' width='450' height='450'></canvas>
+	<script>
+ var canvas=document.getElementById('canvas')
+ var cobj=canvas.getContext('2d')
+ var me=true;
+ var arr=[]
+ for(var i=0;i<15;i++){
+ 	arr[i]=[]
+ 	for(var j=0;j<15;j++){
+ 		arr[i][j]=0
+ 	}
+ }
+ //2.引入背景图
+ var img=new Image()
+ img.src='1.jpg'
+ img.onload=function(){
+ 	// 调整图片位置
+ cobj.drawImage(img,-2,-2,454,454)
+    drawChessBorad()
+    drawChessman()
+    /*drawChessman(0,0,true)
+    drawChessman(1,1,false)*/
+ }
+ //1. 画棋盘 图片加上延迟加载 遮到棋盘  创建函数 在引入图片中调用
+
+ function drawChessBorad(){
+ for(var i=0;i<15;i++){
+ 	cobj.moveTo(15+i*30,15)
+ 	cobj.lineTo(15+i*30,435)
+ 	cobj.stroke()
+ 	cobj.beginPath()
+ 	cobj.moveTo(15,15+i*30)
+ 	cobj.lineTo(435,15+i*30)
+ 	cobj.stroke()
+ }
+ }
+
+ // 画棋子
+ function drawChessman(i,j,me){
+ var colorobj=cobj.createRadialGradient(15+i*30+2,15+j*30-2,13,15+i*30+2,15+j*30-2,0)
+    if(me){
+    colorobj.addColorStop(0,'#1a1a1a')
+    colorobj.addColorStop(1,'#aaa')
+    }else{
+    colorobj.addColorStop(0,'#b2b2b2')
+    colorobj.addColorStop(1,'#fff')
+    }
+     cobj.fillStyle=colorobj
+     cobj.beginPath()
+     cobj.arc(15+i*30,15+j*30,13,0,Math.PI*2)
+     cobj.closePath()
+     cobj.fill()
+     
+ }
+// 4.落子
+ canvas.onclick=function(e){
+    var x=e.offsetX
+    var y=e.offsetY 
+    var i=Math.floor(x/30)
+    var j=Math.floor(y/30)
+    if(arr[i][j]==0){
+    drawChessman(i,j,me)
+    if(me){
+    	arr[i][j]=1
+    }else{
+    	arr[i][j]=2
+    }
+    me=!me
+ }
+ }
+	</script>
+</body>
+</html>

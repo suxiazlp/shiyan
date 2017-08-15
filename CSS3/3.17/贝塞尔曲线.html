@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+     #canvas{
+     	background: #f5f5f5;
+     }
+	</style>
+</head>
+<body>
+	<canvas id='canvas' width='500' height='400'></canvas>
+	<script>
+	var canvas=document.getElementById('canvas')
+     var cobj=canvas.getContext('2d')
+     canvas.onmousedown=function(e){
+         var startx=e.clientX;
+         var starty=e.clientY;
+         canvas.onmouseup=function(e){
+         	var endx=e.clientX
+         	var endy=e.clientY
+         	canvas.onmousemove=function(e){
+         	cobj.clearRect(0,0,500,400)
+               var movex=e.clientX
+               var movey=e.clientY
+               cobj.beginPath()
+               cobj.moveTo(startx,starty)
+               cobj.quadraticCurveTo(movex,movey,endx,endy) 
+               cobj.stroke()
+         	}
+         }
+     }
+	</script>
+</body>
+</html>

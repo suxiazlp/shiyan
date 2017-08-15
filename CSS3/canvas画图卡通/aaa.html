@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- <meta name="author" content="http://www.softwhy.com/" /> -->
+<title></title>
+<style type="text/css">
+div {
+  width: 400px;
+  height: 400px;
+  margin: 100px auto;
+}
+</style>
+</head>
+<body>
+<div>
+  <canvas id="canvas" width="400" height="400"></canvas>
+</div>
+<script>
+var canvas=document.getElementById("canvas");
+var cobj=canvas.getContext('2d');
+/* 中心轴 130 */
+/* 面部 头发*/
+cobj.beginPath();
+cobj.moveTo(70, 90);
+cobj.quadraticCurveTo(130, 30, 187, 90);
+cobj.quadraticCurveTo(160, 85, 143, 88);
+cobj.quadraticCurveTo(132, 89, 130, 95);
+cobj.quadraticCurveTo(132, 89, 117, 88);
+cobj.quadraticCurveTo(100, 85, 70, 90);
+cobj.fillStyle = "#3e0d09";
+cobj.fill();
+cobj.stroke();
+  
+  
+/* 轮廓*/
+// 创建二次贝塞尔曲线
+cobj.beginPath();
+cobj.moveTo(70, 90);
+cobj.quadraticCurveTo(65, 99, 65, 106);
+cobj.quadraticCurveTo(70, 144, 68, 186);
+cobj.quadraticCurveTo(75, 210, 130, 213);
+cobj.quadraticCurveTo(185, 210, 191, 186);
+cobj.quadraticCurveTo(190, 144, 192, 106);
+cobj.quadraticCurveTo(194, 98, 187, 90);
+cobj.quadraticCurveTo(160, 85, 143, 88);
+cobj.quadraticCurveTo(132, 89, 130, 95);
+cobj.quadraticCurveTo(132, 89, 117, 88);
+cobj.quadraticCurveTo(100, 85, 70, 90);
+cobj.fillStyle = "#fde9ea";
+cobj.fill();
+cobj.stroke();
+  
+  
+/* 左面眉毛*/
+cobj.beginPath();
+cobj.moveTo(90, 130);
+cobj.quadraticCurveTo(96, 113, 115, 130);
+cobj.quadraticCurveTo(117, 131, 113, 133);
+cobj.quadraticCurveTo(96, 120, 90, 130);
+cobj.fillStyle = "#614248";
+cobj.fill();
+cobj.stroke();
+  
+/* 右面眉毛 */
+cobj.beginPath();
+cobj.moveTo(170, 130);
+cobj.quadraticCurveTo(165, 113, 145, 130);
+cobj.quadraticCurveTo(143, 131, 147, 133);
+cobj.quadraticCurveTo(164, 120, 170, 130);
+cobj.fillStyle = "#614248";
+cobj.fill();
+cobj.stroke();
+  
+/* 左面眼睛 */
+cobj.beginPath();
+cobj.lineWidth = 3;
+cobj.strokeStyle = "#431b24";
+cobj.moveTo(88, 148);
+cobj.lineTo(115, 150);
+cobj.moveTo(107, 150);
+cobj.quadraticCurveTo(104, 157, 101, 150);
+cobj.fillStyle = "#431b24";
+cobj.fill();
+cobj.stroke();
+  
+/* 右面眼睛 */
+cobj.beginPath();
+cobj.lineWidth = 3;
+cobj.strokeStyle = "#431b24";
+cobj.moveTo(172, 148);
+cobj.lineTo(145, 150);
+cobj.moveTo(153, 150);
+cobj.quadraticCurveTo(156, 157, 159, 150);
+cobj.fillStyle = "#431b24";
+cobj.fill();
+cobj.stroke();
+  
+/* 鼻子 */
+cobj.beginPath();
+cobj.lineWidth = 1;
+cobj.moveTo(120, 163);
+cobj.quadraticCurveTo(120, 165, 122, 170);
+cobj.quadraticCurveTo(130, 172, 138, 170);
+cobj.quadraticCurveTo(140, 165, 140, 163);
+cobj.stroke();
+  
+/* 嘴 */
+cobj.beginPath();
+cobj.moveTo(111, 180)
+cobj.quadraticCurveTo(130, 197, 149, 180);
+cobj.stroke();
+  
+/* 左耳朵*/
+cobj.beginPath();
+cobj.moveTo(69, 148);
+cobj.quadraticCurveTo(53, 140, 58, 166);
+cobj.quadraticCurveTo(59, 170, 58, 175);
+cobj.quadraticCurveTo(57, 183, 68, 184);
+cobj.moveTo(68, 165);
+cobj.quadraticCurveTo(65, 158, 60, 160);
+cobj.moveTo(68, 175);
+cobj.quadraticCurveTo(60, 170, 62, 165);
+cobj.fillStyle = "#fde9ea";
+cobj.fill();
+cobj.stroke();
+  
+/* 右耳朵 */
+cobj.beginPath();
+cobj.moveTo(191, 148);
+cobj.quadraticCurveTo(207, 140, 202, 166);
+cobj.quadraticCurveTo(201, 170, 202, 175);
+cobj.quadraticCurveTo(203, 183, 192, 184);
+cobj.moveTo(192, 165);
+cobj.quadraticCurveTo(195, 158, 200, 160);
+cobj.moveTo(192, 175);
+cobj.quadraticCurveTo(200, 170, 198, 165);
+cobj.fillStyle = "#fde9ea";
+cobj.fill();
+cobj.stroke();
+  
+/* 身体 */
+cobj.beginPath();
+cobj.moveTo(100, 210);
+cobj.quadraticCurveTo(85, 218, 70, 240);
+cobj.quadraticCurveTo(73, 270, 115, 276);
+cobj.quadraticCurveTo(180, 283, 190, 240);
+cobj.quadraticCurveTo(175, 218, 160, 210);
+cobj.quadraticCurveTo(130, 218, 100, 210);
+cobj.fillStyle = "#949dd4";
+cobj.fill();
+cobj.stroke();
+  
+/* 衣服 */
+cobj.beginPath();
+cobj.moveTo(80, 260);
+cobj.quadraticCurveTo(80, 240, 100, 230);
+cobj.moveTo(106, 235);
+cobj.quadraticCurveTo(95, 233, 95, 220);
+cobj.moveTo(100, 230);
+cobj.quadraticCurveTo(125, 230, 130, 220);
+cobj.moveTo(120, 217);
+cobj.quadraticCurveTo(130, 221, 140, 217);
+cobj.moveTo(125, 215);
+cobj.lineTo(135, 220);
+cobj.moveTo(135, 215);cobjcobj
+cobj.lineTo(125, 220);
+cobj.stroke();
+  
+/* 左 脸庞 */
+cobj.beginPath();
+cobj.moveTo(80, 170);
+cobj.quadraticCurveTo(78, 167, 80, 165);
+cobj.quadraticCurveTo(87, 163, 95, 165);
+cobj.quadraticCurveTo(98, 167, 95, 170);
+cobj.quadraticCurveTo(87, 172, 80, 170);
+cobj.fillStyle = "#e8afb9";
+cobj.fill();
+  
+/* 右 脸庞 */
+cobj.beginPath();
+cobj.moveTo(180, 170);
+cobj.quadraticCurveTo(182, 167, 180, 165);
+cobj.quadraticCurveTo(173, 163, 165, 165);
+cobj.quadraticCurveTo(162, 167, 165, 170);
+cobj.quadraticCurveTo(173, 172, 180, 170);
+cobj.fillStyle = "#e8afb9";
+cobj.fill();    
+</script>
+</body>
+</html>

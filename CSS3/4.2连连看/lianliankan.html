@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+
+
+#canvas{
+    background:#eee;
+}
+</style>
+</head>
+<body>
+	<canvas id='canvas' width='1000' height='850'></canvas>
+	<script>
+var canvas=document.getElementById('canvas');
+var cobj=canvas.getContext('2d');
+// 种子文件
+//声明一个rectArr数组
+var rectArr=[]
+//共有8种颜色，进行循环
+for(var i=0;i<8;i++){
+	//创建一个rectObj对象 小矩形的模型
+	var rectObj={
+		w:50,
+		h:50,
+		color:'rgb('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')'
+	};
+	rectArr.push(rectObj)
+}
+// alert(rectArr.length)
+// 第一关矩形数量
+var newArr=[]
+for(var i=0;i<2;i++){
+   for(var j=0;j<rectArr.length;j++){  	
+   	var newObj={};
+   	for(var k in rectArr[j]){
+   		newObj[k]=rectArr[j][k]
+   	}
+   	  newArr.push(rectArr[j]);
+   }
+}
+// alert(newArr.length)
+// 3.将小矩形画在画布上
+var rows=0,cols=0;
+for(var i=0;i<newArr.length;i++){
+	if(i%4==0){
+		rows++;
+		cols=0
+	}
+cobj.beginPath();
+cobj.fillStyle=newArr[i].color
+cobj.rect((newArr[i].w+5)*cols,(newArr[i].h+5)*rows,newArr[i].w,newArr[i].h);
+cobj.fill()
+cols++;
+  newArr[i].x=(newArr[i].w+5)*cols;
+  newArr[i].y=(newArr[i].h+5)*rows;
+}
+
+var arrs=[]//用来放置点击过后的小方块个人数为2
+//4. 操作小矩形
+canvas.onclick=function(e){
+ var ox=e.offsetX;
+ var oy=e.offsetY;
+ cobj.clearRect(0,0,1000,850)
+ for(var i=0;i<newArr.length;i++){
+ 	cobj.fillStyle=newArr[i].color
+ var str=newArr[i].x+','+newArr[i].y+','+newArr[i].w+','+newArr[i].h
+ var event1=new addEvent(cobj,'rect',str,function(){
+ 	//alert(1)
+ 	arrs.push(newArr[i])
+ 	if(arrs.length==2){
+ 		if(arrs[0].color==arrs.color){
+ 			arrs[0].color='rgba(0,0,0,0)'
+ 			arrs[1].color='rgba(0,0,0,0)'
+ 		}
+ 	}
+ });
+ event1.add(ox,oy)
+}
+}
+
+
+// 构造函数属性和方法
+function addEvent(cobj,type,data,callback){
+    this.cobj=cobj;
+    this.type=type;
+    this.data=data;
+    this.callback=callback;
+    // 调用下面的draw方法
+    this.draw();
+}
+addEvent.prototype={
+	draw:function(){
+		// 如果画圆，就得到画圆的框架
+		if(this.type=='arc'){
+            this.cobj.beginPath();
+            // 把date变成数组，逗号为分隔符
+            var arr=this.data.split(',');
+            this.cobj.arc(arr[0],arr[1],arr[2],arr[3],arr[4]);
+            this.cobj.fill();
+		}
+		// 如果画矩形，就得到画矩形的框架
+		if(this.type=='rect'){
+            this.cobj.beginPath();
+            // 把date变成数组，逗号为分隔符
+            var arr=this.data.split(',');
+            this.cobj.rect(arr[0],arr[1],arr[2],arr[3]);
+            this.cobj.fill();
+		}
+	},
+	// 判断鼠标在的范围
+    add:function(cx,cy){
+    	// 如果在范围里，就执行回调函数
+        if(this.cobj.isPointInPath(cx,cy)){
+        	this.callback();
+        }
+    }
+}
+
+
+
+</script>
+</body>
+<html>

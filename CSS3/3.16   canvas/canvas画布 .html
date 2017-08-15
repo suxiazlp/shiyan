@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas</title>
+	<style>
+	*{
+		margin:0;
+		padding: 0;
+	}
+#canvas{
+	background: #f5f5f5;
+}
+	</style>
+</head>
+<body>
+	<canvas id='canvas' width='600' height='400'></canvas>
+	<img id='img' src="1.png" alt="">
+	<script>
+     var canvas=document.getElementById('canvas')
+     var cobj=canvas.getContext('2d')
+     // 渐变
+     // 渐变的开始和结束位置
+   /*var colobj=cobj.createLinearGradient(100,0,100,100)
+         colobj.addColorStop(0.2,'pink')
+         colobj.addColorStop(0.7,'orange')
+         colobj.addColorStop(1,'red')
+         cobj.fillStyle=colobj*/
+
+      // 径向渐变
+      // 前两个圆心  第三个半径 第四五个圆心  第六个半径
+   /* var colobj=cobj.createRadialGradient(50,50,10,50,50,50)
+        colobj.addColorStop(0.2,'pink')
+        colobj.addColorStop(0.7,'orange')
+        colobj.addColorStop(1,'red')
+        cobj.fillStyle=colobj*/
+
+        // 引入背景图
+    /*var imgobj=cobj.createPattern(document.getElementById('img'),'repeat-y')
+        cobj.fillStyle=imgobj*/
+    // 设置填充颜色
+     // cobj.fillStyle='lightblue'
+     // cobj.fillStyle='rgb(0,0,0)'
+    /* cobj.fillStyle='rgba(0,0,0,0.3)'
+     // 设置边框颜色
+     cobj.strokeStyle='lightblue'
+      // 设置阴影颜色
+     cobj.shadowColor='#000'
+     // 设置阴影距离
+     cobj.shadowOffsetX='5'
+     cobj.shadowOffsetY='5'
+     // 设置阴影模糊
+     cobj.shadowBlur='5'*/
+     /*cobj.fillRect(0,0,100,100)
+     cobj.strokeRect(100,100,100,100)*/
+	</script>
+</body>
+</html>

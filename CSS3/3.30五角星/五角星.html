@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>五角星</title>
+	<style>
+    
+    #canvas{
+    	background: red;
+    }
+	</style>
+</head>
+<body>
+	<canvas id='canvas' width='400' height='300'></canvas>
+	<script>
+     var canvas=document.getElementById('canvas');
+     var cobj=canvas.getContext('2d');
+     star(100,100,50,30,5,'fill','yellow')
+     var angle=0
+     function star(x,y,r1,r2,num,startype,color){
+     	var stararr=[]
+     	angle=360/(2*num)
+     for(var i=0;i<2*num;i++){
+     	//创建对象
+         var starobj={}
+         if(i%2==0){
+         	starobj.x=x+r1*Math.cos(i*Math.PI/180*(360/num*2))
+         	starobj.y=y+r1*Math.sin(i*Math.PI/180*(360/num*2))
+         }else{
+         	starobj.x=x+r2*Math.cos(i*Math.PI/180*(360/num*2))
+         	starobj.y=y+r2*Math.sin(i*Math.PI/180*(360/num*2))
+         }
+         stararr.push(starobj)
+        }
+        cobj.beginPath()
+        cobj.fillStyle=color
+        cobj.strokeStyle=color
+        cobj.moveTo(stararr[0].x,stararr[0].y)
+        for(var i=1;i<stararr.length;i++){
+        	cobj.lineTo(stararr[i].x,stararr[i].y)
+        }
+        cobj.closePath()
+        if(startype=='fill'){
+           cobj.fill()
+        }else{
+           cobj.stroke()
+        }
+    }
+	</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>背景模拟轮播</title>
+	<style>
+     .box{
+     	width:400px;height: 560px;
+     	margin:10px auto;
+     	background-color: pink;
+     	background-image: url(a.jpg),url(b.jpg),url(c.jpg),url(d.jpg), url(e.jpg);
+     	background-repeat: no-repeat;
+     	background-position: -800px 0,0 0,-800px 0,-800px 0,-800px 0;
+       background-size: cover;
+
+
+     }
+	</style>
+</head>
+<body>
+     <div class="box box1" id='box'></div>
+     <script>
+      var box=document.getElementById('box')
+      //获取轮播的对象
+      var bp=getstyle(box).backgroundPosition
+      //获取轮播对象的backgroundPosition样式
+      var arr=bp.split(',')
+      //拆分字符串  取得各组数据
+
+      // 分割字符串用split
+      //用来获得实际的样式属性
+      var num=0
+      // 创建num为虚拟的下标 从零开始
+       setInterval(function(){
+         num++
+         // 循环增加虚拟下标值
+
+         // 因为num值太大超出了背景图片的数量值  出现了空白，所以在num超出的瞬间将num变为0
+         if(num>=arr.length){
+           num=0
+      }
+      // 循环得到每一组数据，arr[i]为每一组数据的值，i为每一组数据的下标
+         for(var i=0;i<arr.length;i++){
+         	if(num==i){
+         		// 如果虚拟下标与真实下标重合
+         		arr[i]='0 0' 
+         		// 那么下标对应的背景图片显示
+         	}else{
+         		// 否则其它的下标对应的背景图片都放在-800px 0 的位置
+         		arr[i]='-800px 0'
+         	}
+         }
+         var newarr=arr.join(',')
+         // 重新组合改变过得每一组数据为newarr
+         box.style.backgroundPosition=newarr
+         // 将改变过的数据newarr 重新赋值给backgroundPosition
+      },1000)
+     
+   function getstyle(obj){
+	if(document.getElementsByClassName){
+		return getComputedStyle(obj,null)
+	}else{
+		return obj.currentStyle
+	}
+  }
+     // alert(typeof arr)
+     </script>
+</body>
+</html>

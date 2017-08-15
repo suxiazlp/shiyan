@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.box{
+	width:100%;
+	height: auto;
+	background: red;
+   }
+   .aa{
+   	width:200px;height: 200px;
+   	margin-right:20px;
+   	float: left;
+   	background: pink;
+   }
+   .box:after{
+   	display: block;
+    clear:both;
+    content: '';
+   }
+</style>
+</head>
+<body>
+	<div class="box">
+		<div class="aa"></div>
+		<div class="aa"></div>
+		<div class="aa"></div>
+		<div class="aa"></div>
+	</div>
+</body>
+</html>
