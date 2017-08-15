@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 100%;
+            height: 100px;
+            border: 2px solid #000000;
+            position: relative;
+        }
+
+        ul {
+            width: 100%;
+            height: 50px;
+            background-color: #00AA00;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+        }
+
+        ul > li {
+            font-size: 20px;
+            margin: auto 10px;
+            /*float:left;*/
+            display: inline;
+            transition: font-size .5s linear;
+        }
+
+        i {
+            width: 48px;
+            height: 10px;
+            background-color: #0088FF;
+            position: absolute;
+            transition: width .5s linear;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <i id="slide" style="left:0px"></i>
+    <ul id="ul">
+        <li>首页</li>
+        <li>业务</li>
+        <li>案例</li>
+        <li>客户</li>
+        <li>品质</li>
+        <li>增值</li>
+        <li>关于</li>
+        <li>联系</li>
+    </ul>
+</div>
+<button onclick="main('up')">上一页</button>
+<button onclick="main('down')">下一页</button>
+</body>
+<script>
+    let ul = document.getElementById('ul');
+    let lis = ul.children;
+    let slide = document.getElementById('slide');
+    let index = 0;
+    let position;
+    let speed = 3;
+    slide.style.left = lis[index].offsetLeft - 4 + "px";
+
+    function animation(value) {
+        position = lis[index].offsetLeft - 5;
+
+        if (value == "down") {
+            if ((slide.style.left.slice(0, -2) < position)&&((slide.style.left.slice(0,-2)-0 + speed)<position)) {
+                slide.style.left = slide.style.left.slice(0, -2) - 0 + speed + "px"
+            } else {
+               slide.style.left = position + "px";
+                return;
+            }
+        } else if (value == "up") {
+            if ((slide.style.left.slice(0, -2) > position) && ((slide.style.left.slice(0, -2) - 0 + speed) > position)) {
+                slide.style.left = slide.style.left.slice(0, -2) - 0 - speed + "px"
+            } else {
+                slide.style.left = position + "px";
+                return;
+            }
+        }
+        requestAnimationFrame(function () {
+            animation(value)
+        })
+    }
+
+
+    function main(value) {
+        if (value == "up") {
+            if (index > 0) {
+                index--
+            } else {
+                return
+            }
+            if (index == 0) {
+                for (let i = 0; i < lis.length; i++) {
+                    lis[i].style.fontSize = "20px";
+                    lis[i].style.margin = "";
+                }
+                slide.style.width = "48px";
+            }
+        } else if (value == "down") {
+            if (index < lis.length - 1) {
+                index++
+            } else {
+                return
+            }
+            if (index == 1) {
+                for (let i = 0; i < lis.length; i++) {
+                    lis[i].style.fontSize = "16px";
+                    lis[i].style.margin = "auto 8px";
+                }
+                slide.style.width = "40px";
+            }
+        }
+        requestAnimationFrame(function () {
+            animation(value)
+        })
+    }
+
+    window.onresize=function () {
+        slide.style.left=lis[index].offsetLeft+"px";
+    }
+
+</script>
+</html>
