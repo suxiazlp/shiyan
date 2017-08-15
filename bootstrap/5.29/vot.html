@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <!--<link rel="stylesheet" href="./css/style.css">-->
+   <link rel="stylesheet" href="vot.css">
+   <script src="../js/jquery-1.11.2.js"></script>
+    <script src="../js/bootstrap.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-home move-to-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <i class="icon-header-icon1 open-icon"></i>
+                <i class="icon-header-icon2 close-icon"></i>
+            </button>
+            <a class="navbar-brand" href="/">
+                <i class="icon-logo1"></i>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a class="btn btn-one" href="/login/">Sign In</a></li>
+                <li><a class="btn btn-two" href="/vet-software/">JOIN TOPVET</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div ng-controller="Home.Search" class="ng-scope">
+
+    <!--背景轮播start-->
+    <div class="home-main">
+        <div class="background-item background1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 item">
+                        <h1>Not feeling well?<br class="hidden-md hidden-lg"> Find a top vet</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="background-item background2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 item">
+                        <h1>We're better together.<br class="hidden-md hidden-lg"> Find a top vet</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="background-item background3 active">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 item">
+                        <h1>They deserve the best.<br class="hidden-md hidden-lg"> Find a top vet</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--背景轮播表单start-->
+        <div class="wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 item">
+                        <h2>TopVet lists over 20,000 trusted vets</h2><h2 class="no-margin-top">Find yours today</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 item">
+                        <!--<form class="form-inline ng-pristine ng-valid">
+                            <div class="input-wrapper">
+                                <input type="text" class="search-input form-control not-mobile ng-pristine ng-valid" placeholder="Search Vets by Name or Location" ng-bs-autocomplete-scheduler="search" ng-bs-autocomplete-model="item" ng-model="itemValue" autocomplete="off" novalidate="" ng-class="{'error': noResults}">
+                                <input type="text" class="search-input form-control mobile ng-pristine ng-valid" placeholder="Search" ng-bs-autocomplete-scheduler="search" ng-bs-autocomplete-scheduler-append="1" ng-bs-autocomplete-model="item" ng-model="itemValue" autocomplete="off" novalidate="" ng-class="{'error': noResults}">
+                                <i class="icon-header-icon2 clear-text ng-hide" ng-clear-text="" ng-clear-text-model="item" ng-clear-text-model-value="itemValue" ng-clear-text-input=".search-input" ng-show="itemValue != undefined &amp;&amp; itemValue != ''"></i>
+                                <div class="autocomplete-suggestions" style="position: absolute; display: none; max-height: 300px; z-index: 9999;">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-three not-mobile" ng-click="submit()">SEARCH</button>
+                            <button type="submit" class="btn btn-three mobile" ng-click="submit()"><i class="icon-search-white"></i></button>
+                        </form>-->
+                        <form action="" class="form_box">
+                            <div class="form_k">
+                                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                <input placeholder="Search Vets by Name or Location"></input>
+                                <button type="button" class="btn-lg">search</button>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--背景轮播表单End-->
+    </div>
+    <!--背景轮播End-->
+
+
+    <div class="home-popular-cities">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="title">MOST</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="subtitle">Popular Cities</div>
+                </div>
+            </div>
+            <div class="popular-cities">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3">
+                        <div class="popular-city" ng-click="openCity('/practices/united-states/new-york/new-york')">
+                            <div class="image">
+                                <img alt="" class="img-responsive" src="https://topvet.azureedge.net/PopularCities/united-states1.png">
+                            </div>
+                            <div class="city-block">
+                                <div class="name">New York</div>
+                                <div class="count">34</div>
+                            </div>
+                            <div class="view-block">VIEW <i class="icon-next-arrow"></i></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="popular-city" ng-click="openCity('/practices/united-states/california/los-angeles')">
+                            <div class="image">
+                                <img alt="" class="img-responsive" src="https://topvet.azureedge.net/PopularCities/united-states2.png">
+                            </div>
+                            <div class="city-block">
+                                <div class="name">Los Angeles</div>
+                                <div class="count">36</div>
+                            </div>
+                            <div class="view-block">VIEW <i class="icon-next-arrow"></i></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="popular-city" ng-click="openCity('/practices/united-states/illinois/chicago')">
+                            <div class="image">
+                                <img alt="" class="img-responsive" src="https://topvet.azureedge.net/PopularCities/united-states3.png">
+                            </div>
+                            <div class="city-block">
+                                <div class="name">Chicago</div>
+                                <div class="count">63</div>
+                            </div>
+                            <div class="view-block">VIEW <i class="icon-next-arrow"></i></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="popular-city" ng-click="openCity('/practices/united-states/texas/houston')">
+                            <div class="image">
+                                <img alt="" class="img-responsive" src="https://topvet.azureedge.net/PopularCities/united-states4.png">
+                            </div>
+                            <div class="city-block">
+                                <div class="name">Houston</div>
+                                <div class="count">103</div>
+                            </div>
+                            <div class="view-block">VIEW <i class="icon-next-arrow"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="home-get-listed-today">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="title">Are you a top vet?</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="subtitle">List your veterinary practice and grow your business online</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <a href="/vet-software/" class="btn btn-three">GET LISTED TODAY</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-5 item">
+                <div class="logo1">
+                    <a href="/"><i class="icon-logo5"></i></a>
+                </div>
+                <div class="info-block">
+                    <div class="text">TopVet is dedicated to providing</div>
+                    <div class="text">excellent veterinary software.</div>
+                </div>
+                <div class="copyright hidden-xs">© 2015-2017 TopVet. All rights reserved.</div>
+            </div>
+            <div class="col-md-2 col-sm-4 item hidden-xs">
+                <h4>COMPANY</h4>
+                <ul>
+                    <li><a href="/home/contact/">Contact Us</a></li>
+                    <li><a href="/terms-and-conditions/">Terms</a></li>
+                    <li><a href="/privacy/">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 col-sm-4 item visible-xs">
+                <h4 class="collapsed" ng-toggle-collapse="" ng-toggle-collapse-target="#company-collapsed">COMPANY<i class="icon-footer-arrow-down"></i><i class="icon-footer-arrow-up"></i></h4>
+                <ul id="company-collapsed" class="collapse">
+                    <li><a href="/home/contact/">Contact Us</a></li>
+                    <li><a href="/terms-and-conditions/">Terms</a></li>
+                    <li><a href="/privacy/">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 col-sm-3 item three-item hidden-xs">
+                <h4>TOP VETS</h4>
+                <ul>
+                    <li><a href="/vet-software/">Join Us</a></li>
+                    <li><a href="/login/">Login</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 col-sm-3 item three-item visible-xs">
+                <h4 class="collapsed" ng-toggle-collapse="" ng-toggle-collapse-target="#vets-collapsed">TOP VETS<i class="icon-footer-arrow-down"></i><i class="icon-footer-arrow-up"></i></h4>
+                <ul id="vets-collapsed" class="collapse"><li><a href="/vet-software/">Join Us</a></li><li><a href="/login/">Login</a></li></ul>
+            </div>
+            <div class="col-md-2 col-md-offset-0 col-sm-4 col-sm-offset-5 item four-item hidden-xs">
+                <h4>BROWSE BY COUNTRY</h4>
+                <ul>
+                    <li><a href="/country/united-kingdom">Vets in United Kingdom</a></li>
+                    <li><a href="/country/ireland">Vets in Ireland</a></li>
+                    <li><a href="/country/new-zealand">Vets in New Zealand</a></li>
+                    <li><a href="/country/australia">Vets in Australia</a></li>
+                    <li><a href="/country/south-africa">Vets in South Africa</a></li>
+                    <li><a href="/country/canada">Vets in Canada</a></li>
+                    <li><a href="/country/united-states">Vets in United States</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 col-md-offset-0 col-sm-4 col-sm-offset-5 item four-item visible-xs">
+                <h4 class="collapsed" ng-toggle-collapse="" ng-toggle-collapse-target="#country-collapsed">BROWSE BY COUNTRY<i class="icon-footer-arrow-down"></i><i class="icon-footer-arrow-up"></i></h4>
+                <ul id="country-collapsed" class="collapse">
+                    <li><a href="/country/united-kingdom">Vets in United Kingdom</a></li>
+                    <li><a href="/country/ireland">Vets in Ireland</a></li>
+                    <li><a href="/country/new-zealand">Vets in New Zealand</a></li>
+                    <li><a href="/country/australia">Vets in Australia</a></li>
+                    <li><a href="/country/south-africa">Vets in South Africa</a></li>
+                    <li><a href="/country/canada">Vets in Canada</a></li>
+                    <li><a href="/country/united-states">Vets in United States</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 col-sm-3 item">
+                <h4>FOLLOW US</h4>
+                <ul class="social">
+                    <li class="facebook">
+                        <a href="https://twitter.com/topvetnet" target="_blank" rel="nofollow">
+                            <i class="icon-twitter normal"></i><i class="icon-twitter-hover hover"></i>
+                        </a>
+                    </li>
+                    <li class="twitter">
+                        <a href="https://www.facebook.com/topvetnet" target="_blank" rel="nofollow">
+                            <i class="icon-facebook normal"></i><i class="icon-facebook-hover hover"></i>
+                        </a>
+                    </li>
+                </ul>
+                <h4 class="built-by no-margin-bottom">
+                    <a href="http://www.codefirst.ie" target="_blank">SOFTWARE DEVELOPED BY</a>
+                </h4>
+                <div class="logo2">
+                    <a href="http://www.codefirst.net" target="_blank"><i class="icon-logo3"></i></a>
+                </div>
+            </div>
+            <div class="col-xs-12 item visible-xs">
+                <div class="copyright no-margin-top">© 2015-2017 TopVet. All rights reserved.</div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script type="text/javascript" src="https://topvet.azureedge.net/application.js?v=1.0.86.12101"></script>
+<div class="autocomplete-suggestions" style="position: absolute; display: none; max-height: 300px; z-index: 9999;"></div>
+</body>
+</html>

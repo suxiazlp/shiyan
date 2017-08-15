@@ -1,0 +1,455 @@
+/* ======= define font family from file ====== */
+@font-face {
+    font-family: Releway-ExtraBold;
+    src: url('../fonts/Raleway-ExtraBold.ttf')
+}
+@font-face {
+    font-family: Releway-Bold;
+    src: url('../fonts/Raleway-Bold.ttf')
+}
+@font-face {
+    font-family: Raleway-Regular;
+    src: url('../fonts/Raleway-Regular.ttf')
+}
+@font-face {
+    font-family: Raleway-Black;
+    src: url('../fonts/Raleway-Black.ttf')
+}
+@font-face {
+    font-family: Raleway-Medium;
+    src: url('../fonts/Raleway-Medium.ttf')
+}
+/*=============== global ==================*/
+html {
+    /*overflow-y: scroll;*/
+    overflow-x: hidden;
+    min-height: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    text-size-adjust: none;
+    text-rendering: optimizeLegibility;
+    line-height: 1.5;
+    background: #fff;
+}
+body{
+    background: #fff;
+    color:#FFF;
+    font-family: Raleway-Regular;
+    padding: 0px;
+    margin: 0px;
+}
+.back{
+    background-image: url('../images/overlay.png');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    background-position: center top;
+}
+.c-main,
+#c-wrapper{
+    width:1280px;
+    background: #F4F4F4;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+.t-center{
+    text-align: center;
+}
+.t-left{
+    text-align: left;
+}
+.clear{
+    clear: both;
+}
+
+#c-main{
+    position: absolute;
+    top: 0px;
+    background: transparent;
+}
+
+.s-home{
+    background-size: cover;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    height: 1000px;
+    position: relative;
+    text-shadow: #000 1px 1px;
+}
+#s-home1{
+    background-image: url('../images/firecracker.jpg');
+}
+.s-home-title{
+    font-size: 72px;
+    padding-left: 58px;
+    padding-top: 260px;
+    letter-spacing: 2.5px;
+    line-height: 80px;
+    width: 66%;
+    font-family: Raleway-Black;
+}
+.s-home-desc{
+    font-family: Raleway-Medium;
+    font-size: 30px;
+    padding-left: 58px;
+    padding-top: 00px;
+    letter-spacing: 1.25px;
+    line-height: 45px;
+    width: 60%;
+}
+.s-home-signup{
+    text-align: center;
+    width: 520px;
+    padding-top: 30px;
+    padding-left: 58px;
+}
+.s-home-signup a,
+.s-home-signup a:hover,
+.s-home-signup a:visited{
+    text-decoration: none;
+    color: #fff;
+}
+.s-home-signup div{
+    font-family: Raleway-Black;
+    font-size: 36px;
+    letter-spacing: 0px;
+    line-height: 50px;
+}
+.s-home-signup .s-home-btsignup{
+    font-family: Releway-Bold;
+    background: #663399;
+    width: 270px;
+    height: 50px;
+    font-size: 14px;
+    border-radius: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    text-shadow: none;
+}
+.down-arrow{
+    position: absolute;
+    width: 43px;
+    height: 28px;
+    left: 50%;
+    bottom: 30px;
+    margin-left: -21px;
+}
+
+
+.s-about{
+    background-size: cover;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    height: 695px;
+    position: relative;;
+}
+#s-about1{
+    background-image: url('../images/violine.jpg');
+}
+.s-about-title{
+    font-family: Raleway-Black;
+    font-size: 44px;
+    letter-spacing: 0;
+    line-height: 50px;
+}
+.s-about-desc{
+    font-family: Raleway-Medium;
+    font-size: 14px;
+    letter-spacing: 1.75px;
+    text-transform: uppercase;
+    padding-top: 145px;
+}
+.s-about-submain{
+    font-family: Releway-Bold;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+.s-about-subdesc{
+    opacity: 0.9;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 28px;
+}
+.row1{
+    padding-top: 100px;
+}
+.col1{
+    width: 55%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.s-cta{
+    width: 500px;
+    margin: auto;
+}
+.s-logo{
+    margin-top: 30px;
+    width: 104px;
+    height: 104px;
+}
+.s-cta-title{
+    font-family: Raleway-Black;
+    color: #2F2F2F;
+    font-size: 44px;
+    letter-spacing: -0.24px;
+    line-height: 50px;
+}
+.s-cta-desc{
+    font-size: 18px;
+    color: #747E80;
+    letter-spacing: 0;
+    line-height: 28px;
+}
+.s-cta-desc1{
+    font-size: 18px;
+    color: #747E80;
+    letter-spacing: 0;
+    line-height: 28px;
+    padding-bottom: 20px;
+}
+.s-cta-request{
+    margin-top: 100px;
+    border-radius: 100px;
+    height: 50px;
+    box-shadow: #aaa 1px 14px 32px;
+    overflow: hidden;
+}
+.s-cta-request input{
+    width: 54%;
+    float: left;
+    border: 0px !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    font-size: 16px;
+    padding-left: 8%;
+    margin-top: 15px;
+    color: #333;
+}
+.s-cta-request div{
+    font-family: Releway-Bold;
+    background: #663399;
+    width: 46%;
+    float: right;
+    height: 100%;
+    padding-top: 15px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.cmobile.c-main{
+    display: none;
+}
+.cmobile#c-main{
+    display: block;
+}
+.cmobile .s-home{
+    background-image: url('../images/firecracker.jpg');
+}
+.cmobile .s-about{
+    background-image: url('../images/violine.jpg');
+}
+.cmobile .soverlay{
+    background-image: url('../images/overlay.png');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    background-position: center top;
+}
+
+@media (min-width: 1280px) {
+    .s-home-title{
+        width: 700px;
+    }
+    .s-home-desc{
+        width: 560px;
+    }
+    .s-cta-desc{
+        letter-spacing: 1px;
+        width: 80%;
+        margin: auto;
+    }
+}
+@media (max-width: 1280px) {
+    .c-main,
+    #c-wrapper{
+        width: 100%;
+    }
+    .row .col-lg-4{
+        width: 33.3333%;
+        float: left;
+    }
+}
+
+@media (max-width: 1024px)  and (min-width: 769px) {
+    .s-home{
+        background-size: cover;
+        background-position-x: 22%;
+    }
+    .s-home-title{
+        font-size: 54px;
+        line-height: 60px;
+        padding-left: 20px;
+        padding-top: 150px;
+        width: 600px;
+    }
+    .s-home-desc{
+        padding-left: 20px;
+        font-size: 24px;
+        letter-spacing: 1px;
+        line-height: 30px;
+        width: 460px;
+    }
+}
+@media (max-width: 768px) {
+    .row .col-lg-4{
+        width: 100%;
+    }
+    .s-home{
+        background-size: cover;
+        background-position-x: 20%;
+    }
+    .s-home-title{
+        font-size: 54px;
+        line-height: 60px;
+        padding-left: 20px;
+        padding-top: 120px;
+        width: 380px;
+    }
+    .s-home-desc{
+        padding-left: 20px;
+        font-size: 24px;
+        letter-spacing: 1px;
+        line-height: 30px;
+        width: 380px;
+    }
+    .s-home-signup{
+        width: 360px;
+        padding-left: 20px;
+    }
+    .s-home-signup div{
+        font-size: 30px;
+    }
+    .s-about-desc{
+        padding-top: 20px;
+    }
+    .row1{
+        padding-top: 30px;
+    }
+    .col1{
+        padding-bottom: 40px;
+    }
+    .s-about-submain{
+        padding-top: 10px;
+    }
+    .s-about{
+        background-position-x:50%;
+        height: auto;
+    }
+}
+
+@media (max-width: 666px) {
+    .s-home{
+        !*height: 100%;*!
+        background-size: cover;
+        background-position-x: 30%;
+    }
+    .s-home-title{
+        font-size: 34px;
+        line-height: 40px;
+        padding-top: 90px;
+        letter-spacing: 1.2px;
+        width: 200px;
+    }
+    .s-home-desc{
+        font-size: 20px;
+        line-height: 30px;
+        padding-top: 20px;
+        width: 240px;
+    }
+
+    .s-home-signup .s-home-btsignup{
+        font-size: 18px;
+    }
+    .s-home-signup div{
+        font-size: 26px;
+    }
+    .s-home-signup {
+        width: 320px;
+        padding: 0px;
+        position: absolute;
+        bottom: 80px;
+        margin-left: -160px;
+        left:50%;
+    }
+    .s-about-title{
+        font-size: 34px;
+    }
+    .s-cta{
+        width: 90%;
+    }
+    .s-cta-title{
+        font-size: 32px;
+    }
+    .s-cta-desc,
+    .s-cta-desc1{
+        font-size: 18px;
+    }
+    .s-cta-request{
+        height: auto;
+        box-shadow: none;
+        overflow: visible;
+        margin-top: 30px;
+    }
+    .s-cta-request input,
+    .s-cta-request div{
+        border-radius: 100px;
+        width: 80% !important;
+        height: 50px !important;
+        box-shadow: #aaa 1px 10px 20px !important;
+        float: none !important;
+        margin:auto;
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 530px) {
+    .s-home{
+        background-size: cover;
+        background-position: 40%;
+    }
+    .s-home-title{
+        font-size: 32px;
+        line-height: 38px;
+        padding-left: 10px;
+        width: 184px;
+    }
+    .s-home-desc{
+        font-size: 18px;
+        line-height: 24px;
+        padding-top: 20px;
+        padding-left: 10px;
+        width: 200px;
+    }
+    .s-about-desc{
+        font-size: 14px;
+    }
+    .s-about-title{
+        font-size: 32px;
+    }
+}

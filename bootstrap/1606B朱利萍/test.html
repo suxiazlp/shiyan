@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/Vue.js"></script>
+    <link rel="stylesheet" href="enter/">
+</head>
+<body>
+<div id="app">
+    <p v-zlp="one">今天是6.15：考试仿做V-show效果</p>
+    <button v-on:click="go">隐藏</button>
+    <button v-on:click="goes">显示</button>
+</div>
+<script>
+    Vue.directive('zlp',{
+       update:function (el,binding) {
+            if(binding.value){
+                el.style.display = 'block'
+            }else{
+                el.style.display = 'none'
+            }
+        }
+    })
+    new Vue({
+        el:'#app',
+        data:{
+            one:true,
+        },
+        methods:{
+            go:function () {
+               this.one=false
+            },
+            goes:function () {
+                this.one=true
+            }
+        }
+    })
+</script>
+</body>
+</html>

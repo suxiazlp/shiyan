@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta property="og:description" content="Peek:to beta signup page. Get ready for a revolutionary location based discovery service." />
+    <meta property="fb:app_id" content="1765959877057432" />
+    <meta property="og:image" content="https://peek.to/images/ogimage.png" />
+    <meta property="og:image:height" content="600" />
+    <meta property="og:image:width" content="1080" />
+    <meta property="og:site_name" content="Peek:to" />
+    <meta property="og:title" content="Let’s Make Our World Smaller. Connect to a real and unfiltered world through the eyes of others." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://peek.to" />
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content=“@peektoapp”>
+    <meta name="twitter:creator" content=“@peektoapp”>
+
+    <title>Peek:To Explore the world!</title>
+
+    <link rel="stylesheet" href="./css/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./css/font-awesome.css">
+    <link rel="stylesheet" href="css/ie10-viewport-bug-workaround.css">
+    <link rel="stylesheet" href="./css/index.css">
+
+</head>
+<body>
+<!-- main feature -->
+<div id='c-wrapper'>
+
+    <div class='c-main t-center'>
+        <section class='s-home t-left' id='s-home1'></section>
+        <section class='s-about t-center' id='s-about1'></section>
+        <div class="back" id='back'></div>
+    </div>
+
+    <div class='c-main t-center' id='c-main'>
+
+        <!-- home page -->
+        <section class='s-home t-left' id='home'>
+            <div class="soverlay">
+                <div class='s-home-title'>Let's Make Our World Smaller</div>
+                <div class='s-home-desc'>Connect to a real and unfiltered world through the eyes of others</div>
+                <div class="s-home-signup">
+                    <div>PeeK:to</div>
+                    <a href='#cta'><div class='s-home-btsignup'>sign up for beta</div></a>
+                </div>
+                <a href='#about'><img class="down-arrow" src="images/Bitmap.png"/></a>
+            </div>
+        </section>
+
+        <section class='s-about t-center' id='about'>
+            <div class="soverlay">
+                <div class='s-about-desc'>a few words</div>
+                <div class='s-about-title'>About Peek:to</div>
+                <div class='row row1'>
+                    <div class='col-lg-4'>
+                        <div class="col1">
+                            <img src='images/mag.png'/>
+                            <div class='s-about-submain'>a dream</div>
+                            <div class='s-about-subdesc'>We are on a mission to make our world smaller</div>
+                        </div>
+                    </div>
+                    <div class='col-lg-4'>
+                        <div class="col1">
+                            <img src='images/group.png'/>
+                            <div class='s-about-submain'>why</div>
+                            <div class='s-about-subdesc'>Had enough with likes, filters and buzzwords ?<br/>Let's connect to the real world that surrounds us all.</div>
+                        </div>
+                    </div>
+                    <div class='col-lg-4'>
+                        <div class="col1">
+                            <img src='images/icon.png'/>
+                            <div class='s-about-submain'>join</div>
+                            <div class='s-about-subdesc'>If you are willing to help people explore the world through your eyes than come join the ride...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class='s-cta t-center' id='cta'>
+            <img class="s-logo" src='images/logo.png'/>
+            <div class="s-cta-title">Want a Sneak Peek?</div>
+            <div class="s-cta-desc">Sign up for closed beta and help us plant the early seeds of Peek:to</div>
+
+            <div class="s-cta-request">
+                <input id="signup-text" name="email" type="email" placeholder="Your Email" type='text' required/>
+                <div class="s-cta-btrequest" style="cursor:pointer;" id="signup-button" onClick="doSubmit();">request invite</div>
+            </div>
+            <br/>
+            <br/>
+            <div class="s-cta-desc1">Access to the closed beta is by invitation only. Requests accepted until the 31st of May 2017</div>
+        </section>
+
+    </div>
+</div>
+<script src="js/jquery-3.1.1.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/index.js"></script>
+<script src="js/ie10-viewport-bug-workaround.js"></script>
+<script src="https://cdn.firebase.com/js/client/1.0.18/firebase.js"></script>
+
+<script>
+    var signupBtn = document.getElementById('signup-button');
+    var signupTxt = document.getElementById('signup-text');
+
+    function doSubmit()
+    {
+        var emailAddress = signupTxt.value;
+
+        if (emailAddress == "")
+        {
+            ga('click', 'Signup Click empty address');
+            fbq('track', 'Signup', { status: 'Signup Click empty address' });
+            return false;
+        }
+
+        signupBtn.disabled = true;
+
+        ga('click', 'Signup Click');
+        fbq('track', 'Signup', { status: 'Signup Click' });
+
+        // Store emails to firebase
+        var myFirebaseRef = new Firebase("https://takeapeek-b2444.firebaseio.com/signups");
+        myFirebaseRef.push({ email: emailAddress }, onSignupComplete);
+
+        return false;
+    }
+
+    var onSignupComplete = function (error)
+    {
+        signupBtn.disabled = false;
+        if (error)
+        {
+            signupBtn.innerHTML = 'Sorry. Could not signup.';
+            ga('click', 'Signup Fail: ' + error);
+            fbq('track', 'Signup', { status: 'Signup Fail: ' + error });
+        }
+        else
+        {
+            signupBtn.innerHTML = 'Thanks for signing up!';
+            ga('click', 'Signup Success');
+            fbq('track', 'Signup', { status: 'Signup Success' });
+
+            //Open thankyou page in place
+            window.open('thankyou.html', '_top');
+        }
+    };
+
+</script>
+
+</body></html>
+    
