@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	 // 1.cookie与h5存储数据的对比
+	   /*document.cookie='name:张三'
+         alert(document.cookie)*/
+
+      // 2.h5存储
+
+      // 小存储
+             /*localStorage  注释之后也保留访问历史
+             不会消失  依然可以弹出    如果是删除则不能弹出name值*/
+
+	  // (1)localStorage.setItem
+	  // localStorage.setItem('name','朱')
+	  alert(localStorage.getItem('name')) 
+
+	   // (2)localStorage.name
+	   // localStorage.name='利'
+	   alert(localStorage.name)
+
+	   /*// (3)localStorage['name']*/
+	   // localStorage['name1']='萍'
+	   alert(localStorage['name'])
+
+        
+       // (4)localStorage.removeItem('name')移除
+          // localStorage.removeItem('name1')
+       // (5)localStorage.clear()
+           localStorage.clear()
+
+               // sessionStorage
+         // (1)sessionStorage.setItem         
+	   /*sessionStorage.setItem('name','王五')
+	   alert(sessionStorage.getItem('name'))*/
+          
+        // (2)sessionStorage.name
+	   /*sessionStorage.name='利'
+	   alert(sessionStorage.name)*/
+
+	   /*// (3)sessionStorage['name']*/
+	   /*sessionStorage['name']='萍'
+	   alert(sessionStorage['name'])*/
+	</script>
+</body>
+</html>

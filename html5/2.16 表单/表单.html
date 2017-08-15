@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- 如果input不放入form表单里  则给form一个ID名 给input一个form名等于ID名 -->
+	<!-- <form action="1.php" id='myform'>
+	         用户名：<input type="text"><br/><br/>
+	     密码框：<input type="password"><br/><br/>
+	     email： <input type="email" required><br/><br/>
+	     url:    <input type="url" required><br/><br/>
+	
+	     日期    <input type="date"><br/><br/>
+	 小时和分钟  <input type="time"><br/><br/>
+	       月和年    <input type='month'><br/><br/>
+	       周和年    <input type='week'><br/><br/>
+	       日月年(UTC时间)<input type='datetime'><br/><br/>
+	       日月年(本地时间)<input type='datetime'-local/><br/><br/>
+	       number :  <input type="number" max='10' min='0' value='4' step='2'><br/><br/> 只识别数字
+	       range:     <input type="range" max='10' min='0' step='1' value='5'/><br/><br/>
+	       search:    <input type="search" results='s'><br/><br/>
+	       tel    :   <input type="tel"><br/><br/>
+	       color  ：  <input type="color"><br/><br/> 
+            </form>-->
+        
+       <!-- 新增属性 -->
+       <form action="1.php" id='myform' novalidate='true' method='post'>
+       	<!-- novalidate不验证form表单是否完成  直接提交 -->
+      placeholder：<input id="placeholder" placeholder="哈哈哈"><br/><br/>
+                    <!-- placeholder免去了用JS去实现点击清除表单初始值. -->
+           email   <input type="email" required><br/><br/>
+                     <!-- required代表框里要写符合规则的字符   不写无法提交    不能为空 -->
+       tel:        <input type="tel" pattern='^13[0-9]             {9}$' name='tel' autofocus='true'>            <br/><br/> 
+       <!-- pattern正则 的验证 前面不加斜杠-->
+                  <!-- autofocus自动获得焦点 -->
+       用户名：  <input type="text" autocomplete='on'          name='text'><br/><br/>        
+    <!-- autocomplete的属性值有on和off 自动补全功能 与name同时用 -->
+      文件域     <input type="file" multiple='multiple'><br/><br/> 
+            <!-- multiple可以选择多个文件 -->
+
+     年龄      <input type="text" list='li'>
+                <datalist id='li'>
+                	<option>20</option>
+                	<option>30</option>
+                	<option>40</option>
+                </datalist> 	
+
+
+                  <input type="submit" value="提交" formaction="22222.php" formmethod='get'>
+                  <!-- formaction改变提交的地址 -->
+                 <!-- formmethod改变提交的方式 -->
+	
+	</form>
+	
+</body>
+</html>

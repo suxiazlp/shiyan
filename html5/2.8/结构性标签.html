@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin:0;padding: 0;
+	}
+     header{
+     	width:100%;height:70px;background: #aaa;font-size: 40px;line-height: 70px;text-align: center;font-weight: bold;
+     }
+     footer{
+     	width:100%;height:70px;background: #aaa;font-size: 40px;line-height: 70px;text-align: center;font-weight: bold;
+     }
+     nav{
+     	width:100%;height:50px;background: #ccc;
+     }
+     nav li{
+     	width:auto;height:100%;font-size: 20px;line-height:50px;text-align: center;list-style:none;float: left;padding:0 20px;
+     }
+     nav li a{
+     	text-decoration: none;color:#1b1b1b;
+     }
+     section{
+     	width:100%;height:200px;background: #eee;
+     	border-bottom: 1px solid #e1e1e1;
+     }
+     hgroup{
+     	width:40px;height:auto;position: fixed;right:40px;top:180px;
+     }
+     hgroup div{
+     	width:40px;line-height: 30px;font-size: 16px;border:1px solid lightgreen;
+     }
+     aside{
+        width:20%;height:100%;background: lightyellow;
+        float: right;
+     }
+     figure img{
+        width:150px;
+     }
+	</style>
+</head>
+<body>
+	<header>我是头部</header>
+    <div id="main">
+    	<nav>
+    		<ul>
+    		    <li><a href="">首页1</a></li>
+    		    <li><a href="">首页2</a></li>
+    		    <li><a href="">首页3</a></li>
+    		    <li><a href="">首页4</a></li>
+    		    <li><a href="">首页5</a></li>
+    		    <li><a href="">首页6</a></li>
+    	    </ul>
+        </nav>
+        <section>
+        	哈哈哈
+        	<article>
+        		移动云时代，全球开发者工具服务正在发生巨大变革：产品体验变革（消费者体验化），商业模式变革（Freemium免费增值），技术变革（开源开放云服务）。非常高兴看到国内创业公司推出HBuilder，代表了新一代开放服务的方向，基于持续更新的云知识库的高效开放工具，让开发者更加专注于解决问题本身，让技术服务变得更智能。
+                我在硅谷做了近7年的工程师，用过不少工具，绝大多数是老外所写；看到HBuilder，名副其实的最快的、最人性化的前端编辑器，丝毫不逊色于我见到的最高水平的工具。这是一只极富极客精神的技术团队。也因此，我做了他们的天使投资人。
+                HBuilder的问世有意义的推动和加速HTML5的发展，碎片化的语法定义和浏览器兼容性一直是开发者最头疼的，现在开发者有福了，在 HBui
+        	</article>
+        </section>
+        <section>
+            呵呵呵
+            <aside>我是侧边栏</aside>
+        </section>
+        <section>
+            嘿嘿嘿
+            <figure>
+                <figcaption>这是图片的集合</figcaption>
+                <img src="17.jpg" alt="">
+                <img src="18.jpg" alt="">
+                <img src="19.jpg" alt="">
+            </figure>
+        </section>
+        <section>
+            啧啧啧
+            <code>daimakuai</code>
+            <dialog>
+                <!-- 对话标签 -->
+                <dt>甲:
+                    <dd>吃的什么?</dd>
+                </dt>
+                <dt>乙:
+                    <dd>包子!</dd>
+                </dt>
+                <dt>甲:
+                    <dd>好吃吗?</dd>
+                </dt>
+            </dialog>
+        </section>
+        <section>
+            啦啦啦
+            <!-- 代表的是百分比 -->
+            <meter max=20 min=0 value=5></meter>
+           我的生日是<time>2017</time>年<time>2</time>月<time>8</time>
+           <!-- 进度条 -->
+           <progress max=20 min=0 value=5></progress>
+        </section>
+        <hgroup>
+        	<div>哈哈哈</div>
+        	<div>呵呵呵</div>
+        	<div>嘿嘿嘿</div>
+        	<div>啧啧啧</div>
+        </hgroup>
+    </div>
+    <footer>我是last</footer>
+    <script>
+     /*var meter=document.getElementsByTagName('meter')[0]
+     meter.onclick=function(){
+        meter.value+=1
+     }
+
+     var t=document.getElementsByTagName('time')[0]
+     var t1=document.getElementsByTagName('time')[1]
+     var t2=document.getElementsByTagName('time')[2]
+     var date=new Date()
+     var year=date.getFullYear()
+     var month=date.getMonth()+1
+     var day=date.getDate()
+     if(t.innerHTML==year&&t1.innerHTML==month&&t2.innerHTML==day){
+        alert("生日快乐")
+     }else{
+        alert("不是生日")
+     }*/
+
+     var pro=document.getElementsByTagName('progress')[0]
+     var section=document.getElementsByTagName('section')[4]
+     var t=setInterval(function(){
+        if(pro.value==20){
+            clearInterval(t)
+            var span=document.createElement('span')
+            span.innerHTML='加载完成!'
+            section.appendChild(span)
+        }else{
+        pro.value+=1
+        }
+     },300)
+    </script>
+</body>
+</html>

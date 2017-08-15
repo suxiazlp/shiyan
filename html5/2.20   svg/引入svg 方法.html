@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- <embed src="svg.svg"  width="300" height="100"
+	type="image/svg+xml"
+	pluginspage="http://www.adobe.com/svg/viewer/install/"  /> -->
+
+<!-- 用谷歌打开 -->
+<!-- <object data="svg.svg" width="300" height="100" type="image/svg+xml" codebase="http://www.adobe.com/svg/viewer/install/"/> -->
+
+<!-- <iframe src="svg.svg" width="300" height="100"> 
+</iframe>-->
+<!-- x.y代表左上角  cx.cy代表中心店 -->
+
+
+
+<!-- fill填充色  stroke边框  stroke-width边框宽度  fill-opacity填充透明度 -->
+<!-- rx 和 ry 属性可使矩形产生圆角 -->
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="500" width='1349'>
+
+<!-- 多边形 -->
+<polygon points="100,10 40,180 190,60  10,60
+160,180" style="fill:lime;stroke:purple;stroke-width:5;fill- rule:evenodd;"/>
+
+<!-- 矩形 -->
+ <rect x="200" y="200" width="250" height="250" style="fill:blue;stroke:pink;stroke-width:5;
+fill-opacity:0.1;stroke-opacity:0.9"/>
+
+<!-- 线条 -->
+ <line x1="500" y1="0" x2="500" y2="300"
+style="stroke:rgb(99,99,99);stroke-width:2"/>
+
+<!-- 圆 -->
+<circle cx="300" cy="60" r="40" stroke="black"
+stroke-width="2"  fill="lightblue"/>
+
+<!-- 椭圆 -->
+<ellipse cx='300' cy='150' rx='40' ry='20' fill='lightgreen' stroke='lightgray' stroke-width='2'>
+</svg>
+</body>
+</html>

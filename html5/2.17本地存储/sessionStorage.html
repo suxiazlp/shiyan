@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	标题： <input type="text" id='title'>
+	内容   <textarea name="" id="cont"></textarea>
+	<a href="demo.php" id='sub'>登录</a>
+
+	<script>
+   var title=document.getElementById('title')
+   var cont=document.getElementById('cont')
+   var sub=document.getElementById('sub')
+   // 如果保留着title或cont
+   if(sessionStorage.title||sessionStorage.cont){
+   	title.value=sessionStorage.title
+   	cont.value=sessionStorage.cont
+      // 页面上title和cont的值等于页面上保留的值
+   }
+   // 点击登录时
+   sub.onclick=function(){
+   	sessionStorage.title=title.value
+   	sessionStorage.cont=cont.value
+      /*浏览器保留的title等于title的值
+      浏览器保留的cont等于cont的值*/
+   }
+	</script>
+</body>
+</html>

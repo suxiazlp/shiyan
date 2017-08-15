@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.aa{
+		width:200px;height: 200px;border: 1px solid green;
+	}
+    .box{
+    	width:100px;height: 100px;background: red;
+    }
+	</style>
+</head>
+<body>
+    <div class="aa"></div>
+	<div class="box" draggable=true></div>
+	<script>
+  /* dragstart  拖拽开始
+   ondrag       拖拽中
+   dragend    拖拽结束*/
+
+   var aa=document.getElementsByClassName('aa')[0]
+   var box=document.getElementsByClassName('box')[0]
+
+   box.ondragstart=function(){
+   	aa.innerHTML='拖拽开始'
+   }
+   box.ondrag=function(){
+   	// aa.innerHTML+="拖拽中"
+   }
+   box.ondragend=function(){
+   	aa.innerHTML+="拖拽结束" 
+   }
+
+   // 投放区
+    /*dragenter:进入投放区
+    dragover:在投放区移动
+    dragleave:投放完成
+    drop:投入投放区
+*/
+   aa.ondragenter=function(e){
+   	e.preventDefault();
+   	aa.innerHTML+="进入投放区aaaaaa"
+   }
+   aa.ondragover=function(e){
+   	e.preventDefault();
+   	// aa.innerHTML+="在投放区移动bbbbbb"
+   }
+   aa.ondragleave=function(e){
+   	e.preventDefault();
+   	aa.innerHTML+="投放离开cccccccc"
+   }
+   aa.ondrop=function(){
+   	aa.appendChild(box)
+   	aa.innerHTML+="sgggggggggggsdfgsfg"
+   }
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+     #aa{
+     	width:100px;height: 100px;background: lightgreen;
+     }
+     #lll{
+     	width:100px;height: 100px;background: lightblue;
+     }
+	</style>
+</head>
+<body>
+	<input type="text" list="a">
+	<datalist id="a">
+		<option value="哈哈哈1">哈哈哈1</option>
+		<option value="哈哈哈2">哈哈哈2</option>
+		<option value="哈哈哈3">哈哈哈3</option>
+		<option value="哈哈哈4">哈哈哈4</option>
+		<option value="哈哈哈5">哈哈哈5</option>
+	</datalist>
+	<!-- contextmenu 是上下文菜单，即鼠标右击元素会出现一个菜单 --> 
+    <div id="aa" contextmenu='menu1'></div>
+    <menu id='menu1' type="context">
+    	<!--label：菜单项显示的名称
+    	    icon：在菜单项左侧显示的图标
+    	    onclick：点击菜单项触发的事件 -->
+
+    	<menuitem label="我是one" icon='' onclick='(function(){
+    	location.href="http://www.baidu.com"
+        })()'>
+        </menuitem>
+    </menu>
+
+
+<!-- contenteditable
+规定是否可编辑元素的内容
+ -->
+<!-- true   -----可以编辑元素的内容
+false  -----无法编辑元素的内容
+inherit -----继承父元素的contenteditable属性 -->
+<div class="lp" contenteditable="true">
+	啧啧啧啧啧啧啧啧啧啧啧啧啧啧啧
+    <div class="zlp" contenteditable="inherit">
+       哈哈好呵呵呵呵呵呵呵呵呵呵呵哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+    </div>
+</div>
+
+<!-- draggable
+规定元素是否可拖拽 -->
+<!-- true 	规定元素是可拖动的。
+false 	规定元素是不可拖动的。
+auto 	使用浏览器的默认特性。 -->
+<div id="lll" draggable=true></div>
+
+<!-- hidden隐藏 -->
+<div id="lll" draggable=true hidden></div>    
+</body>
+</html>

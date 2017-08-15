@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- x.y代表左上角  cx.cy代表中心店 -->
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="190">
+     <polygon points="100,10 40,180 190,60  10,60
+     160,180" fill='lime' fill-rule='evenodd' style="stroke:yellow;stroke-width:2;fill- rule:evenodd;"/>
+    </svg>
+    <script>
+     var svg=document.getElementsByTagName('svg')[0]
+     var po=svg.getElementsByTagName('polygon')[0]
+     // po.setAttribute('fill','red')
+     setInterval(function(){
+     var r=Math.floor(Math.random()*255)
+     var g=Math.floor(Math.random()*255)
+     var b=Math.floor(Math.random()*255)
+     po.setAttribute('fill','rgb('+r+','+g+','+b+')')
+     },200)
+    </script>
+</body>
+</html>

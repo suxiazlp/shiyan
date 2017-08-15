@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	   *{
+		    margin:0;padding:0;
+	    }
+       .top{
+       	width:200px;height: 200px;border:1px solid lightblue;
+       }
+       .bottom{
+       	width:200px;height: 200px;border:1px solid #870000;
+       }
+       .small{
+       	width:100px;height: 25px;text-align: center;line-height: 25px;margin:20px auto;background: #e1e1e1;
+       }
+	</style>
+</head>
+<body>
+	<div class="top"></div>
+	<div class="bottom">
+		<div class="small">我是块1</div>
+		<div class="small">我是块2</div>
+		<div class="small">我是块3</div>
+		<div class="small">我是块4</div>
+	</div>
+	<script>
+       var small=document.getElementsByClassName('small')
+       var atop=document.getElementsByClassName('top')[0]
+       var bottom=document.getElementsByClassName('bottom')[0]
+       for(var i=0;i<small.length;i++){
+       	small[i].draggable=true;
+       	small[i].flag=false
+       	small[i].ondragstart=function(){
+       		this.flag=true
+       	}
+       	small[i].ondragend=function(){
+       		this.flag=false
+       	}
+       }
+       atop.ondragenter=bottom.ondragenter=function(e){
+       	    e.preventDefault()
+       }
+       atop.ondragover=bottom.ondragover=function(e){
+       	    e.preventDefault()
+       }
+       atop.ondrop=bottom.ondrop=function(e){
+       	    e.preventDefault()
+        	for(var i=0;i<small.length;i++){
+        		if(small[i].flag){
+        			this.appendChild(small[i])
+        		}
+        	}
+       }
+       /*bottom.ondragenter=function(e){
+       	    e.preventDefault()
+       }
+       bottom.ondragover=function(e){
+       	    e.preventDefault()
+       }
+       bottom.ondrop=function(){
+        	for(var i=0;i<small.length;i++){
+        		if(small[i].flag){
+        			this.appendChild(small[i])
+        		}
+        	}
+       }*/
+	</script>
+</body>
+</html>

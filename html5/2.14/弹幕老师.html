@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>视频弹幕</title>
+	<style>
+    *{
+    	margin:0;padding:0;
+    }
+    #box{
+    	width:100%;height:auto;
+    }
+    #boxtop{
+    	width:100%;position: relative;
+    }
+    #mark{
+    	width:100%;position: absolute;top:0;left:0;background:rgba(0,0,0,0);
+    	color: #fff;text-align: right;
+    }
+    #boxbottom{
+    	width: 100%;height:100px;background: rgba(0,0,0,0.7);line-height: 100px;
+    }
+	</style>
+</head>
+<body>
+<div id="box">
+    <div id="boxtop">
+    	<video src="iceage4.mp4" controls=controls width='100%'></video>
+    	<div id="mark"></div>
+    </div>
+	<div id="boxbottom">
+		<input type="text" id='text'>
+		<input type="button" value='发送' class='btn'>
+		<input type="button" value="隐藏" class='btn'>
+		<input type="button" value="显示" class='btn'>
+	</div>
+</div>
+<script src='animate.js'></script>
+<script>
+	var mark=document.getElementById('mark');
+	var video=document.getElementsByTagName('video')[0];
+	var text=document.getElementById('text');
+	var btns=document.getElementsByClassName('btn');
+	var hh=video.offsetHeight-110;
+	var ww=document.documentElement.clientWidth;
+
+	mark.style.height=hh+'px';
+    btns[0].onclick=function(){
+    	var val=text.value;
+    	var p1=document.createElement('p');
+    	p1.innerHTML=val;
+    	var p1l=Math.floor(Math.random()*ww);
+    	var p1t=Math.floor(Math.random()*hh);
+    	p1.style.cssText='position:absolute;font-size:40px;max-width:300px;min-width:100px;left:'+p1l+'px;top:'+p1t+'px';
+    	mark.appendChild(p1);
+    	animate(p1,{'left':'-300'},5000)
+    }
+    btns[1].onclick=function(){
+    	mark.style.display='none';
+    }
+    btns[2].onclick=function(){
+    	mark.style.display='block';
+    }
+</script>
+</body>
+</html>

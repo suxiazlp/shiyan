@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+     .box{
+     	width:300px;height:300px;border:1px solid red;
+     }
+     .aa{
+     	width: 100px;height: 100px;background: green;
+     }
+	</style>
+</head>
+<body>
+	<div class="box">
+		
+	</div>
+	<div class="aa" draggable=true> </div>
+	<script>
+    var box=document.getElementsByClassName('box')[0];
+    var aa=document.getElementsByClassName('aa')[0];
+    aa.ondragstart=function(e){
+    	// e.dataTransfer.setData('a1','nihao')
+    	// e.dataTransfer.clearData('a1')
+    }
+    box.ondragenter=function(e){ 	
+        e.preventDefault();
+    }
+    box.ondragover=function(e){
+        e.preventDefault();
+    }
+    box.ondrop=function(e){
+    	// console.log(e)
+    	// console.log(e.dataTransfer.getData('a1'))
+    	// console.log(e.dataTransfer.types)
+      console.log(e.dataTransfer.files[0].name)
+      console.log(e.dataTransfer.files[0].size)
+      console.log(e.dataTransfer.files[0].type)
+       e.preventDefault();
+    }
+
+	</script>
+</body>
+</html>

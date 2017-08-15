@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	用户名:  <input type="text" id="user"><br/><br/>
+   登录密码:<input type="password" id="pass"><br/><br/>
+   记住密码 <input type="checkbox" id='remb'><br/><br/>
+    <input type="button" id='sub' value='登录'>
+    <script>
+      var user=document.getElementById('user')
+      var pass=document.getElementById('pass')
+      var remb=document.getElementById('remb')
+      var sub=document.getElementById('sub')
+      // 如果保留着user值和password值
+      if(localStorage.user&&localStorage.password){
+      	user.value=localStorage.user
+      	pass.value=localStorage.password
+      	// 则页面中user的值和password的值等于后台保留的值
+      	remb.checked=true
+      	// 且密码框默认选中
+      }
+      sub.onclick=function(){ //点击提交时
+      	if(remb.checked){   //如果密码框选中
+      		localStorage.user=user.value
+      		localStorage.password=pass.value
+      		//用户名的值和密码值则保留着
+        }else{
+      		user.value=''
+      		pass.value=''
+      		// 若没有选中  则user和pass的值为空
+      		localStorage.removeItem('user')
+      		localStorage.removeItem('password')
+      		// 并且清除保留的user值和password值
+      	}
+      }
+    </script>
+</body>
+</html>

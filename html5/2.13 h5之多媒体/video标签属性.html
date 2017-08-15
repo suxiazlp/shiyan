@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- controls显示暂停和进度 -->
+	<!-- autoplay打开之后自动播放  autoplay=autoplay-->
+	<!-- width、height设置视频宽高 -->
+	<!-- loop值为loop表示重复播放 -->
+	<!-- preload恢复成默认的 有暂停键 和autoplay不能同时存在-->
+	<!-- source解决浏览器兼容问题 -->
+	<!-- poster表示视频的封面 -->
+	<video controls=controls width='1000' heihgt='500' loop=loop preload=pre poster='1.jpg'>
+		<source src="iceage4.mp4" type="video/mp4"></source>
+		<source src="iceage4.webm" type="video/webm"></source>
+		<source src="http://www.w3school.com.cn/i/movie.ogg" type="video/ogg"></source>
+		以上视频格式都不支持
+	</video>
+	<!-- 音频 -->
+	<audio src="fcml.mp3" controls=controls autoplay=autoplay loop=loop></audio>
+</body>
+</html>

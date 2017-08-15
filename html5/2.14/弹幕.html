@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>弹幕</title>
+	<style>
+     *{
+     	margin:0;padding: 0;
+     }
+     #box{
+     	width:100%;height:auto;
+     }
+     #boxtop{
+     	width:100%;position: relative;
+     }
+     #boxbottom{
+     	width:100%;height:60px;background:rgba(0,0,0,0.7); 
+     	line-height: 60px;
+     }
+     #mark{
+     	width:100%;position: absolute;top:0;background: rgba(0,0,0,0);text-align: right;
+     }
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div class="boxtop">
+	          <video src="iceage4.mp4" controls=controls autoplay=autoplay loop=loop width="100%">
+	          </video>
+	          <div id="mark"></div>
+	    </div>
+	    <div id="boxbottom">
+	    	<input type="text" id="text">
+	    	<input type="button" value="发送" class="btn">
+	    	<input type="button" value="隐藏" class="btn">
+	    	<input type="button" value="显示" class="btn">
+	    </div>
+	</div>
+</body>
+<script src="animate.js"></script>
+<script>
+	var mark=document.getElementById('mark')
+	var video=document.getElementsByTagName('video')[0]
+	var text=document.getElementById('text')
+	var btns=document.getElementsByClassName('btn')
+	var hh=video.offsetHeight-115
+	var ww=document.documentElement.clientWidth
+    mark.style.height=hh+'px'
+    // 给第一个按钮添加点击事件
+    btns[0].onclick=function(){
+        var val=text.value
+        var p1=document.createElement('p')
+        p1.innerHTML=val
+        var p1l=Math.floor(Math.random()*ww)
+        var p1t=Math.floor(Math.random()*hh)
+        p1.style.cssText='font-size:40px;position:absolute;max-width:300px;min-width:100px;left:'+p1l+'px;top:'+p1t+'px';
+        // p1l和p1t都是随机的
+        // left：p1l；top:p1t;代表着宽和高移动都是随机的
+        p1.style.color='white'
+        mark.appendChild(p1)
+        animate(p1,{'left':'-300'},5000)
+    }
+    btns[1].onclick=function(){
+    	mark.style.display='none'
+    }
+    btns[2].onclick=function(){
+    	mark.style.display='block'
+    }
+</script>
+</html>

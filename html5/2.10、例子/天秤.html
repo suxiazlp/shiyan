@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin:0;padding: 0;
+	}
+    .box{
+    	width:220px;height: 220px;border:1px solid #000;
+    	position: relative;
+    }
+    .inner{
+    	width:50px;height: 50px;border:1px solid #fff;
+    	background: red;float: left;text-align: center;line-height: 48px;box-sizing:border-box;
+    }
+    .inner img{
+         width: 48px;
+    }
+    .tp{
+    	width:1000px;height:400px;margin:0 auto;position: relative;margin-top:10px;
+    }
+    .tp-line{
+    	width:1000px;height: 210px;border-bottom: 10px solid #000;box-sizing:border-box;
+    }
+    .tp-left{
+    	width:200px;height: 200px;border:1px solid #000;float: left;background: url(img/18.jpg) no-repeat center;
+    }
+    .jpg18{
+    	width:200px;height: 200px;
+    }
+    .tp-right{
+    	width:200px;height: 200px;border:1px solid #000;float: right;background: url(img/19.jpg) no-repeat center;
+    }
+    .clear{
+    	clear:both;
+    }
+    
+    .tp-sj{
+    	width:0;height:0;border-width:120px;border-style:solid;border-color:transparent transparent #000 transparent;margin:0 auto;position: absolute;left:380px;top:90px;
+
+    }
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="inner">
+			<img src="img/1.png" alt="">
+		</div>
+		<div class="inner">
+			<img src="img/2.jpg" alt="">
+		</div>	
+		<div class="inner">
+			<img src="img/3.jpg" alt="">
+		</div>	
+		<div class="inner">	
+			<img src="img/4.jpg" alt="">
+		</div>	
+		<div class="inner">	
+			<img src="img/5.jpg" alt="">
+		</div>	
+		<div class="inner">	
+			<img src="img/6.jpg" alt="">
+		</div>	
+		<div class="inner">	
+			<img src="img/7.jpg" alt="">
+		</div>	
+		<div class="inner">	
+			<img src="img/8.jpg" alt="">
+		</div>	
+		<div class="inner">	
+			<img src="img/9.jpg" alt="">
+		</div>	
+		<div class="inner">	
+			<img src="img/10.jpg" alt="">
+		</div>	
+		<div class="inner">	
+			<img src="img/11.jpg" alt="">
+		</div>	
+		<div class="inner">	
+			<img src="img/12.jpg" alt="">
+		</div>	
+		<div class="inner">	
+			<img src="img/13.jpg" alt="">
+		</div>	
+		<div class="inner">	
+			<img src="img/14.jpg" alt="">
+		</div>	
+		<div class="inner">	
+			<img src="img/15.jpg" alt="">
+		</div>	
+		<div class="inner">	
+			<img src="img/16.jpg" alt="">
+		</div>	
+		
+	</div>
+	<div class="tp">
+		<div class="tp-line">
+			<div class="tp-left">
+				<!-- <img src="img/18.jpg" class="jpg18"> -->
+			</div>
+		    <div class="tp-right">
+		    	<!-- <img src="img/19.jpg" class="jpg18"> -->
+		    </div>
+		    <div class="clear"></div>
+		</div>
+		<div class="tp-sj"></div>
+	</div>
+
+	<script>
+    var box=document.getElementsByClassName('box')[0]
+    var inner=document.getElementsByClassName('inner')
+    var left=document.getElementsByClassName('tp-left')[0]
+    var right=document.getElementsByClassName('tp-right')[0]
+    var line=document.getElementsByClassName('tp-line')[0]
+    for(var i=0;i<inner.length;i++){
+    	inner[i].draggable=true;
+    	inner[i].flag=false
+    	inner[i].ondragstart=function(){
+    		this.flag=true
+    	}
+    	inner[i].ondragend=function(){
+    		this.flag=false
+    	}
+    }
+
+        left.ondragenter=box.ondragenter=right.ondragenter=function(e){
+            e.preventDefault();
+        }
+        left.ondragover=box.ondragover=right.ondragover=function(e){
+            e.preventDefault();
+        }
+        left.ondrop=box.ondrop=right.ondrop=function(e){
+            e.preventDefault();
+            for(var i=0;i<inner.length;i++){
+            	if(inner[i].flag){
+            		this.appendChild(inner[i])
+                    var leftlong=left.childNodes.length
+                    var num=-leftlong*10
+                    line.style.transform='rotateZ('+num+'deg)'
+                    var rightlong=right.childNodes.length
+                    num+=rightlong*10
+                    line.style.transform='rotateZ('+num+'deg)'
+
+            	}
+            }
+        }
+	</script>
+</body>
+</html>

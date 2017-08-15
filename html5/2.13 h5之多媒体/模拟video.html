@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+      #box{
+      	width:600px;height: 40px;background: lightblue;
+      }
+      .pause{
+      	width:0;height:0;border-width:8px;border-style:solid;border-color:transparent transparent transparent #fff;margin-top:12px;
+      	float: left;margin-left:6px;
+      }
+      .play{
+          width:24px;height: 14px;border-left:6px solid #fff;border-right:6px solid #fff;margin-top:13px;
+          margin-left:6px;float: left;box-sizing:border-box;
+      }
+      #progress{
+      	width:75%;height: 8px;box-shadow: 0 0 4px #000;float: left;margin-top:16px;margin-left:6px;border-radius: 4%;background: #e1e1e1;
+      	position: relative;
+      }
+      #bar{
+      	width:0%;height: 8px;background: #fff;border-radius: 4%;display: inline-block;position: absolute;
+      	top:0;left:0;
+      }
+      #radius{
+      	width:16px;height: 16px;border-radius: 8px;background: #ccc;box-shadow: 0 0 4px #000;position: absolute;top:-4px;
+      }
+      .soundon{
+        width:10px;height: 10px;border-width:8px;border-style:solid;border-color:transparent #fff transparent transparent;float: left;margin-top:7px;
+      }
+      .soundoff{
+        width:10px;height: 10px;border-width:8px;border-style:solid;border-color:transparent #000 transparent transparent;float: left;margin-top:7px;
+      }
+      #range{
+        width:10%;height: 8px;float: left;margin-top:16px;
+      }
+      #full{
+        width:10px;height: 10px;float: left;border:2px solid #fff;box-sizing:border-box;margin-top:15px;
+      }
+      #full:hover{
+        width: 12px;height: 12px;margin-top:14px;
+      }
+	</style>
+</head>
+<body>
+	<video controls=controls>
+		<source src="iceage4.mp4" type="video/mp4"></source>
+		<source src="iceage4.webm" type="video/webm"></source>
+	</video>
+	<div id="box">
+		<!-- 播放与暂停 -->
+		<div id="play" class="pause"></div>
+		<!-- 进度条 -->
+		<div id="progress">
+			<span id="bar"></span>
+			<div id="radius"></div>
+		</div>
+    <!-- 静音状态 -->
+    <div id="sound" class="soundon"></div>
+    <!-- 声音大小 -->
+    <input type="range" max='100' min='0' value='30' id='range'>
+    <!-- 全屏 -->
+    <div id="full"></div>
+	</div>
+	<script>
+	//获取暂停与播放按钮
+     var play=document.getElementById('play')
+    //获取视频对象  
+     var video=document.getElementsByTagName('video')[0]
+     //进度条对象
+     var progress=document.getElementById('progress')
+     var bar=document.getElementById('bar')
+     var radius=document.getElementById('radius') 
+     //静音按钮
+     var sound=document.getElementById('sound')
+     //声音大小
+     var range=document.getElementById('range')
+     //全屏
+     var full=document.getElementById('full')
+    
+
+     //视频的暂停与播放
+     play.onclick=function(){
+        if(video.paused){
+        	play.className='play'
+        	video.play()
+        }else{
+        	play.className='pause'
+        	video.pause()
+        }    
+     }
+     // 进度条
+     video.addEventListener('timeupdate',function(){
+     	var bl1=video.currentTime/video.duration;
+     	bar.style.width=progress.offsetWidth*bl1+'px'
+     	radius.style.left=progress.offsetWidth*bl1+'px'
+     },false)
+     //进度条拖拽
+     radius.onmousedown=function(e){
+     	document.onmousemove=function(e){
+     		var leftv=e.clientX-progress.offsetLeft-box.offsetLeft;
+     		if(leftv<=0){
+     			leftv=0
+     		}
+     		if(leftv>=progress.offsetWidth){
+     			leftv=progress.offsetWidth
+     		}
+     		radius.style.left=leftv+'px'
+        var bl2=leftv/progress.offsetWidth
+        video.currentTime=bl2*video.duration
+     	}
+
+     }
+     document.onmouseup=function(){
+      document.onmousemove=null;
+     }
+//静音控制状态
+sound.onclick=function(){
+  if(video.muted){
+    video.muted=false
+    sound.className='soundon'
+  }else{
+    video.muted=true
+    sound.className='soundoff'
+  }
+}
+
+// 声音大小调节
+range.onchange=function(){
+  video.volume=range.value/100
+}
+//设置全屏大小
+full.onclick=function(){
+  video.mozRequestFullScreen()
+}
+	</script>
+</body>
+</html>

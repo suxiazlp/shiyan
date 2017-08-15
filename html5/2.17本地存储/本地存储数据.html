@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+localStorage.name='朱利萍'
+localStorage.sex='女'
+localStorage.age='19'
+localStorage.name1='真'
+localStorage.sex1='女'
+localStorage.age1='19'
+/*alert(localStorage.length)
+alert(localStorage.key(2))*/
+for(var i=0;i<localStorage.length;i++){
+	alert(localStorage.key(i)+':'+localStorage.getItem(localStorage.key(i)))
+}
+	</script>
+</body>
+</html>
